@@ -6,7 +6,7 @@ var pokemons = ['bulbasaur','ivysaur','venusaur','charmander','charmeleon','char
 App.run(function($http, $rootScope, getInfoFactory) {
 	var completed = 0;
 	var hash = window.location.hash;
-	currentPokemon = /#(\w+)/.exec(hash);
+	currentPokemon = /#\/?(\w+)/.exec(hash);
 	if (!currentPokemon) {
 		currentPokemon = pokemons[Math.floor(1 + Math.random() * 750)];
 	} else {
