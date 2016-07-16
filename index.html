@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="" ng-app="App">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Colosseum</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/morph.css">
+    <link rel="stylesheet" href="styles/loading.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/morph.js"></script>
+    <script src="scripts/classie.js"></script>
+	</head>
+  <body class="bgColor">
+  	<div class="container">
+	    <!--[if lt IE 10]>
+	      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	    <![endif]-->
+	    <div class="loadingContainer fadeout" ng-show="!loaded">
+	    	<div class="loader">
+	    		<div class="sk-cube-grid">
+					<div class="sk-cube sk-cube1"></div>
+					<div class="sk-cube sk-cube2"></div>
+					<div class="sk-cube sk-cube3"></div>
+					<div class="sk-cube sk-cube4"></div>
+					<div class="sk-cube sk-cube5"></div>
+					<div class="sk-cube sk-cube6"></div>
+					<div class="sk-cube sk-cube7"></div>
+					<div class="sk-cube sk-cube8"></div>
+					<div class="sk-cube sk-cube9"></div>
+				</div>
+	    	</div>
+	    </div>
+	    <div class="mainContainer container" ng-controller="MainPokemon">
+	    	<div class="innerContainer">
+		    	<div class="pokemonImage">
+		    		<img src="{{imageUrl}}">
+		    	</div>
+		    	<div class="pokemonStats">
+		    		<div class="pokemonVCard">
+		    			<div class="pokemonGenere secondaryColor">{{genere}}</div>
+		    			<div class="pokemonName primaryColor borderColor">{{name}}</div>
+		    			<div class="pokemonId">{{currentPokemon.id}}</div>
+		    			<div class="pokemonTypesContainer">
+		    				<div class="pokemonTypes">
+			    				<ul>
+			    					<li class="padded inline" ng-repeat="type in typeUrls">
+				    					<img src="{{type}}">
+				    				</li>
+			    				</ul>
+			    			</div>
+			    			<div class="padded pokemonHabitat primaryColor">Loves to stay in {{habitat}}s {{happiness}}</div>
+		    			</div>
+		    		</div>
+		    		<div class="pokemonHeight primaryColor">Height {{currentPokemon.height/10}} meters</div>
+		    		<div class="pokemonWeight primaryColor">Weight {{currentPokemon.weight/10}} kilograms</div>
+		    		<div class="pokemonBaseStats mediumSize">
+		    			<ul>
+					        <li ng-repeat="stat in stats" class="liStat">
+					        	<div class="inline thirdyColor">{{up(stat.stat.name)}}</div>
+					        	<div class="inline padded"> - </div>
+					        	<div class="inline secondaryColor">{{stat.base_stat}}</div>
+				        	</li>
+					    </ul>
+		    		</div>
+		    		<div class="pokemonDescription primaryColor">
+		    			{{description}}
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="secondaryContainer">
+		    	<div class="pokemonAbilities">
+		    		<div class="secondaryColor mediumSize primaryColor">Abilities</div>
+		    		<ul>
+				        <li class="padded verticalPadded thirdyColor" ng-repeat="ability in abilities">{{ability.ability.name}}</li>
+				    </ul>
+		    	</div>
+		    	<div class="pokemonFamily" ng-controller="PokemonFamily">
+		    		<div class="secondaryColor mediumSize primaryColor">Family</div>
+		    		<ul>
+				        <li class="padded verticalPadded inline" ng-repeat="pokemon in members">
+				        	<img ng-click="reloadWith(pokemon)" title="{{getPokemonName(pokemon)}}" class="pokemonMember" src="{{getImageUrl(pokemon)}}">
+				        </li>
+				    </ul>
+		    	</div>
+		    	<div class="pokemonHeldItems">
+		    		<div class="secondaryColor mediumSize primaryColor">Held Items</div>
+		    		<ul>
+				        <li class="padded verticalPadded thirdyColor" ng-repeat="item in held_items">
+					        <div class="heldContainer">
+					        	<img class="heldItem inline" title="{{item.item.name}}" src="{{getUrlItem(item.item.name)}}">
+					        	<div class="padded inline">
+					        		{{item.item.name}} with probability {{getRarity(item)}}%
+					        	</div>
+					        </div>
+				        </li>
+				        <li class="padded verticalPadded thirdyColor" ng-show="!held_items.length">None</li>
+				    </ul>
+		    	</div>
+		    </div>
+	    </div>
+		    
+	    <script src="scripts/classie.js"></script>
+	    <script src="scripts/morph.js"></script>
+	    <div ng-controller="Morph" ng-include="'morph.html'" onload="initMorph()"></div>
+		
+	    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	    <script>
+	      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	      e.src='https://www.google-analytics.com/analytics.js';
+	      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	      ga('create','UA-XXXXX-X');ga('send','pageview');
+	    </script>
+    </div>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

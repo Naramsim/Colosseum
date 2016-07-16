@@ -1,0 +1,173 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  color: #ec5a62;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+}
+
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.secondaryContainer {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.innerContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	flex-grow: 2;
+}
+
+.pokemonImage>img {
+	height: 45vh;
+	width: 45vw;
+}
+
+.pokemonStats {
+	display: flex;
+	flex-direction: column;
+	justify-content: center
+}
+
+.pokemonVCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.pokemonName {
+	font-size: 3em;
+	font-weight: 800;
+	z-index: 5;
+}
+
+.pokemonId {
+	font-size: 200px;
+	opacity: .1;
+	margin-top: -149px;
+}
+
+.pokemonBaseStats {
+	padding-top: 1em;
+}
+
+.inline {
+	display: inline-flex;
+}
+
+.padded {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.verticalPadded {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.liStat:nth-child(even) {
+	padding: 5px;
+}
+
+.mediumSize {
+	font-size: 26px;
+}
+
+.pokemonDescription {
+	max-width: 40vw;
+	line-height: 1.5;
+	opacity: .8;
+}
+
+.pokemonTypesContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.pokemonGenere {
+	margin-left: -36px;
+}
+
+.pokemonMember {
+	height: 90px;
+	width: 90px;
+	cursor: pointer;
+}
+
+.heldContainer {
+	vertical-align: middle;
+}
+
+.heldItem {
+	vertical-align: middle;
+	height: 40px;
+}
+
+.pokemonFamily {
+    max-width: 60%;
+}
+
+.loadingContainer {
+	min-height: 100%;
+	min-width: 100%;
+	width: 100%;
+	height: 100%;
+	background-color: #cccccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 100;
+	transition: 2s;
+}
+
+.fadein,
+.fadeout {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}

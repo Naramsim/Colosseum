@@ -1,0 +1,31 @@
+<div id="morphsearch" class="morphsearch" ng-controller="PokemonSearch">
+	<form class="morphsearch-form">
+		<input class="morphsearch-input" type="search" ng-model="searchString" placeholder="Search..."/>
+		<button class="morphsearch-submit" type="submit">Search</button>
+	</form>
+	<div class="morphsearch-content">
+		<div class="dummy-column">
+			<h2>Starting with</h2>
+			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilterStart:searchString">
+				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+				<h3>{{pokemon}}</h3>
+			</li>
+		</div>
+		<div class="dummy-column">
+			<h2>Results</h2>
+			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilter:searchString">
+				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+				<h3>{{pokemon}}</h3>
+			</li>
+		</div>
+		<div class="dummy-column">
+			<h2>Recent</h2>
+			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in recents track by $index">
+				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+				<h3>{{pokemon}}</h3>
+			</li>
+		</div>
+	</div><!-- /morphsearch-content -->
+	<span class="morphsearch-close"></span>
+</div><!-- /morphsearch -->
+<div class="overlay"></div>
