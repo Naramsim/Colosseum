@@ -47,7 +47,7 @@
 		    	<div class="pokemonStats">
 		    		<div class="pokemonVCard">
 		    			<div class="pokemonGenere secondaryColor">{{genere}}</div>
-		    			<div class="pokemonName primaryColor borderColor">{{name}}</div>
+		    			<div class="pokemonName primaryColor borderColor">{{up(currentPokemon.name)}}</div>
 		    			<div class="pokemonId">{{currentPokemon.id}}</div>
 		    			<div class="pokemonTypesContainer">
 		    				<div class="pokemonTypes">
@@ -60,18 +60,18 @@
 			    			<div class="padded pokemonHabitat primaryColor">Loves to stay in {{habitat}}s {{happiness}}</div>
 		    			</div>
 		    		</div>
-		    		<div class="pokemonHeight primaryColor">Height {{currentPokemon.height/10}} meters</div>
+		    		<div class="pokemonHeight primaryColor verticalPadded">Height {{currentPokemon.height/10}} meters</div>
 		    		<div class="pokemonWeight primaryColor">Weight {{currentPokemon.weight/10}} kilograms</div>
 		    		<div class="pokemonBaseStats mediumSize">
 		    			<ul>
-					        <li ng-repeat="stat in stats" class="liStat">
+					        <li ng-repeat="stat in currentPokemon.stats" class="liStat">
 					        	<div class="inline thirdyColor">{{up(stat.stat.name)}}</div>
 					        	<div class="inline padded"> - </div>
 					        	<div class="inline secondaryColor">{{stat.base_stat}}</div>
 				        	</li>
 					    </ul>
 		    		</div>
-		    		<div class="pokemonDescription primaryColor">
+		    		<div class="pokemonDescription primaryColor verticalPadded">
 		    			{{description}}
 		    		</div>
 		    	</div>
@@ -80,7 +80,7 @@
 		    	<div class="pokemonAbilities">
 		    		<div class="secondaryColor mediumSize primaryColor">Abilities</div>
 		    		<ul>
-				        <li class="padded verticalPadded thirdyColor" ng-repeat="ability in abilities">{{ability.ability.name}}</li>
+				        <li class="padded verticalPadded thirdyColor" ng-repeat="ability in currentPokemon.abilities">{{up(ability.ability.name)}}</li>
 				    </ul>
 		    	</div>
 		    	<div class="pokemonFamily" ng-controller="PokemonFamily">
@@ -94,15 +94,15 @@
 		    	<div class="pokemonHeldItems">
 		    		<div class="secondaryColor mediumSize primaryColor">Held Items</div>
 		    		<ul>
-				        <li class="padded verticalPadded thirdyColor" ng-repeat="item in held_items">
+				        <li class="padded verticalPadded thirdyColor" ng-repeat="item in currentPokemon.held_items">
 					        <div class="heldContainer">
 					        	<img class="heldItem inline" title="{{item.item.name}}" src="{{getUrlItem(item.item.name)}}">
 					        	<div class="padded inline">
-					        		{{item.item.name}} with probability {{getRarity(item)}}%
+					        		{{up(item.item.name)}} with probability {{getRarity(item)}}%
 					        	</div>
 					        </div>
 				        </li>
-				        <li class="padded verticalPadded thirdyColor" ng-show="!held_items.length">None</li>
+				        <li class="padded verticalPadded thirdyColor" ng-show="!currentPokemon.held_items.length">None</li>
 				    </ul>
 		    	</div>
 		    </div>
