@@ -1,0 +1,27 @@
+{
+  "name": "colosseum",
+  "version": "0.1.0",
+  "description": "Displays Pokemons in a pretty way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naramsim/Colosseum.git"
+  },
+  "keywords": [
+    "pokemon",
+    "pretty"
+  ],
+  "author": "Naramsim",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Naramsim/Colosseum/issues"
+  },
+  "homepage": "https://github.com/Naramsim/Colosseum#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
