@@ -60,8 +60,8 @@
 			    			<div class="padded pokemonHabitat primaryColor">Loves to stay in {{ ::habitat }}s {{ ::happiness }}</div>
 		    			</div>
 		    		</div>
-		    		<div class="pokemonHeight primaryColor verticalPadded">Height {{ ::currentPokemon.height/10 }} meters</div>
-		    		<div class="pokemonWeight primaryColor">Weight {{ ::currentPokemon.weight/10 }} kilograms</div>
+		    		<div class="pokemonHeight primaryColor verticalPadded">Height {{ currentPokemon.height/10 }} meters</div>
+		    		<div class="pokemonWeight primaryColor">Weight {{ currentPokemon.weight/10 }} kilograms</div>
 		    		<div class="pokemonBaseStats mediumSize">
 		    			<ul>
 					        <li ng-repeat="stat in currentPokemon.stats" class="liStat">
