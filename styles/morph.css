@@ -328,7 +328,7 @@ input[type="search"] { /* reset normalize */
     margin-left: -20px;
 }
 
-@media screen and (max-width: 53.125em) {
+@media screen and (max-width: 900px) {
 	.morphsearch-input {
 		padding: 0 25% 0 10px;
 	}
@@ -352,7 +352,6 @@ input[type="search"] { /* reset normalize */
 @media screen and (max-width: 60.625em) {
 	.morphsearch {
 		width: 80%;
-		top: 10%;
 		right: 10%;
 	}
 }

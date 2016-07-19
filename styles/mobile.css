@@ -1,0 +1,36 @@
+html, body {
+	overflow-x: hidden;
+}
+
+.container {
+	height: initial;
+	min-height: initial;
+}
+
+.innerContainer, .secondaryContainer, .pokemonTypesContainer {
+	flex-direction: column;
+}
+
+.innerContainer {
+	padding-top: 50px;
+}
+
+.secondaryContainer, .pokemonVCard {
+	align-items: center;
+}
+
+.mediumSize {
+	margin-top: 70px;
+}
+
+.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul {
+	text-align: center;
+}
+
+.pokemonDescription {
+	margin: 0 auto;
+}
+
+.pokemonStats, .pokemonDescription {
+	max-width: 80%;
+}
