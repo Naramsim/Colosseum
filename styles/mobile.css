@@ -31,6 +31,6 @@ html, body {
 	margin: 0 auto;
 }
 
-.pokemonStats, .pokemonDescription {
+.pokemonStats, .pokemonDescription, .pokemonFamily {
 	max-width: 80%;
 }
