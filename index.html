@@ -8,9 +8,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
     <link rel="stylesheet" href="styles/morph.css">
     <link rel="stylesheet" href="styles/loading.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -40,13 +41,13 @@
                 </div>
             </div>
         </div>
-        <div class="mainContainer container" ng-controller="MainPokemon">
+        <div class="mainContainer container" ng-class="{ animation : loaded }" ng-controller="MainPokemon">
             <div class="innerContainer">
-                <div class="pokemonImage">
-                    <img src="{{ ::imageUrl }}">
+                <div class="pokemonImage to-scale">
+                    <img ng-src="{{ ::imageUrl }}" imageonload="unveil()">
                 </div>
                 <div class="pokemonStats">
-                    <div class="pokemonVCard">
+                    <div class="pokemonVCard to-left">
                         <div class="pokemonGenere secondaryColor">{{ ::genere }}</div>
                         <div class="pokemonName primaryColor borderColor">{{ ::up(currentPokemon.name) }}</div>
                         <div class="pokemonId">{{ ::currentPokemon.id }}</div>
@@ -54,45 +55,51 @@
                             <div class="pokemonTypes">
                                 <ul>
                                     <li class="padded inline" ng-repeat="type in typeUrls">
-                                        <img src="{{ ::type }}">
+                                        <img ng-src="{{ ::type }}">
                                     </li>
                                 </ul>
                             </div>
                             <div class="padded pokemonHabitat primaryColor">Loves to stay in {{ ::habitat }}s {{ ::happiness }}</div>
                         </div>
                     </div>
-                    <div class="pokemonHeight primaryColor verticalPadded">Height {{ currentPokemon.height/10 }} meters</div>
-                    <div class="pokemonWeight primaryColor">Weight {{ currentPokemon.weight/10 }} kilograms</div>
-                    <div class="pokemonBaseStats mediumSize">
-                        <ul>
-                            <li ng-repeat="stat in currentPokemon.stats" class="liStat">
-                                <div class="inline thirdyColor">{{ ::up(stat.stat.name) }}</div>
-                                <div class="inline padded"> - </div>
-                                <div class="inline secondaryColor">{{ ::stat.base_stat }}</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pokemonDescription primaryColor verticalPadded">
-                        {{ ::description }}
+                    <div class="to-fade">
+                        <div class="pokemonHeight primaryColor verticalPadded">Height {{ currentPokemon.height/10 }} meters</div>
+                        <div class="pokemonWeight primaryColor">Weight {{ currentPokemon.weight/10 }} kilograms</div>
+                        <div class="pokemonBaseStats mediumSize">
+                            <ul>
+                                <li ng-repeat="stat in currentPokemon.stats" class="liStat">
+                                    <div class="inline thirdyColor">{{ ::up(stat.stat.name) }}</div>
+                                    <div class="inline padded"> - </div>
+                                    <div class="inline secondaryColor">{{ ::stat.base_stat }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pokemonDescription primaryColor verticalPadded">
+                            {{ ::description }}
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="secondaryContainer">
-                <div class="pokemonAbilities">
+                <div class="pokemonAbilities to-top delay-1">
                     <div class="secondaryColor mediumSize primaryColor">Abilities</div>
                     <ul>
                         <li class="padded verticalPadded thirdyColor" ng-repeat="ability in currentPokemon.abilities">{{ ::up(ability.ability.name) }}</li>
                     </ul>
                 </div>
-                <div class="pokemonFamily" ng-controller="PokemonFamily">
+                <div class="pokemonFamily to-top delay-2" ng-controller="PokemonFamily">
                     <div class="secondaryColor mediumSize primaryColor">Family</div>
                     <ul>
                         <li class="padded verticalPadded inline" ng-repeat="pokemon in members">
-                            <img ng-click="reloadWith(pokemon)" title="{{ ::getPokemonName(pokemon) }}" class="pokemonMember" src="{{ ::getImageUrl(pokemon) }}">
+                            <img    ng-click="reloadWith(pokemon)" 
+                                    title="{{ ::getPokemonName(pokemon) }}" 
+                                    class="pokemonMember to-top" 
+                                    ng-src="{{ ::getImageUrl(pokemon) }}" 
+                                    style="transition-delay: {{($index + 4 * 3)/10}}s;">
                         </li>
                     </ul>
                 </div>
-                <div class="pokemonMultipliers">
+                <div class="pokemonMultipliers to-top delay-3">
                     <div class="secondaryColor mediumSize primaryColor">Multipliers (Atk)</div>
                     <ul>
                         <li ng-repeat="multiplier in [0,0.25,0.5,1,2,4]">
@@ -107,7 +114,7 @@
                         </li>
                     </ul>  
                 </div>
-                <div class="pokemonHeldItems">
+                <div class="pokemonHeldItems to-top delay-4">
                     <div class="secondaryColor mediumSize primaryColor">Held Items</div>
                     <ul>
                         <li class="padded verticalPadded thirdyColor" ng-repeat="item in currentPokemon.held_items">

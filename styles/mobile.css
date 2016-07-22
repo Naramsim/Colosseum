@@ -34,3 +34,7 @@ html, body {
 .pokemonStats, .pokemonDescription, .pokemonFamily {
 	max-width: 80%;
 }
+
+.morphsearch.open .morphsearch-form {
+	height: 70px;
+}

@@ -64,7 +64,7 @@ App.run(function($http, $rootScope, getInfoFactory) {
     });
 });
 
-App.controller('MainPokemon', function($scope, $http, $rootScope) {
+App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout) {
     $scope.$on('init', function(){
         var types = $rootScope.currentPokemon.types.map((type) => {
             return type.type.name;
@@ -76,6 +76,9 @@ App.controller('MainPokemon', function($scope, $http, $rootScope) {
         }               
         $scope.imageUrl = `images/svgs/${$rootScope.currentPokemon.id}.svg`;
         $scope.habitat = habitat ? habitat : 'in your pocket';
+        $scope.unveil = function() {
+            $rootScope.loaded = true;
+        }
         $scope.getRarity = function(item){
             var mean = 0;
             item.version_details.forEach((version) => {
@@ -114,9 +117,6 @@ App.controller('PokemonFamily', function($scope, $rootScope, $http, $timeout) {
                .success(function(res){
                     $scope.family = res;
                     $scope.members = getMemebers(res);
-                    $timeout( function() {
-                        $rootScope.loaded = true;
-                    });
                 })
                .error(function(data) {
                     console.log(data)
@@ -146,7 +146,6 @@ App.controller('PokemonSearch', function($scope) {
                 recents.unshift(pokemon);
                 localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)))
             } else {
-
                 localStorage.setItem('recents', JSON.stringify([pokemon]));
             }
             window.location.hash = `#${pokemon}`;
@@ -316,6 +315,18 @@ function rgb(r,g,b) {
 function generateRandPokemon() {
     return pokemons[Math.floor(0 + Math.random() * 750)];
 }
+
+App.directive('imageonload', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                element.bind('load', function() {
+                    //call the function that was passed
+                    scope.$apply(attrs.imageonload);
+                });
+            }
+        };
+    })
 
 App.factory('getInfoFactory', ['$http', '$q',
     function($http, $q) {
