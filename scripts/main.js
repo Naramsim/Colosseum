@@ -146,7 +146,8 @@ App.controller('PokemonSearch', function($scope) {
                 recents.unshift(pokemon);
                 localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)))
             } else {
-                localStorage.setItem('recents', `['${pokemon}']`);
+
+                localStorage.setItem('recents', JSON.stringify([pokemon]));
             }
             window.location.hash = `#${pokemon}`;
             window.location.reload(true);
