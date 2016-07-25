@@ -38,3 +38,10 @@ html, body {
 .morphsearch.open .morphsearch-form {
 	height: 70px;
 }
+
+.jp {
+	width: initial;
+	font-size: 200%;
+	top: 10%;
+	opacity: .7;
+}

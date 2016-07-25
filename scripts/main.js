@@ -48,7 +48,15 @@ App.run(function($http, $rootScope, getInfoFactory) {
             } else {
                 return false;
             }
-        })[0].genus;    
+        })[0].genus; 
+
+        $rootScope.jp = res.names.filter((text) => {
+            if (text.language.name === 'ja') {
+                return true;
+            } else {
+                return false;
+            }
+        })[0].name;    
 
         $rootScope.description = res.flavor_text_entries.filter((text) => {
             if (text.language.name === 'en') {

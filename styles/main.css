@@ -3,7 +3,7 @@
 .clearfix:after { clear: both; }
 
 body {
-  font-size: 1em;
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -51,6 +51,10 @@ a:focus {
 	flex-grow: 5;
 }
 
+.pokemonImage {
+	position: relative;
+}
+
 .pokemonImage>img {
 	height: 45vh;
 	width: 45vw;
@@ -69,13 +73,13 @@ a:focus {
 }
 
 .pokemonName {
-	font-size: 3em;
+	font-size: 300%;
 	font-weight: 800;
 	z-index: 5;
 }
 
 .pokemonId {
-	font-size: 200px;
+	font-size: 1334%;
 	opacity: .1;
 	margin-top: -149px;
 }
@@ -112,7 +116,7 @@ a:focus {
 }
 
 .mediumSize {
-	font-size: 26px;
+	font-size: 170%;
 }
 
 .pokemonDescription {
@@ -184,4 +188,20 @@ a:focus {
 .fadeout.ng-hide-add,
 .fadein.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
+}
+
+.jp {
+	/*font-family: 'Noto Sans Japanese', serif;*/
+    font-weight: 400;
+    position: absolute;
+    top: 100%;
+    font-size: 1260%;
+    opacity: 0.1;
+    width: 400%;
+}
+
+@media screen and (max-width: 1300px) {
+	body {
+		font-size: 12px;
+	}
 }
