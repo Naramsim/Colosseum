@@ -1,3 +1,20 @@
+.fadein,
+.fadeout {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+}
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+}
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
 
 .to-left{
 	transform: translateX(150px);
@@ -52,6 +69,7 @@
 .animation .to-scale{
 	transform: 	scale(1);
 	opacity: 	1;
+	animation: blur 350ms;
 }
 
 .animation .delay-1{
@@ -69,3 +87,39 @@
 .animation .delay-4{
 	transition-delay: .8s;
 }
+
+@keyframes blur {
+	0% { -webkit-filter: blur(0px); }
+	50% { -webkit-filter: blur(1px); }
+	100% { -webkit-filter: blur(0px); }
+}
+	
+
+
+.animationEnded .to-fade{
+	transition: .5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
+}
+
+.animationEnded .to-left, .animationEnded .to-scale, .animationEnded .to-top{
+	transition: .3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
+}
+
+.animationEnded .to-fade{
+	opacity: 1
+}
+
+.animationEnded .to-left{
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.animationEnded .to-top{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.animationEnded .to-scale{
+	transform: 	scale(1);
+	opacity: 	1;
+}
+

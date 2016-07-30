@@ -86,7 +86,15 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout) {
         $scope.habitat = habitat ? habitat : 'in your pocket';
         $scope.unveil = function() {
             $rootScope.loaded = true;
+            $timeout(function() {
+                $rootScope.animationsEnded = true;
+                $rootScope.$apply(function() {
+                    $rootScope.animationsEnded = true;
+                })
+            }, 5000)
         }
+        
+            
         $scope.getRarity = function(item){
             var mean = 0;
             item.version_details.forEach((version) => {
@@ -160,7 +168,25 @@ App.controller('PokemonSearch', function($scope) {
             window.location.reload(true);
         }
     });
-})
+});
+
+App.controller('PokemonAbilities', function($scope, $http) {
+    $scope.$on('init', function(){
+        $scope.getAbility = function(url) {
+            console.log("hello")
+            var id = /ability\/(\d+)\/$/.exec(url);
+            if (id && id.length > 0) {
+                $http.get(`${baseUrl}/ability/${id[1]}/index.json`)
+                .success(function(res){
+                    $scope.abilityDescription = res.effect_entries[0].short_effect;
+                })
+                .error(function(data) {
+                    return "Nothing";
+                });
+            }
+        }
+    });
+});
 
 App.filter('pokemonFilter', function(){
     return function(arr, searchString){
@@ -235,13 +261,17 @@ function getColors(id) {
         var css = document.createElement('style');
         css.type = 'text/css';
         css.innerHTML = `   .bgColor { 
-                                        background: linear-gradient( 0deg, ${bgColor}, ${bgColorEnd} );
+                                background: linear-gradient( 0deg, ${bgColor}, ${bgColorEnd} );
                                      }
                             .primaryColor { color: ${primaryColor}; }
                             .secondaryColor { color: ${secondaryColor}; } 
                             .thirdyColor { color: ${thirdyColor}; }
                             .borderColor { 
                                 text-shadow: -1px 0 ${bgColor}, 0 1px ${bgColor}, 1px 0 ${bgColor}, 0 -1px ${bgColor};
+                            }
+                            .tooltipColor {
+                                background: ${bgColor};
+                                border-bottom: 56px solid ${secondaryColor};
                             }`;
         document.body.appendChild(css);
     }

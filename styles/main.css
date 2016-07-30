@@ -33,6 +33,11 @@ a:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	-webkit-user-select: none;       
+	-moz-user-select: none; 
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 .secondaryContainer {
@@ -95,6 +100,10 @@ a:focus {
 .padded {
 	padding-right: 10px;
 	padding-left: 10px;
+}
+
+.pokemonAbilities {
+	z-index: 10;
 }
 
 .verticalPadded {
@@ -172,24 +181,6 @@ a:focus {
 	transition: 2s;
 }
 
-.fadein,
-.fadeout {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-}
-
-.fadein.ng-hide-remove,
-.fadeout.ng-hide-add.ng-hide-add-active {
-  opacity: 0;
-}
-
-.fadeout.ng-hide-add,
-.fadein.ng-hide-remove.ng-hide-remove-active {
-  opacity: 1;
-}
-
 .jp {
 	/*font-family: 'Noto Sans Japanese', serif;*/
     font-weight: 400;
@@ -198,6 +189,22 @@ a:focus {
     font-size: 1260%;
     opacity: 0.1;
     width: 400%;
+}
+
+.switchMultiplier > .multiplierAttack {
+	display: none;
+}
+
+.switchMultiplier > .multiplierDefense {
+	display: initial;
+}
+
+.hidden {
+	display: none;
+}
+
+.pointer {
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1300px) {

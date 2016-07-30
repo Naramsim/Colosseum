@@ -11,12 +11,14 @@
     <link rel="stylesheet" href="styles/morph.css">
     <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/tooltips.css">
     <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/morph.js"></script>
@@ -42,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="mainContainer container" ng-class="{ animation : loaded }" ng-controller="MainPokemon">
+        <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
             <div class="innerContainer">
                 <div class="pokemonImage to-scale">
                     <div class="jp">{{jp}}</div>
@@ -83,10 +85,19 @@
                 </div>
             </div>
             <div class="secondaryContainer">
-                <div class="pokemonAbilities to-top delay-1">
+                <div class="pokemonAbilities to-top delay-1" ng-controller="PokemonAbilities">
                     <div class="secondaryColor mediumSize primaryColor">Abilities</div>
                     <ul>
-                        <li class="padded verticalPadded thirdyColor" ng-repeat="ability in currentPokemon.abilities">{{ ::up(ability.ability.name) }}</li>
+                        <li class="padded verticalPadded thirdyColor tooltip" ng-repeat="ability in currentPokemon.abilities" ng-mouseover="getAbility(ability.ability.url)">
+	                        <span class="tooltip-item">
+	                        	{{ ::up(ability.ability.name) }}
+					        </span>
+	                        <span class="tooltip-content tooltipColor">
+	                        	<span class="tooltip-text">
+	                        		{{ abilityDescription }}
+	                        	</span>
+					        </span>
+                        </li>
                     </ul>
                 </div>
                 <div class="pokemonFamily to-top delay-2" ng-controller="PokemonFamily">
@@ -101,12 +112,24 @@
                         </li>
                     </ul>
                 </div>
-                <div class="pokemonMultipliers to-top delay-3">
-                    <div class="secondaryColor mediumSize primaryColor">Multipliers (Atk)</div>
-                    <ul>
+                <div class="pokemonMultipliers to-top delay-3" ng-class="{ switchMultiplier : $storage.multiplier }">
+                    <div class="secondaryColor mediumSize primaryColor pointer" ng-click="$storage.multiplier = !$storage.multiplier" >Multipliers ({{ $storage.multiplier ? 'Def' : 'Atk' }})</div>
+                    <ul class="multiplierAttack">
                         <li ng-repeat="multiplier in [0,0.25,0.5,1,2,4]">
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.attack | multi:multiplier">
+                                    <div class="centerAligned">
+                                        <img class="topPadded inline" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <div class="miniLabel thirdyColor">x{{multiplier}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="multiplierDefense hidden">
+                        <li ng-repeat="multiplier in [0,0.25,0.5,1,2,4]">
+                            <ul class="multiplierRow">
+                                <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.defense | multi:multiplier">
                                     <div class="centerAligned">
                                         <img class="topPadded inline" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
