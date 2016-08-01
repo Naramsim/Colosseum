@@ -8,6 +8,7 @@ function initMorph() {
 
 			// return if open and the input gets focused
 			if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
+			
 			if( isOpen ) {
 				classie.remove( morphSearch, 'open' );
 				// trick to hide input text once the search overlay closes 
@@ -26,8 +27,12 @@ function initMorph() {
 			}
 			else {
 				classie.add( morphSearch, 'open' );
+				// if( evt.type.toLowerCase() === 'keydown' ){
+				// 	input.focus();
+				// }
 			}
 			isOpen = !isOpen;
+
 		};
 	// events
 	input.addEventListener( 'focus', toggleSearch );
@@ -37,6 +42,9 @@ function initMorph() {
 	document.addEventListener( 'keydown', function( ev ) {
 		var keyCode = ev.keyCode || ev.which;
 		if( keyCode === 27 && isOpen ) {
+			toggleSearch(ev);
+		}
+		if( keyCode === 70 && !isOpen ) {
 			toggleSearch(ev);
 		}
 	} );

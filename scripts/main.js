@@ -120,7 +120,6 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout) {
 App.controller('PokemonFamily', function($scope, $rootScope, $http, $timeout) {
     $scope.$on('init', function(){
         $scope.getImageUrl = function(id) {
-            console.log(id)
             return `images/svgs/${id}.svg`;
         }
         $scope.reloadWith = function(id) {
@@ -173,16 +172,44 @@ App.controller('PokemonSearch', function($scope) {
 App.controller('PokemonAbilities', function($scope, $http) {
     $scope.$on('init', function(){
         $scope.getAbility = function(url) {
-            console.log("hello")
             var id = /ability\/(\d+)\/$/.exec(url);
             if (id && id.length > 0) {
-                $http.get(`${baseUrl}/ability/${id[1]}/index.json`)
-                .success(function(res){
-                    $scope.abilityDescription = res.effect_entries[0].short_effect;
-                })
-                .error(function(data) {
-                    return "Nothing";
-                });
+            	localAbility = localStorage.getItem('a' + id[1]);
+            	if (!localAbility) {
+	                $http.get(`${baseUrl}/ability/${id[1]}/index.json`)
+	                .success(function(res){
+	                    $scope.abilityDescription = res.effect_entries[0].short_effect;
+	                    localStorage.setItem('a' + id[1], res.effect_entries[0].short_effect);
+	                })
+	                .error(function(data) {
+	                    return "Nothing";
+	                });
+	            } else {
+	            	$scope.abilityDescription = localAbility;
+	            }
+            }
+        }
+    });
+});
+
+App.controller('PokemonHeldItems', function($scope, $http) {
+    $scope.$on('init', function(){
+        $scope.getHeldItem = function(url) {
+            var id = /item\/(\d+)\/$/.exec(url);
+            if (id && id.length > 0) {
+            	localHeldItem = localStorage.getItem('h' + id[1]);
+            	if (!localHeldItem) {
+	                $http.get(`${baseUrl}/item/${id[1]}/index.json`)
+	                .success(function(res){
+	                    $scope.heldItemDescription = res.effect_entries[0].short_effect;
+	                    localStorage.setItem('h' + id[1], res.effect_entries[0].short_effect);
+	                })
+	                .error(function(data) {
+	                    return "Nothing";
+	                });
+	            } else {
+	            	$scope.heldItemDescription = localHeldItem;
+	            }
             }
         }
     });
@@ -342,7 +369,6 @@ function getMultipliers(types) {
           else{multipliers.defense[type] = 2}
         })
     })
-    console.log(multipliers)
     return multipliers
 }
 

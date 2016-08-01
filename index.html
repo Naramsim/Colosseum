@@ -92,7 +92,7 @@
 	                        <span class="tooltip-item">
 	                        	{{ ::up(ability.ability.name) }}
 					        </span>
-	                        <span class="tooltip-content tooltipColor">
+	                        <span class="tooltip-content tooltipColor tooltip-onleft">
 	                        	<span class="tooltip-text">
 	                        		{{ abilityDescription }}
 	                        	</span>
@@ -139,15 +139,22 @@
                         </li>
                     </ul>  
                 </div>
-                <div class="pokemonHeldItems to-top delay-4">
+                <div class="pokemonHeldItems to-top delay-4" ng-controller="PokemonHeldItems">
                     <div class="secondaryColor mediumSize primaryColor">Held Items</div>
                     <ul>
-                        <li class="padded verticalPadded thirdyColor" ng-repeat="item in currentPokemon.held_items">
+                        <li class="padded verticalPadded thirdyColor tooltip" ng-repeat="item in currentPokemon.held_items" ng-mouseover="getHeldItem(item.item.url)">
                             <div class="centerAligned">
-                                <img class="middleRow inline" title="{{ ::item.item.name }}" src="{{ ::getUrlItem(item.item.name) }}">
-                                <div class="padded inline">
-                                    {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%
-                                </div>
+                                <span class="tooltip-item">
+                                    <img class="middleRow inline" title="{{ ::item.item.name }}" src="{{ ::getUrlItem(item.item.name) }}">
+                                    <div class="padded inline">
+                                        {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%
+                                    </div>
+                                </span>
+                                <span class="tooltip-content tooltipColor tooltip-onright">
+                                    <span class="tooltip-text">
+                                        {{ heldItemDescription }}
+                                    </span>
+                                </span>
                             </div>
                         </li>
                         <li class="padded verticalPadded thirdyColor" ng-show="!currentPokemon.held_items.length">None</li>

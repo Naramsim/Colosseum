@@ -7,25 +7,31 @@
 		<div class="dummy-column">
 			<h2>Starting with</h2>
 			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilterStart:searchString">
-				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
-				<h3 class="inline">{{up(pokemon)}}</h3>
-				<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				<a href="">
+					<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+					<h3 class="inline">{{up(pokemon)}}</h3>
+					<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				</a>
 			</li>
 		</div>
 		<div class="dummy-column">
 			<h2>Results</h2>
 			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilter:searchString">
-				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
-				<h3>{{up(pokemon)}}</h3>
-				<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				<a href="">
+					<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+					<h3>{{up(pokemon)}}</h3>
+					<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				</a>
 			</li>
 		</div>
 		<div class="dummy-column">
 			<h2>Recent</h2>
 			<li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in recents track by $index">
-				<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
-				<h3>{{up(pokemon)}}</h3>
-				<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				<a href="">
+					<img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+					<h3>{{up(pokemon)}}</h3>
+					<h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+				</a>
 			</li>
 		</div>
 	</div><!-- /morphsearch-content -->

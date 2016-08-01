@@ -41,8 +41,21 @@ html, body {
 }
 
 .jp {
-	width: initial;
 	font-size: 200%;
 	top: 10%;
 	opacity: .7;
+	position: relative;
+	margin-bottom: -35px;
+    margin-top: 23px;
+}
+
+.tooltip-onleft {
+    width: 239%;
+    left: -65%;
+    bottom: -2px;
+}
+
+.tooltip-onright {
+	width: 100%;
+    left: 0%;
 }

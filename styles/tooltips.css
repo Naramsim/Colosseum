@@ -28,10 +28,6 @@
 .tooltip-content {
 	position: absolute;
 	z-index: 99;
-	width: 360px;
-	left: 50%;
-	margin-left: -50px;
-	bottom: -5px;
 	text-align: left;
 	opacity: 0;
 	line-height: 1.5;
@@ -44,6 +40,18 @@
 	transform: translate3d(0,-0.5em,0);
 	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
 	transition: opacity 0.3s, transform 0.3s;
+}
+
+.tooltip-onright {
+	width: 450px;
+	left: -30%;
+	bottom: 8px;
+}
+
+.tooltip-onleft {
+	width: 360px;
+	left: -10%;
+	bottom: -5px;
 }
 
 .tooltip-text {
