@@ -5,7 +5,6 @@ function initMorph() {
 		isOpen = false, isAnimating = false,
 		// show/hide search area
 		toggleSearch = function(evt) {
-
 			// return if open and the input gets focused
 			if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
 			
@@ -27,9 +26,6 @@ function initMorph() {
 			}
 			else {
 				classie.add( morphSearch, 'open' );
-				// if( evt.type.toLowerCase() === 'keydown' ){
-				// 	input.focus();
-				// }
 			}
 			isOpen = !isOpen;
 
@@ -46,6 +42,9 @@ function initMorph() {
 		}
 		if( keyCode === 70 && !isOpen ) {
 			toggleSearch(ev);
+			setTimeout(function(){
+				input.focus();
+			}, 600)
 		}
 	} );
 	/***** for demo purposes only: don't allow to submit the form *****/

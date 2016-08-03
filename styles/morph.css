@@ -114,35 +114,6 @@ input[type="search"] { /* reset normalize */
 	outline: none;
 }
 
-.morphsearch-submit {
-	position: absolute;
-	width: 80px;
-	height: 80px;
-	text-indent: 100px;
-	overflow: hidden;
-	right: 0;
-	top: 50%;
-	background: transparent url(../img/magnifier.svg) no-repeat center center;
-	background-size: 100%;
-	border: none;
-	pointer-events: none;
-	transform-origin: 50% 50%;
-	opacity: 0;
-	-webkit-transform: translate3d(-30px,-50%,0) scale3d(0,0,1);
-	transform: translate3d(-30px,-50%,0) scale3d(0,0,1);
-}
-
-.morphsearch.open .morphsearch-submit {
-	pointer-events: auto;
-	opacity: 1;
-	-webkit-transform: translate3d(-30px,-50%,0) scale3d(1,1,1);
-	transform: translate3d(-30px,-50%,0) scale3d(1,1,1);
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transition-delay: 0.5s;
-	transition-delay: 0.5s;
-}
-
 .morphsearch-close {
 	width: 36px;
 	height: 36px;

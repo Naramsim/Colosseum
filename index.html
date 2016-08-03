@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/tooltips.css">
+    <link rel="stylesheet" href="styles/tooltipLoader.css">
     <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
@@ -93,7 +94,12 @@
 	                        	{{ ::up(ability.ability.name) }}
 					        </span>
 	                        <span class="tooltip-content tooltipColor tooltip-onleft">
-	                        	<span class="tooltip-text">
+                                    <div class="sk-three-bounce" ng-class="{ hidden : abilityDescription }">
+                                        <div class="sk-child sk-bounce1"></div>
+                                        <div class="sk-child sk-bounce2"></div>
+                                        <div class="sk-child sk-bounce3"></div>
+                                    </div>
+	                        	<span class="tooltip-text" ng-class="{ hidden : !abilityDescription }">
 	                        		{{ abilityDescription }}
 	                        	</span>
 					        </span>
@@ -151,7 +157,12 @@
                                     </div>
                                 </span>
                                 <span class="tooltip-content tooltipColor tooltip-onright">
-                                    <span class="tooltip-text">
+                                    <div class="sk-three-bounce" ng-class="{ hidden : heldItemDescription }">
+                                        <div class="sk-child sk-bounce1"></div>
+                                        <div class="sk-child sk-bounce2"></div>
+                                        <div class="sk-child sk-bounce3"></div>
+                                    </div>
+                                    <span class="tooltip-text" ng-class="{ hidden : !heldItemDescription }">
                                         {{ heldItemDescription }}
                                     </span>
                                 </span>
