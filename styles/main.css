@@ -179,6 +179,14 @@ a:hover, a:active {
 	text-align: center;
 }
 
+.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {
+	/*flex-grow: 1;*/
+}
+
+.pokemonMultipliers {
+	flex-basis: 350px;
+}
+
 .loadingContainer {
 	min-height: 100%;
 	min-width: 100vw;
@@ -203,16 +211,24 @@ a:hover, a:active {
     width: 400%;
 }
 
+.multiplierAttack, .multiplierDefense {
+	position: absolute;
+}
+
 .switchMultiplier > .multiplierAttack {
-	display: none;
+	opacity: 0;
 }
 
 .switchMultiplier > .multiplierDefense {
-	display: initial;
+	opacity: 1;
 }
 
 .hidden {
 	display: none;
+}
+
+.softHidden {
+	opacity: 0;
 }
 
 .pointer {

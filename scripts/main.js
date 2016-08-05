@@ -1,4 +1,4 @@
-var App = angular.module('App', ['ngAnimate']);
+var App = angular.module('App', ['ngAnimate', 'ngStorage']);
 var currentPokemon = 'nincada';
 var baseUrl = 'https://cdn.rawgit.com/Naramsim/ninjask/master/data/api/v2';
 var recentPokemons = JSON.parse(localStorage.getItem('recents'));
@@ -72,8 +72,9 @@ App.run(function($http, $rootScope, getInfoFactory) {
     });
 });
 
-App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout) {
+App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout, $localStorage) {
     $scope.$on('init', function(){
+        $scope.$storage = $localStorage;
         var types = $rootScope.currentPokemon.types.map((type) => {
             return type.type.name;
         })
@@ -90,10 +91,9 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout) {
                 $rootScope.animationsEnded = true;
                 $rootScope.$apply(function() {
                     $rootScope.animationsEnded = true;
-                })
+                });
             }, 5000)
         }
-        
             
         $scope.getRarity = function(item){
             var mean = 0;
@@ -192,6 +192,21 @@ App.controller('PokemonAbilities', function($scope, $http) {
     });
 });
 
+
+App.controller('PokemonMultipliers', function($scope) {
+    //$scope.$on('init', function(){
+        var multiplierAttackElement = document.getElementsByClassName('multiplierAttack')[0];
+        var multiplierDefenseElement = document.getElementsByClassName('multiplierDefense')[0];
+        angular.element(multiplierDefenseElement).ready(function() {
+            var highestMultiplierHeight = Math.max(multiplierAttackElement.clientHeight, multiplierDefenseElement.clientHeight);
+            
+            console.log(highestMultiplierHeight);
+            $scope.$apply(function() {
+                $scope.multiplierHeight = highestMultiplierHeight + 12;
+            });
+        });
+    //});
+});
 App.controller('PokemonHeldItems', function($scope, $http) {
     $scope.$on('init', function(){
         $scope.getHeldItem = function(url) {
@@ -299,7 +314,27 @@ function getColors(id) {
                             .tooltipColor {
                                 background: ${bgColor};
                                 border-bottom: 56px solid ${secondaryColor};
-                            }`;
+                            }
+                            .onoffswitch-inner:before {
+                                background-color: ${secondaryColor};
+                            }
+                            .onoffswitch-label, .onoffswitch-switch {
+                                border: 2px solid ${secondaryColor};
+                                background-color: ${secondaryColor}; 
+                            }
+                            .onoffswitch-inner:before {
+                                color: ${bgColor};
+                            }
+                            .onoffswitch-inner:after {
+                                background-color: ${bgColor}; 
+                            }
+                            .onoffswitch-switch {
+                                background: ${bgColor};
+                            }
+                            .onoffswitch-inner:after {
+                                color: ${thirdyColor};
+                            }
+                            `;
         document.body.appendChild(css);
     }
     image.src = 'images/svgs/'+ id + '.svg';

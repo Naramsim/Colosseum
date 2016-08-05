@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/loading.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link rel="stylesheet" href="styles/tooltips.css">
+    <link rel="stylesheet" href="styles/switch.css">
     <link rel="stylesheet" href="styles/tooltipLoader.css">
     <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -118,8 +119,23 @@
                         </li>
                     </ul>
                 </div>
-                <div class="pokemonMultipliers to-top delay-3" ng-class="{ switchMultiplier : $storage.multiplier }">
-                    <div class="secondaryColor mediumSize primaryColor pointer" ng-click="$storage.multiplier = !$storage.multiplier" >Multipliers ({{ $storage.multiplier ? 'Def' : 'Atk' }})</div>
+                <div    class="pokemonMultipliers to-top delay-3" 
+                        ng-class="{ switchMultiplier : $storage.multiplier }" 
+                        ng-controller="PokemonMultipliers"
+                        style="height: {{ multiplierHeight }}px;">
+                    <div class="secondaryColor mediumSize primaryColor pointer inline">Multipliers</div>
+                    <div class="onoffswitch inline">
+                        <input  type="checkbox" 
+                                name="onoffswitch" 
+                                class="onoffswitch-checkbox" 
+                                id="myonoffswitch" 
+                                ng-checked="!$storage.multiplier" 
+                                ng-click="$storage.multiplier = !$storage.multiplier">
+                        <label class="onoffswitch-label" for="myonoffswitch">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                        </label>
+                    </div>
                     <ul class="multiplierAttack">
                         <li ng-repeat="multiplier in [0,0.25,0.5,1,2,4]">
                             <ul class="multiplierRow">
@@ -132,7 +148,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul class="multiplierDefense hidden">
+                    <ul class="multiplierDefense softHidden">
                         <li ng-repeat="multiplier in [0,0.25,0.5,1,2,4]">
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.defense | multi:multiplier">
