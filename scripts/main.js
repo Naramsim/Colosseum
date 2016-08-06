@@ -194,7 +194,7 @@ App.controller('PokemonAbilities', function($scope, $http) {
 
 
 App.controller('PokemonMultipliers', function($scope) {
-    //$scope.$on('init', function(){
+    $scope.$on('init', function(){
         var multiplierAttackElement = document.getElementsByClassName('multiplierAttack')[0];
         var multiplierDefenseElement = document.getElementsByClassName('multiplierDefense')[0];
         angular.element(multiplierDefenseElement).ready(function() {
@@ -202,10 +202,10 @@ App.controller('PokemonMultipliers', function($scope) {
             
             console.log(highestMultiplierHeight);
             $scope.$apply(function() {
-                $scope.multiplierHeight = highestMultiplierHeight + 12;
+                $scope.multiplierHeight = highestMultiplierHeight + 32 + 12;
             });
         });
-    //});
+    });
 });
 App.controller('PokemonHeldItems', function($scope, $http) {
     $scope.$on('init', function(){
