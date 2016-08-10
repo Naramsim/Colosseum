@@ -49,7 +49,7 @@
         <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
             <div class="innerContainer">
                 <div class="pokemonImage to-scale">
-                    <div class="jp">{{jp}}</div>
+                    <div class="jp thirdyColor">{{jp}}</div>
                     <img ng-src="{{ ::imageUrl }}" imageonload="unveil()">
                 </div>
                 <div class="pokemonStats">
@@ -121,8 +121,7 @@
                 </div>
                 <div    class="pokemonMultipliers to-top delay-3" 
                         ng-class="{ switchMultiplier : $storage.multiplier }" 
-                        ng-controller="PokemonMultipliers"
-                        style="height: {{ multiplierHeight }}px;">
+                        ng-controller="PokemonMultipliers">
                     <div class="secondaryColor mediumSize primaryColor pointer inline">Multipliers</div>
                     <div class="onoffswitch inline">
                         <input  type="checkbox" 

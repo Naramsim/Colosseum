@@ -59,3 +59,28 @@ html, body {
 	width: 100%;
     left: 0%;
 }
+
+.multiplierAttack, .multiplierDefense {
+    position: relative;
+}
+
+.softHidden {
+	display: none;
+}
+
+.switchMultiplier > .multiplierAttack {
+	display: none;
+}
+
+.switchMultiplier > .multiplierDefense {
+	display: block;
+}
+
+.pokemonHeldItems {
+    margin-bottom: 50px;
+}
+
+.secondaryContainer > .pokemonMultipliers {
+    flex-basis: 1px;
+    height: auto;
+}

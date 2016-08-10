@@ -199,11 +199,14 @@ App.controller('PokemonMultipliers', function($scope) {
         var multiplierDefenseElement = document.getElementsByClassName('multiplierDefense')[0];
         angular.element(multiplierDefenseElement).ready(function() {
             var highestMultiplierHeight = Math.max(multiplierAttackElement.clientHeight, multiplierDefenseElement.clientHeight);
+            var css = document.createElement('style');
+            css.type = 'text/css';
+            css.innerHTML = `   .pokemonMultipliers { 
+                                    height: ${highestMultiplierHeight + 32 + 12}px;
+                                        }
+                                `;
+            document.body.appendChild(css);
             
-            console.log(highestMultiplierHeight);
-            $scope.$apply(function() {
-                $scope.multiplierHeight = highestMultiplierHeight + 32 + 12;
-            });
         });
     });
 });
