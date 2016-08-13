@@ -277,6 +277,20 @@ a:hover, a:active {
 	height: 40px;
 }
 
+.status {
+	text-align: center;
+    margin-top: 20px;
+    color: #5a5a5a;
+}
+
+.centerHorizontally {
+	display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 @media screen and (max-width: 1300px) {
 	body {
 		font-size: 12px;

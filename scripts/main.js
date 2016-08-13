@@ -38,6 +38,7 @@ App.run(function($http, $rootScope, getInfoFactory) {
     var quoteId = quotes[Math.floor(Math.random()*quotes.length)]
     $rootScope.quote = quoteId[1]
     $rootScope.quoteAuthor = quoteId[0]
+    $rootScope.status = 'FETCHING'
     $rootScope.reloadHome = function(id) {
             window.location.hash = ''
             window.location.reload(true);
@@ -71,6 +72,7 @@ App.run(function($http, $rootScope, getInfoFactory) {
         getColors($rootScope.currentPokemon.id);
         completed += 1;
         if(completed = 2){
+            setTimeout(() => {$rootScope.status = 'READY'},300)
             $rootScope.$broadcast('init');  
         }
     });
@@ -104,6 +106,7 @@ App.run(function($http, $rootScope, getInfoFactory) {
         })[0].flavor_text;  
         completed += 1;
         if(completed = 2){
+            setTimeout(() => {$rootScope.status = 'READY'},300)
             $rootScope.$broadcast('init');  
         }
     });

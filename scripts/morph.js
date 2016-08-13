@@ -46,6 +46,10 @@ function initMorph() {
 				input.focus();
 			}, 600)
 		}
+		if( keyCode === 82 && !isOpen ) {
+			window.location.hash = ''
+            window.location.reload(true);
+		}
 	} );
 	/***** for demo purposes only: don't allow to submit the form *****/
 	morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
