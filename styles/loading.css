@@ -59,6 +59,7 @@
 
 .roller,
 .roller:last-child {
+  opacity: 0;
   width: 70px;
   height: 70px;
   position: absolute;
@@ -116,6 +117,7 @@
     -webkit-transform: rotate(240deg);
   }
   20% {
+    opacity: .8;
     -webkit-transform: rotate(300deg);
   }
   40% {
@@ -211,6 +213,7 @@
     -moz-transform: rotate(240deg);
   }
   20% {
+    opacity: .8;
     -moz-transform: rotate(300deg);
   }
   40% {
@@ -306,6 +309,7 @@
     transform: rotate(240deg);
   }
   20% {
+    opacity: .8;
     transform: rotate(300deg);
   }
   40% {
