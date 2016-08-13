@@ -4,8 +4,45 @@ var baseUrl = 'https://cdn.rawgit.com/Naramsim/ninjask/master/data/api/v2';
 var recentPokemons = JSON.parse(localStorage.getItem('recents'));
 var pokemons = ['bulbasaur','ivysaur','venusaur','charmander','charmeleon','charizard','squirtle','wartortle','blastoise','caterpie','metapod','butterfree','weedle','kakuna','beedrill','pidgey','pidgeotto','pidgeot','rattata','raticate','spearow','fearow','ekans','arbok','pikachu','raichu','sandshrew','sandslash','nidoran-f','nidorina','nidoqueen','nidoran-m','nidorino','nidoking','clefairy','clefable','vulpix','ninetales','jigglypuff','wigglytuff','zubat','golbat','oddish','gloom','vileplume','paras','parasect','venonat','venomoth','diglett','dugtrio','meowth','persian','psyduck','golduck','mankey','primeape','growlithe','arcanine','poliwag','poliwhirl','poliwrath','abra','kadabra','alakazam','machop','machoke','machamp','bellsprout','weepinbell','victreebel','tentacool','tentacruel','geodude','graveler','golem','ponyta','rapidash','slowpoke','slowbro','magnemite','magneton','farfetchd','doduo','dodrio','seel','dewgong','grimer','muk','shellder','cloyster','gastly','haunter','gengar','onix','drowzee','hypno','krabby','kingler','voltorb','electrode','exeggcute','exeggutor','cubone','marowak','hitmonlee','hitmonchan','lickitung','koffing','weezing','rhyhorn','rhydon','chansey','tangela','kangaskhan','horsea','seadra','goldeen','seaking','staryu','starmie','mr-mime','scyther','jynx','electabuzz','magmar','pinsir','tauros','magikarp','gyarados','lapras','ditto','eevee','vaporeon','jolteon','flareon','porygon','omanyte','omastar','kabuto','kabutops','aerodactyl','snorlax','articuno','zapdos','moltres','dratini','dragonair','dragonite','mewtwo','mew','chikorita','bayleef','meganium','cyndaquil','quilava','typhlosion','totodile','croconaw','feraligatr','sentret','furret','hoothoot','noctowl','ledyba','ledian','spinarak','ariados','crobat','chinchou','lanturn','pichu','cleffa','igglybuff','togepi','togetic','natu','xatu','mareep','flaaffy','ampharos','bellossom','marill','azumarill','sudowoodo','politoed','hoppip','skiploom','jumpluff','aipom','sunkern','sunflora','yanma','wooper','quagsire','espeon','umbreon','murkrow','slowking','misdreavus','unown','wobbuffet','girafarig','pineco','forretress','dunsparce','gligar','steelix','snubbull','granbull','qwilfish','scizor','shuckle','heracross','sneasel','teddiursa','ursaring','slugma','magcargo','swinub','piloswine','corsola','remoraid','octillery','delibird','mantine','skarmory','houndour','houndoom','kingdra','phanpy','donphan','porygon2','stantler','smeargle','tyrogue','hitmontop','smoochum','elekid','magby','miltank','blissey','raikou','entei','suicune','larvitar','pupitar','tyranitar','lugia','ho-oh','celebi','treecko','grovyle','sceptile','torchic','combusken','blaziken','mudkip','marshtomp','swampert','poochyena','mightyena','zigzagoon','linoone','wurmple','silcoon','beautifly','cascoon','dustox','lotad','lombre','ludicolo','seedot','nuzleaf','shiftry','taillow','swellow','wingull','pelipper','ralts','kirlia','gardevoir','surskit','masquerain','shroomish','breloom','slakoth','vigoroth','slaking','nincada','ninjask','shedinja','whismur','loudred','exploud','makuhita','hariyama','azurill','nosepass','skitty','delcatty','sableye','mawile','aron','lairon','aggron','meditite','medicham','electrike','manectric','plusle','minun','volbeat','illumise','roselia','gulpin','swalot','carvanha','sharpedo','wailmer','wailord','numel','camerupt','torkoal','spoink','grumpig','spinda','trapinch','vibrava','flygon','cacnea','cacturne','swablu','altaria','zangoose','seviper','lunatone','solrock','barboach','whiscash','corphish','crawdaunt','baltoy','claydol','lileep','cradily','anorith','armaldo','feebas','milotic','castform','kecleon','shuppet','banette','duskull','dusclops','tropius','chimecho','absol','wynaut','snorunt','glalie','spheal','sealeo','walrein','clamperl','huntail','gorebyss','relicanth','luvdisc','bagon','shelgon','salamence','beldum','metang','metagross','regirock','regice','registeel','latias','latios','kyogre','groudon','rayquaza','jirachi','deoxys','turtwig','grotle','torterra','chimchar','monferno','infernape','piplup','prinplup','empoleon','starly','staravia','staraptor','bidoof','bibarel','kricketot','kricketune','shinx','luxio','luxray','budew','roserade','cranidos','rampardos','shieldon','bastiodon','burmy','wormadam','mothim','combee','vespiquen','pachirisu','buizel','floatzel','cherubi','cherrim','shellos','gastrodon','ambipom','drifloon','drifblim','buneary','lopunny','mismagius','honchkrow','glameow','purugly','chingling','stunky','skuntank','bronzor','bronzong','bonsly','mime-jr','happiny','chatot','spiritomb','gible','gabite','garchomp','munchlax','riolu','lucario','hippopotas','hippowdon','skorupi','drapion','croagunk','toxicroak','carnivine','finneon','lumineon','mantyke','snover','abomasnow','weavile','magnezone','lickilicky','rhyperior','tangrowth','electivire','magmortar','togekiss','yanmega','leafeon','glaceon','gliscor','mamoswine','porygon-z','gallade','probopass','dusknoir','froslass','rotom','uxie','mesprit','azelf','dialga','palkia','heatran','regigigas','giratina','cresselia','phione','manaphy','darkrai','shaymin','arceus','victini','snivy','servine','serperior','tepig','pignite','emboar','oshawott','dewott','samurott','patrat','watchog','lillipup','herdier','stoutland','purrloin','liepard','pansage','simisage','pansear','simisear','panpour','simipour','munna','musharna','pidove','tranquill','unfezant','blitzle','zebstrika','roggenrola','boldore','gigalith','woobat','swoobat','drilbur','excadrill','audino','timburr','gurdurr','conkeldurr','tympole','palpitoad','seismitoad','throh','sawk','sewaddle','swadloon','leavanny','venipede','whirlipede','scolipede','cottonee','whimsicott','petilil','lilligant','basculin','sandile','krokorok','krookodile','darumaka','darmanitan','maractus','dwebble','crustle','scraggy','scrafty','sigilyph','yamask','cofagrigus','tirtouga','carracosta','archen','archeops','trubbish','garbodor','zorua','zoroark','minccino','cinccino','gothita','gothorita','gothitelle','solosis','duosion','reuniclus','ducklett','swanna','vanillite','vanillish','vanilluxe','deerling','sawsbuck','emolga','karrablast','escavalier','foongus','amoonguss','frillish','jellicent','alomomola','joltik','galvantula','ferroseed','ferrothorn','klink','klang','klinklang','tynamo','eelektrik','eelektross','elgyem','beheeyem','litwick','lampent','chandelure','axew','fraxure','haxorus','cubchoo','beartic','cryogonal','shelmet','accelgor','stunfisk','mienfoo','mienshao','druddigon','golett','golurk','pawniard','bisharp','bouffalant','rufflet','braviary','vullaby','mandibuzz','heatmor','durant','deino','zweilous','hydreigon','larvesta','volcarona','cobalion','terrakion','virizion','tornadus','thundurus','reshiram','zekrom','landorus','kyurem','keldeo','meloetta','genesect','chespin','quilladin','chesnaught','fennekin','braixen','delphox','froakie','frogadier','greninja','bunnelby','diggersby','fletchling','fletchinder','talonflame','scatterbug','spewpa','vivillon','litleo','pyroar','flabebe','floette','florges','skiddo','gogoat','pancham','pangoro','furfrou','espurr','meowstic','honedge','doublade','aegislash','spritzee','aromatisse','swirlix','slurpuff','inkay','malamar','binacle','barbaracle','skrelp','dragalge','clauncher','clawitzer','helioptile','heliolisk','tyrunt','tyrantrum','amaura','aurorus','sylveon','hawlucha','dedenne','carbink','goomy','sliggoo','goodra','klefki','phantump','trevenant','pumpkaboo','gourgeist','bergmite','avalugg','noibat','noivern','xerneas','yveltal','zygarde','diancie','hoopa','volcanion'];
 var all_types = {bug:{attack:{'double':['psychic','grass','dark'],half:['fighting','fire','flying','ghost','poison','steel','fairy'],zero:[]},defense:{half:['fighting','grass','ground'],'double':['fire','flying','rock'],zero:[]}},dark:{attack:{'double':['ghost','psychic'],half:['dark','fighting','fairy'],zero:[]},defense:{half:['dark','ghost'],'double':['bug','fighting','fairy'],zero:['psychic']}},dragon:{attack:{'double':['dragon'],half:['steel'],zero:['fairy']},defense:{half:['electric','fire','grass','water'],'double':['dragon','ice','fairy'],zero:[]}},electric:{attack:{'double':['flying','water'],half:['dragon','electric','grass'],zero:['ground']},defense:{half:['electric','flying','steel'],'double':['ground'],zero:[]}},fairy:{attack:{'double':['dark','dragon','fighting'],half:['fire','poison','steel'],zero:[]},defense:{half:['bug','dark','fighting'],'double':['poison','steel'],zero:['dragon']}},fighting:{attack:{'double':['dark','ice','normal','rock','steel'],half:['bug','fairy','flying','poison','psychic'],zero:['ghost']},defense:{half:['bug','dark','rock'],'double':['fairy','flying','psychic'],zero:[]}},fire:{attack:{'double':['bug','grass','ice','steel'],half:['dragon','fire','rock','water'],zero:[]},defense:{half:['bug','fairy','fire','grass','ice','steel'],'double':['bug','fire','flying','ice','poison'],zero:[]}},flying:{attack:{'double':['bug','fighting','grass'],half:['electric','rock','steel'],zero:[]},defense:{half:['bug','fighting','grass'],'double':['electric','ice','rock'],zero:['ground']}},ghost:{attack:{'double':['ghost','psychic'],half:['dark'],zero:['normal']},defense:{half:['bug','poison'],'double':['ghost','dark'],zero:['normal','fighting']}},grass:{attack:{'double':['ground','rock','water'],half:['bug','dragon','fire','flying','grass','poison','steel'],zero:[]},defense:{half:['electric','grass','ground','water'],'double':['bug','fire','flying','ice','poison'],zero:[]}},ground:{attack:{'double':['electric','fire','poison','rock','steel'],half:['bug','grass'],zero:['flying']},defense:{half:['poison','rock'],'double':['grass','ice','water'],zero:['electric']}},ice:{attack:{'double':['dragon','flying','grass','ground'],half:['fire','ice','steel','water'],zero:[]},defense:{half:['ice'],'double':['fighting','fire','rock','steel'],zero:[]}},normal:{attack:{'double':[],half:['rock','steel'],zero:['ghost']},defense:{half:[],'double':['fighting'],zero:['ghost']}},poison:{attack:{'double':['grass','fairy'],half:['ghost','ground','poison','rock'],zero:['steel']},defense:{half:['bug','fairy','fighting','grass','poison'],'double':['ground','psychic'],zero:[]}},psychic:{attack:{'double':['fighting','poison'],half:['psychic','steel'],zero:['dark']},defense:{half:['fighting','psychic'],'double':['bug','dark','ghost'],zero:[]}},rock:{attack:{'double':['bug','fire','flying','ice'],half:['fighting','ground','steel'],zero:[]},defense:{half:['fire','flying','normal','poison'],'double':['fighting','grass','ground','steel','water'],zero:[]}},steel:{attack:{'double':['fairy','ice','rock'],half:['electric','fire','steel','water'],zero:[]},defense:{half:['bug','dragon','fairy','flying','grass','ice','normal','psychic','rock','steel'],'double':['fighting','fire','ground'],zero:['poison']}},water:{attack:{'double':['fire','ground','rock'],half:['dragon','grass','steel'],zero:[]},defense:{half:['fire','ice','steel','water'],'double':['electric','grass'],zero:[]}}};
+var quotes = [
+    ['Prof. Oak','Pokémon around the world wait for you, Ash.'],
+    ['Prof. Oak','So, tell me about yourself. Are you a boy or a girl?'],
+    ['Prof. Oak','I came when I heard you defeated the Elite Four'],
+    ['Dark Cave lass','Don\'t try anything funny in the dark!'],
+    ['Sailor','I like feisty kids like you'],
+    ['Youngster','I like shorts! They\'re comfy and easy to wear!'],
+    ['Youngster joey','My Rattata is the top percentage of all Rattata!'],
+    ['Barry','It\'s a $10 million fine if you\'re late!'],
+    ['Gary Oak','Smell you Later!'],
+    ['Juggler','Dropped my balls!'],
+    ['Mom','Oh...you look tired. why don\'t you take a rest?'],
+    ['Blaine','You better have Burn Heal'],
+    ['Nurse','We hope to see you again'],
+    ['Team Rocket guy','I Dropped The Lift Key'],
+    ['Celadon old man','Hehehe! This gym is full of women!'],
+    ['Ash','It\'s a secret switch! Press﻿ it? Who wouldn\'t?'],
+    ['Team Rocket Guy','Don\'t touch the poster at the Game Corner! There\'s no secret switch behind it!'],
+    ['Route 3 lass','You looked at me, didn\'t you?'],
+    ['Slateport swimmer','Cheeks are most prone to burning.'],
+    ['Red','...'],
+    ['Prof. Oak','It\'s not winning if your opponent is at a disadvantage'],
+    ['Young fisherman','I\'ll beat you with the magikarp my dad gave me'],
+    ['Team Rocket grunt','Develop amnesia conveniently and forget everything you heard!'],
+    ['Barry','We need Poké balls! P-O-K-E balls!'],
+    ['Youngster Kevin','These are not shorts! These are half-pants!'],
+    ['Prof. Oak','There\'s a time and place for everything, but not now.'],
+    ['Skyla','Heads up! Make sure you are ready for it!'],
+]
 
 App.run(function($http, $rootScope, getInfoFactory) {
+    var quoteId = quotes[Math.floor(Math.random()*quotes.length)]
+    $rootScope.quote = quoteId[1]
+    $rootScope.quoteAuthor = quoteId[0]
+    $rootScope.reloadHome = function(id) {
+            window.location.hash = ''
+            window.location.reload(true);
+        }
+
     var completed = 0;
     var hash = window.location.hash;
     currentPokemon = /#\/?([\w-\d]+)/.exec(hash);
@@ -83,7 +120,7 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout, $loc
         if(habitat) {
             habitat = habitat.name;
         }               
-        $scope.imageUrl = `images/svgs/${$rootScope.currentPokemon.id}.svg`;
+        $scope.imageUrl = `images/pokemons/${$rootScope.currentPokemon.id}.svg`;
         $scope.habitat = habitat ? habitat : 'in your pocket';
         $scope.unveil = function() {
             $rootScope.loaded = true;
@@ -106,13 +143,13 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout, $loc
             return mean;
         }
         $scope.getUrlItem = function(name){
-            return `images/items/${name}.png`;
+            return `images/items/${name}.svg`;
         }
         $scope.getUrlType = function(name){
-            return `images/types/${name}.png`;
+            return `images/types/${name}.svg`;
         }
         $scope.typeUrls = $rootScope.currentPokemon.types.map((type) => {
-            return `images/types/${type.type.name}.png`
+            return `images/types/${type.type.name}.svg`
         });
     });
 });
@@ -120,7 +157,7 @@ App.controller('MainPokemon', function($scope, $http, $rootScope, $timeout, $loc
 App.controller('PokemonFamily', function($scope, $rootScope, $http, $timeout) {
     $scope.$on('init', function(){
         $scope.getImageUrl = function(id) {
-            return `images/svgs/${id}.svg`;
+            return `images/pokemons/${id}.svg`;
         }
         $scope.reloadWith = function(id) {
             window.location.hash = '#' + pokemons[id - 1];
@@ -135,6 +172,11 @@ App.controller('PokemonFamily', function($scope, $rootScope, $http, $timeout) {
                 })
                .error(function(data) {
                     console.log(data)
+                    Bugsnag.notify("ErrorName", "Something broke!", {
+                        special_info: {
+                            pokemon: currentPokemon
+                        }
+                    })
                });
         }
         
@@ -152,7 +194,7 @@ App.controller('PokemonSearch', function($scope) {
         $scope.pokemons = pokemons;
         $scope.recents = recentPokemons;
         $scope.getImageUrl = function(id) {
-            return `images/svgs/${pokemons.indexOf(id) + 1}.svg`;
+            return `images/pokemons/${pokemons.indexOf(id) + 1}.svg`;
         }
         $scope.saveAndReload = function(pokemon) {
             var recents = localStorage.getItem('recents');
@@ -340,7 +382,7 @@ function getColors(id) {
                             `;
         document.body.appendChild(css);
     }
-    image.src = 'images/svgs/'+ id + '.svg';
+    image.src = 'images/pokemons/'+ id + '.svg';
     image.crossOrigin = 'Anonymous';
 }    
 
@@ -441,6 +483,11 @@ App.factory('getInfoFactory', ['$http', '$q',
                     })
                    .error(function(data) {
                         console.log(data)
+                        Bugsnag.notify("ErrorName", "Something broke!", {
+                            special_info: {
+                                pokemon: currentPokemon
+                            }
+                        })
                    });
                 return deferred.promise;
             },
@@ -452,6 +499,11 @@ App.factory('getInfoFactory', ['$http', '$q',
                     })
                    .error(function(data) {
                         console.log(data)
+                        Bugsnag.notify("ErrorName", "Something broke!", {
+                            special_info: {
+                                pokemon: currentPokemon
+                            }
+                        })
                    });
                 return deferred.promise;
             }

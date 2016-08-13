@@ -18,6 +18,10 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
 
+    <script
+        src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"
+        data-apikey="010116d4d838b23664b588020959bc08">
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
@@ -27,29 +31,42 @@
     <script src="scripts/classie.js"></script>
     </head>
   <body class="bgColor">
+    <!--[if lt IE 10]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
     <div class="container">
-        <!--[if lt IE 10]>
-          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
         <div class="loadingContainer fadeout" ng-show="!loaded">
             <div class="loader">
-                <div class="sk-cube-grid">
-                    <div class="sk-cube sk-cube1"></div>
-                    <div class="sk-cube sk-cube2"></div>
-                    <div class="sk-cube sk-cube3"></div>
-                    <div class="sk-cube sk-cube4"></div>
-                    <div class="sk-cube sk-cube5"></div>
-                    <div class="sk-cube sk-cube6"></div>
-                    <div class="sk-cube sk-cube7"></div>
-                    <div class="sk-cube sk-cube8"></div>
-                    <div class="sk-cube sk-cube9"></div>
+                <div class="loader-wrapper">
+                    <div class="infiniteLoader">
+                        <div class="roller first"></div>
+                        <div class="roller first"></div>
+                    </div>
+                    <div id="loader2" class="infiniteLoader">
+                        <div class="roller second"></div>
+                        <div class="roller second"></div>
+                    </div>
+                    <div id="loader3" class="infiniteLoader">
+                        <div class="roller third"></div>
+                        <div class="roller third"></div>
+                    </div>
+                </div>
+                <div class="quote">{{ ::quote }}</div>
+                <div class="quoteBy">
+                    <i>
+                        <div class="by inline">By</div>
+                        <div class="author inline">@{{ ::quoteAuthor }}</div>
+                    </i>
                 </div>
             </div>
         </div>
         <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
+            <div class="logo to-bottom-logo delay-3">
+                <img src="images/items/master-ball.svg" ng-click="reloadHome()">
+            </div>
             <div class="innerContainer">
-                <div class="pokemonImage to-scale">
-                    <div class="jp thirdyColor">{{jp}}</div>
+                <div class="pokemonImage to-scale delay-1">
+                    <div class="jp thirdyColor">{{ ::jp}}</div>
                     <img ng-src="{{ ::imageUrl }}" imageonload="unveil()">
                 </div>
                 <div class="pokemonStats">
@@ -58,10 +75,10 @@
                         <div class="pokemonName primaryColor borderColor">{{ ::up(currentPokemon.name) }}</div>
                         <div class="pokemonId">{{ ::currentPokemon.id }}</div>
                         <div class="pokemonTypesContainer">
-                            <div class="pokemonTypes">
+                            <div class="pokemonTypes ">
                                 <ul>
                                     <li class="padded inline" ng-repeat="type in typeUrls">
-                                        <img ng-src="{{ ::type }}">
+                                        <img class="pokemonTypeVc" ng-src="{{ ::type }}">
                                     </li>
                                 </ul>
                             </div>
@@ -140,7 +157,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.attack | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="topPadded inline" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="topPadded inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>
@@ -152,7 +169,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.defense | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="topPadded inline" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="topPadded inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>

@@ -206,13 +206,14 @@ a:hover, a:active {
 	min-width: 100vw;
 	width: 100vw;
 	height: 100%;
-	background-color: #cccccc;
+	background-color: #282b30;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
 	z-index: 100;
-	transition: 2s;
+	transition: 1s;
+	transition-delay: 10s;
 }
 
 .jp {
@@ -255,6 +256,25 @@ a:hover, a:active {
     vertical-align: middle;
     font-size: 30px;
     margin-left: -20px;
+}
+
+.pokemonTypeVc {
+	height: 14px;
+}
+
+.pokemonType {
+	height: 24px;
+}
+
+.logo {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	cursor: pointer;
+}
+
+.logo > img {
+	height: 40px;
 }
 
 @media screen and (max-width: 1300px) {

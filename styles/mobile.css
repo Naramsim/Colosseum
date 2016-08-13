@@ -84,3 +84,7 @@ html, body {
     flex-basis: 1px;
     height: auto;
 }
+
+.logo {
+	display: none;
+}

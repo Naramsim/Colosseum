@@ -1,9 +1,9 @@
 .fadein,
 .fadeout {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
 }
 
 .fadein.ng-hide-remove,
@@ -26,6 +26,11 @@
 	opacity: 0;
 }
 
+.to-bottom-logo{
+	transform: translateY(-150px);
+	opacity: 0;
+}
+
 .to-fade{
 	opacity: 0;
 }
@@ -39,17 +44,17 @@
 	transition: .5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
-.animation .to-left, .animation .to-scale, .animation .to-top{
+.animation .to-left, .animation .to-scale, .animation .to-top, .animation .to-bottom-logo{
 	transition: .3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
 .animation .to-left{
-	transition-delay: .4s;
+	transition-delay: 1.4s;
 }
 
 
 .animation .to-fade{
-	transition-delay: .6s;
+	transition-delay: 1.6s;
 }
 
 .animation .to-fade{
@@ -66,6 +71,11 @@
 	transform: translateY(0);
 }
 
+.animation .to-bottom-logo{
+	opacity: 1;
+	transform: translateY(0);
+}
+
 .animation .to-scale{
 	transform: 	scale(1);
 	opacity: 	1;
@@ -73,19 +83,19 @@
 }
 
 .animation .delay-1{
-	transition-delay: .5s;
+	transition-delay: 1.5s;
 }
 
 .animation .delay-2{
-	transition-delay: .6s;
+	transition-delay: 1.6s;
 }
 
 .animation .delay-3{
-	transition-delay: .7s;
+	transition-delay: 1.7s;
 }
 
 .animation .delay-4{
-	transition-delay: .8s;
+	transition-delay: 1.8s;
 }
 
 @keyframes blur {
@@ -94,8 +104,6 @@
 	100% { -webkit-filter: blur(0px); }
 }
 	
-
-
 .animationEnded .to-fade{
 	transition: .5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
@@ -118,8 +126,135 @@
 	transform: translateY(0);
 }
 
+.animationEnded .to-bottom-logo{
+	opacity: 1;
+	transform: translateY(0);
+}
+
 .animationEnded .to-scale{
 	transform: 	scale(1);
 	opacity: 	1;
 }
 
+.logo:hover{
+  animation: rattle linear 0.5s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  -webkit-animation: rattle linear 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: rattle linear 0.5s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: rattle linear 0.5s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: rattle linear 0.5s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;
+}
+
+@keyframes rattle{
+  0% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  15% {
+    transform:  translate(3px,-2px)  rotate(12deg) ;
+  }
+  30% {
+    transform:  translate(1px,0px)  rotate(0deg) ;
+  }
+  43% {
+    transform:  translate(-18px,-2px)  rotate(-11deg) ;
+  }
+  56% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-moz-keyframes rattle{
+  0% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  15% {
+    -moz-transform:  translate(3px,-2px)  rotate(12deg) ;
+  }
+  30% {
+    -moz-transform:  translate(1px,0px)  rotate(0deg) ;
+  }
+  43% {
+    -moz-transform:  translate(-18px,-2px)  rotate(-11deg) ;
+  }
+  56% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    -moz-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-webkit-keyframes rattle {
+  0% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  15% {
+    -webkit-transform:  translate(3px,-2px)  rotate(12deg) ;
+  }
+  30% {
+    -webkit-transform:  translate(1px,0px)  rotate(0deg) ;
+  }
+  43% {
+    -webkit-transform:  translate(-18px,-2px)  rotate(-11deg) ;
+  }
+  56% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-o-keyframes rattle {
+  0% {
+    -o-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  15% {
+    -o-transform:  translate(3px,-2px)  rotate(12deg) ;
+  }
+  30% {
+    -o-transform:  translate(1px,0px)  rotate(0deg) ;
+  }
+  43% {
+    -o-transform:  translate(-18px,-2px)  rotate(-11deg) ;
+  }
+  56% {
+    -o-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    -o-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
+
+@-ms-keyframes rattle {
+  0% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  15% {
+    -ms-transform:  translate(3px,-2px)  rotate(12deg) ;
+  }
+  30% {
+    -ms-transform:  translate(1px,0px)  rotate(0deg) ;
+  }
+  43% {
+    -ms-transform:  translate(-18px,-2px)  rotate(-11deg) ;
+  }
+  56% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+  100% {
+    -ms-transform:  translate(0px,0px)  rotate(0deg) ;
+  }
+}
