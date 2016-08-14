@@ -7,15 +7,15 @@
     <title>Colosseum</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/morph.css">
-    <link rel="stylesheet" href="styles/loading.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link rel="stylesheet" href="styles/tooltips.css">
-    <link rel="stylesheet" href="styles/switch.css">
-    <link rel="stylesheet" href="styles/tooltipLoader.css">
-    <link rel="stylesheet" href="styles/logo.css">
-    <link rel="stylesheet" media="(max-width: 900px)" href="styles/mobile.css" />
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/morph.css">
+    <link rel="stylesheet" href="src/styles/loading.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="src/styles/tooltips.css">
+    <link rel="stylesheet" href="src/styles/switch.css">
+    <link rel="stylesheet" href="src/styles/tooltipLoader.css">
+    <link rel="stylesheet" href="src/styles/logo.css">
+    <link rel="stylesheet" media="(max-width: 900px)" href="src/styles/mobile.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
 
@@ -24,9 +24,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/morph.js"></script>
-    <script src="scripts/classie.js"></script>
+    <script src="index.js"></script>
+    <script src="src/scripts/morph.js"></script>
+    <script src="src/scripts/classie.js"></script>
     </head>
   <body class="bgColor">
     <!--[if lt IE 10]>
@@ -205,8 +205,8 @@
             </div>
         </div>
             
-        <script src="scripts/classie.js"></script>
-        <script src="scripts/morph.js"></script>
+        <script src="src/scripts/classie.js"></script>
+        <script src="src/scripts/morph.js"></script>
         <div ng-controller="Morph" ng-include="'morph.html'" onload="initMorph()"></div>
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -225,7 +225,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <!-- <script src="index.js"></script> -->
     <!-- endbuild -->
   </body>
 </html>

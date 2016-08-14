@@ -51,6 +51,4 @@ function initMorph() {
             window.location.reload(true);
 		}
 	} );
-	/***** for demo purposes only: don't allow to submit the form *****/
-	morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
 };
