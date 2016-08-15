@@ -1,4 +1,4 @@
-import pokemons from '../../data/pokemons.json'
+import pokemons from '../../../data/pokemons.json'
 
 export default class Morph {
 	constructor($scope) { 'ngInject';

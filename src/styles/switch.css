@@ -22,7 +22,8 @@
 }
 .onoffswitch-inner:before {
     content: "Attack";
-    padding-left: 10px; 
+    padding-left: 10px;
+    text-align: left;
 }
 .onoffswitch-inner:after {
     content: "Defense";

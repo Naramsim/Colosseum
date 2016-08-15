@@ -1,3 +1,14 @@
+import '../styles/reset.css'
+import '../styles/animations.css'
+import '../styles/loading.css'
+import '../styles/logo.css'
+import '../styles/main.css'
+import '../styles/morph.css'
+import '../styles/switch.css'
+import '../styles/tooltipLoader.css'
+import '../styles/tooltips.css'
+import '../styles/mobile.css'
+
 import run from './angular/run.js'
 import MainPokemon from './angular/controllers/MainPokemon.js'
 import PokemonFamily from './angular/controllers/PokemonFamily.js'
@@ -11,10 +22,28 @@ import pokemonFilter from './angular/pokemonFilter.js'
 import multiFilter from './angular/multiFilter.js'
 import imageonloadDirective from './angular/imageonloadDirective.js'
 import getInfoFactory from './angular/getInfoFactory.js'
-console.log("hi")
 
+const runtime = require('offline-plugin/runtime');
 
-console.log(getInfoFactory)
+runtime.install({
+  onUpdating: () => {
+    console.log('SW Event:', 'onUpdating');
+  },
+  onUpdateReady: () => {
+    console.log('SW Event:', 'onUpdateReady');
+    // Tells to new SW to take control immediately
+    runtime.applyUpdate();
+  },
+  onUpdated: () => {
+    console.log('SW Event:', 'onUpdated');
+    // Reload the webpage to load into the new version
+    window.location.reload();
+  },
+
+  onUpdateFailed: () => {
+    console.log('SW Event:', 'onUpdateFailed');
+  }
+});
 
 angular.module('App', ['ngAnimate', 'ngStorage'])
 	.run(run)

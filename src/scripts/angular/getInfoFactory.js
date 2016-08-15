@@ -1,5 +1,5 @@
-import { config } from '../scripts/config.js'
-import pokemons from '../data/pokemons.json'
+import { config } from '../config/config.js'
+import pokemons from '../../data/pokemons.json'
 
 export default function getInfoFactory($http, $q) {
     return {

@@ -1,4 +1,4 @@
-import getMultipliers from '../../scripts/getMultipliers.js'
+import getMultipliers from '../../helpers/getMultipliers.js'
 
 export default class mainPokemon {
     constructor($scope, $http, $rootScope, $timeout, $localStorage) { 'ngInject';

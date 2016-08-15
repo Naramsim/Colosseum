@@ -1,4 +1,4 @@
-import all_types from '../data/all_types.json'
+import all_types from '../../data/all_types.json'
 
 export default function getMultipliers(types) {
     var multipliers = {

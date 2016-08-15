@@ -41,11 +41,11 @@
 }
 
 .animation .to-fade{
-	transition: .5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
+	transition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
 .animation .to-left, .animation .to-scale, .animation .to-top, .animation .to-bottom-logo{
-	transition: .3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
+	transition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
 .animation .to-left{
@@ -105,11 +105,11 @@
 }
 	
 .animationEnded .to-fade{
-	transition: .5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
+	transition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
 .animationEnded .to-left, .animationEnded .to-scale, .animationEnded .to-top{
-	transition: .3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
+	transition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);
 }
 
 .animationEnded .to-fade{

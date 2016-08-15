@@ -1,90 +1,95 @@
-html, body {
-	overflow-x: hidden;
-	font-size: 16px;
+@media screen and (max-width: 900px) {
+	html, body {
+		overflow-x: hidden;
+		font-size: 16px;
+	}
+
+	.container {
+		height: initial;
+		min-height: initial;
+	}
+
+	.innerContainer, .secondaryContainer, .pokemonTypesContainer {
+		flex-direction: column;
+	}
+
+	.innerContainer {
+		padding-top: 50px;
+	}
+
+	.secondaryContainer, .pokemonVCard {
+		align-items: center;
+	}
+
+	.mediumSize {
+		margin-top: 70px;
+	}
+
+	.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {
+		text-align: center;
+	}
+
+	.pokemonDescription {
+		margin: 0 auto;
+	}
+
+	.pokemonStats, .pokemonDescription, .pokemonFamily {
+		max-width: 80%;
+	}
+
+	.morphsearch.open .morphsearch-form {
+		height: 70px;
+	}
+
+	.jp {
+		font-size: 200%;
+		top: 10%;
+		opacity: .7;
+		position: relative;
+		margin-bottom: -35px;
+	    margin-top: 23px;
+	}
+
+	.tooltip-onleft {
+	    width: 239%;
+	    left: -65%;
+	    bottom: -2px;
+	}
+
+	.tooltip-onright {
+		width: 100%;
+	    left: 0%;
+	}
+
+	.multiplierAttack, .multiplierDefense {
+	    position: relative;
+	}
+
+	.softHidden {
+		display: none;
+	}
+
+	.switchMultiplier > .multiplierAttack {
+		display: none;
+	}
+
+	.switchMultiplier > .multiplierDefense {
+		display: block;
+	}
+
+	.pokemonHeldItems {
+	    margin-bottom: 50px;
+	}
+
+	.secondaryContainer > .pokemonMultipliers {
+	    flex-basis: 1px;
+	    height: auto;
+	}
+
+	.logo {
+		top: 1%;
+    	left: 10%;
+	}
 }
 
-.container {
-	height: initial;
-	min-height: initial;
-}
-
-.innerContainer, .secondaryContainer, .pokemonTypesContainer {
-	flex-direction: column;
-}
-
-.innerContainer {
-	padding-top: 50px;
-}
-
-.secondaryContainer, .pokemonVCard {
-	align-items: center;
-}
-
-.mediumSize {
-	margin-top: 70px;
-}
-
-.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul {
-	text-align: center;
-}
-
-.pokemonDescription {
-	margin: 0 auto;
-}
-
-.pokemonStats, .pokemonDescription, .pokemonFamily {
-	max-width: 80%;
-}
-
-.morphsearch.open .morphsearch-form {
-	height: 70px;
-}
-
-.jp {
-	font-size: 200%;
-	top: 10%;
-	opacity: .7;
-	position: relative;
-	margin-bottom: -35px;
-    margin-top: 23px;
-}
-
-.tooltip-onleft {
-    width: 239%;
-    left: -65%;
-    bottom: -2px;
-}
-
-.tooltip-onright {
-	width: 100%;
-    left: 0%;
-}
-
-.multiplierAttack, .multiplierDefense {
-    position: relative;
-}
-
-.softHidden {
-	display: none;
-}
-
-.switchMultiplier > .multiplierAttack {
-	display: none;
-}
-
-.switchMultiplier > .multiplierDefense {
-	display: block;
-}
-
-.pokemonHeldItems {
-    margin-bottom: 50px;
-}
-
-.secondaryContainer > .pokemonMultipliers {
-    flex-basis: 1px;
-    height: auto;
-}
-
-.logo {
-	display: none;
-}
+	

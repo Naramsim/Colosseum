@@ -1,0 +1,17 @@
+CACHE MANIFEST
+#ver:2016-08-15 18:54:17
+
+CACHE:
+.././dist/index.js
+../
+.././src/include/morph.html
+.././src/scripts/defer/morph.js
+.././src/scripts/defer/classie.js
+https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js
+https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js
+https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js
+
+NETWORK:
+*

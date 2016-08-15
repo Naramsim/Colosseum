@@ -1,4 +1,4 @@
-import { config } from '../../scripts/config.js'
+import { config } from '../../config/config.js'
 
 export default class pokemonHeldItems {
 	constructor($scope, $http) {

@@ -1,6 +1,6 @@
-import pokemons from '../../data/pokemons.json'
+import pokemons from '../../../data/pokemons.json'
 
-import { recentPokemons } from '../../scripts/recentPokemons.js'
+import { recentPokemons } from '../../getters/recentPokemons.js'
 
 export default class pokemonSearch {
     constructor($scope) { 'ngInject';

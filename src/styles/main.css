@@ -212,8 +212,6 @@ a:hover, a:active {
 	align-items: center;
 	position: fixed;
 	z-index: 100;
-	transition: 1s;
-	transition-delay: 10s;
 }
 
 .jp {

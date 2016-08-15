@@ -1,5 +1,5 @@
-import getMemebers from '../../scripts/getMemebers.js'
-import { config } from '../../scripts/config.js'
+import getMemebers from '../../helpers/getMemebers.js'
+import { config } from '../../config/config.js'
 
 export default class pokemonFamily {
     constructor($scope, $rootScope, $http, $timeout) { 'ngInject';

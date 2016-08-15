@@ -1,4 +1,4 @@
-import pokemons from '../data/pokemons.json'
+import pokemons from '../../data/pokemons.json'
 
 var hash = window.location.hash;
 var currentPokemon = /#\/?([\w-\d]+)/.exec(hash); 

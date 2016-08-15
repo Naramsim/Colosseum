@@ -1,8 +1,31 @@
+const OfflinePlugin = require('offline-plugin');
+
+const offlinePluginOptions = {
+    caches:{
+        main:[
+            './dist/index.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
+        ]
+    },
+    externals: [
+        'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
+    ],
+    ServiceWorker: {
+        events: true
+    }
+}
+
 module.exports = {
     target: 'web',
     devtool: 'sourcemap',
     entry: {
-        './index': './src/index.js'
+        './dist/index': './src/scripts/index.js'
     },
     output: {
         libraryTarget: 'umd',
@@ -13,7 +36,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: 'style!css'
+                loader: 'style-loader!css-loader'
             },
             {
             test: /\.jsx?$/,
@@ -25,5 +48,8 @@ module.exports = {
                 loader: 'json-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new OfflinePlugin(offlinePluginOptions)
+    ]
 };

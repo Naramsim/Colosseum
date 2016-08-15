@@ -381,11 +381,8 @@ kbd {
 	.shortcuts {
 		display: none;
 	}
-}
-
-@media screen and (max-width: 60.625em) {
 	.morphsearch {
-		width: 80%;
+		width: 60%;
 		top: 1%;
 		right: 10%;
 	}

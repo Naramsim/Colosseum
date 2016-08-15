@@ -1,11 +1,11 @@
-import pokemons from '../data/pokemons.json'
-import quotes from '../data/quotes.json'
+import pokemons from '../../data/pokemons.json'
+import quotes from '../../data/quotes.json'
 
-import getColors from '../scripts/getColors.js'
-import getHappiness from '../scripts/getHappiness.js'
+import getColors from '../helpers/getColors.js'
+import getHappiness from '../helpers/getHappiness.js'
 
-import { recentPokemons } from '../scripts/recentPokemons.js'
-import { currentPokemon } from '../scripts/currentPokemon.js'
+import { recentPokemons } from '../getters/recentPokemons.js'
+import { currentPokemon } from '../getters/currentPokemon.js'
 
 
 export default function run($http, $rootScope, getInfoFactory) {
