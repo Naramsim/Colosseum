@@ -130,7 +130,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(47).install();
+	var runtime = __webpack_require__(47);
+	
+	runtime.install({
+	  onUpdating: function onUpdating() {
+	    console.log('SW Event:', 'onUpdating');
+	  },
+	  onUpdateReady: function onUpdateReady() {
+	    console.log('SW Event:', 'onUpdateReady');
+	    // Tells to new SW to take control immediately
+	    runtime.applyUpdate();
+	  },
+	  onUpdated: function onUpdated() {
+	    console.log('SW Event:', 'onUpdated');
+	    // Reload the webpage to load into the new version
+	    window.location.reload();
+	  },
+	
+	  onUpdateFailed: function onUpdateFailed() {
+	    console.log('SW Event:', 'onUpdateFailed');
+	  }
+	});
 	
 	angular.module('App', ['ngAnimate', 'ngStorage']).run(_run2.default).controller('MainPokemon', _MainPokemon2.default).controller('PokemonFamily', _PokemonFamily2.default).controller('Morph', _Morph2.default).controller('PokemonSearch', _PokemonSearch2.default).controller('PokemonAbilities', _PokemonAbilities2.default).controller('PokemonMultipliers', _PokemonMultipliers2.default).controller('PokemonHeldItems', _PokemonHeldItems2.default).filter('pokemonFilterStart', _pokemonFilterStartFilter2.default).filter('pokemonFilter', _pokemonFilter2.default).filter('multi', _multiFilter2.default).directive('imageonload', _imageonloadDirective2.default).factory('getInfoFactory', _getInfoFactory2.default);
 
@@ -658,8 +678,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./mobile.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./mobile.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./morph.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./morph.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -677,7 +697,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\tflex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\talign-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonDescription, .pokemonFamily {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n\t", ""]);
+	exports.push([module.id, "/* Codrops */\r\n\r\nhtml, body {\r\n\theight: 100%;\r\n}\r\n\r\nbody {\r\n\toverflow-x: hidden;\r\n\toverflow-y: scroll;\r\n}\r\n\r\n.morphsearch {\r\n\tborder-radius: 23px;\r\n\twidth: 200px;\r\n\tmin-height: 40px;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tz-index: 10000;\r\n\ttop: 50px;\r\n\tright: 50px;\r\n\t-webkit-transform-origin: 100% 0;\r\n\ttransform-origin: 100% 0;\r\n\t-webkit-transition-property: min-height, width, top, right;\r\n\ttransition-property: min-height, width, top, right;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open {\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n\ttop: 0px;\r\n\tright: 0px;\r\n}\r\n\r\n.morphsearch-form {\r\n\twidth: 100%;\r\n\theight: 40px;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\t-webkit-transition-property: width, height, -webkit-transform;\r\n\ttransition-property: width, height, transform;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-form {\r\n\twidth: 80%;\r\n\theight: 160px;\r\n\t-webkit-transform: translate3d(0,3em,0);\r\n\ttransform: translate3d(0,3em,0);\r\n}\r\n\r\n.morphsearch-input {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tpadding: 0 10% 0 10px;\r\n\tfont-weight: 700;\r\n\tborder: none;\r\n\tbackground: transparent;\r\n\tfont-size: 0.8em;\r\n\tcolor: #ec5a62;\r\n\t-webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n\ttransition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch-input::-ms-clear { /* remove cross in IE */\r\n    display: none;\r\n}\r\n\r\n.morphsearch.hideInput .morphsearch-input {\r\n\tcolor: transparent;\r\n\t-webkit-transition: color 0.3s;\r\n\ttransition: color 0.3s;\r\n}\r\n\r\n.morphsearch.open .morphsearch-input {\r\n\tfont-size: 7em;\r\n}\r\n\r\n/* placeholder */\r\n.morphsearch-input::-webkit-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input::-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-ms-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n/* hide placeholder when active in Chrome */\r\n.gn-search:focus::-webkit-input-placeholder {\r\n\tcolor: transparent;\r\n}\r\n\r\ninput[type=\"search\"] { /* reset normalize */\r\n\t-webkit-box-sizing: border-box; \r\n\tbox-sizing: border-box;\t\r\n}\r\n\r\n.morphsearch-input:focus,\r\n.morphsearch-submit:focus {\r\n\toutline: none;\r\n}\r\n\r\n.morphsearch-close {\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\tposition: absolute;\r\n\tright: 1em;\r\n\ttop: 1em;\r\n\toverflow: hidden;\r\n\ttext-indent: 100%;\r\n\tcursor: pointer;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\t-webkit-transform: scale3d(0,0,1);\r\n\ttransform: scale3d(0,0,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-close {\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n\t-webkit-transform: scale3d(1,1,1);\r\n\ttransform: scale3d(1,1,1);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch-close::before,\r\n.morphsearch-close::after {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\twidth: 2px;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 50%;\r\n\tborder-radius: 3px;\r\n\topacity: 0.2;\r\n\tbackground: #000;\r\n}\r\n\r\n.morphsearch-close:hover.morphsearch-close::before,\r\n.morphsearch-close:hover.morphsearch-close::after {\r\n\topacity: 1;\r\n}\r\n\r\n.morphsearch-close::before {\r\n\t-webkit-transform: rotate(45deg);\r\n\ttransform: rotate(45deg);\r\n}\r\n\r\n.morphsearch-close::after {\r\n\t-webkit-transform: rotate(-45deg);\r\n\ttransform: rotate(-45deg);\r\n}\r\n\r\n.morphsearch-content {\r\n\tcolor: #333;\r\n\tmargin-top: 4.5em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n}\r\n\r\n.shortcuts {\r\n\tcolor: #333;\r\n\tmargin-top: 44em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n\tflex-wrap: wrap;\r\n\tline-height: 16px;\r\n}\r\n\r\n.shortcuts bold {\r\n\tfont-size: 15px;\r\n}\r\n\r\n.shortcuts a {\r\n\tcolor: #dc3f3f;\r\n}\r\n\r\n.shortcuts a:hover {\r\n\tcolor: #ff4343;\r\n}\r\n\r\n.morphsearch.open .morphsearch-content {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.morphsearch.open .shortcuts {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.dummy-column {\r\n\twidth: 30%;\r\n\tpadding: 0 0 6em;\r\n\tfloat: left;\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,100px,0);\r\n\ttransform: translateY(100px);\r\n\t-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;\r\n\ttransition: transform 0.5s, opacity 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:first-child {\r\n\t-webkit-transition-delay: 0.4s;\r\n\ttransition-delay: 0.4s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(2) {\r\n\t-webkit-transition-delay: 0.45s;\r\n\ttransition-delay: 0.45s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(3) {\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column {\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}\r\n\r\n.dummy-column:nth-child(2) {\r\n\tmargin: 0 5%;\r\n}\r\n\r\n.dummy-column h2 {\r\n\tfont-size: 1em;\r\n\tletter-spacing: 1px;\r\n\ttext-transform: uppercase;\r\n\tfont-weight: 800;\r\n\tcolor: #c2c2c2;\r\n\tpadding: 0.5em 0;\r\n}\r\n\r\n.round {\r\n\tborder-radius: 50%;\r\n}\r\n\r\n.dummy-media-object {\r\n\tdisplay: block;\r\n\tmargin: 0.3em 0;\r\n\tcursor: pointer;\r\n\tborder-radius: 5px;\r\n\tbackground: rgba(118,117,128,0.05);\r\n}\r\n\r\n.dummy-media-object > a {\r\n\tpadding: 0.75em;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tdisplay: block;\r\n}\r\n\r\n.dummy-media-object:hover,\r\n.dummy-media-object:focus {\r\n\tbackground: rgba(118,117,128,0.1);\r\n}\r\n\r\n.dummy-media-object img {\r\n\tdisplay: inline-block;\r\n\twidth: 50px;\t\r\n\theight: 50px;\r\n\tmargin: 0 10px 0 0;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.dummy-media-object h3 {\r\n\tvertical-align: middle;\r\n\tfont-size: 0.85em;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tmargin: 0 0 0 0;\r\n\tcolor: rgba(99, 99, 99, 0.7);\r\n}\r\n\r\n.dummy-media-object:hover h3 {\r\n\tcolor: rgba(236,90,98,1);\r\n}\r\n\r\n/* Overlay */\r\n.overlay {\r\n\tposition: fixed;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tbackground: rgba(0,0,0,0.5);\r\n\topacity: 0;\r\n\tpointer-events: none;\r\n\t-webkit-transition: opacity 0.5s;\r\n\ttransition: opacity 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open ~ .overlay {\r\n\topacity: 1;\r\n}\r\n\r\nkbd {\r\n    -moz-border-radius:3px;\r\n    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    -webkit-border-radius:3px;\r\n    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    background-color:#f7f7f7;\r\n    border:1px solid #ccc;\r\n    border-radius:3px;\r\n    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    color:#333;\r\n    display:inline-block;\r\n    font-family:Arial,Helvetica,sans-serif;\r\n    font-size:11px;\r\n    line-height:1.4;\r\n    margin:0 .1em;\r\n    margin-right: 5px;\r\n    padding:.1em .6em;\r\n    text-shadow:0 1px 0 #fff;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n\t.morphsearch-input {\r\n\t\tpadding: 0 25% 0 10px;\r\n\t}\r\n\t.morphsearch.open .morphsearch-input {\r\n\t\tfont-size: 2em;\r\n\t}\r\n\t.dummy-column {\r\n\t\tfloat: none;\r\n\t\twidth: auto;\r\n\t\tpadding: 0 0 2em;\r\n\t}\r\n\t.dummy-column:nth-child(2) {\r\n\t\tmargin: 0;\r\n\t}\r\n\t.morphsearch.open .morphsearch-submit {\r\n\t\t-webkit-transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t\ttransform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t}\r\n\t.shortcuts {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.morphsearch {\r\n\t\twidth: 60%;\r\n\t\ttop: 1%;\r\n\t\tright: 10%;\r\n\t}\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -698,8 +718,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./morph.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./morph.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./switch.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./switch.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -717,7 +737,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "/* Codrops */\r\n\r\nhtml, body {\r\n\theight: 100%;\r\n}\r\n\r\nbody {\r\n\toverflow-x: hidden;\r\n\toverflow-y: scroll;\r\n}\r\n\r\n.morphsearch {\r\n\tborder-radius: 23px;\r\n\twidth: 200px;\r\n\tmin-height: 40px;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tz-index: 10000;\r\n\ttop: 50px;\r\n\tright: 50px;\r\n\t-webkit-transform-origin: 100% 0;\r\n\ttransform-origin: 100% 0;\r\n\t-webkit-transition-property: min-height, width, top, right;\r\n\ttransition-property: min-height, width, top, right;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open {\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n\ttop: 0px;\r\n\tright: 0px;\r\n}\r\n\r\n.morphsearch-form {\r\n\twidth: 100%;\r\n\theight: 40px;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\t-webkit-transition-property: width, height, -webkit-transform;\r\n\ttransition-property: width, height, transform;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-form {\r\n\twidth: 80%;\r\n\theight: 160px;\r\n\t-webkit-transform: translate3d(0,3em,0);\r\n\ttransform: translate3d(0,3em,0);\r\n}\r\n\r\n.morphsearch-input {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tpadding: 0 10% 0 10px;\r\n\tfont-weight: 700;\r\n\tborder: none;\r\n\tbackground: transparent;\r\n\tfont-size: 0.8em;\r\n\tcolor: #ec5a62;\r\n\t-webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n\ttransition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch-input::-ms-clear { /* remove cross in IE */\r\n    display: none;\r\n}\r\n\r\n.morphsearch.hideInput .morphsearch-input {\r\n\tcolor: transparent;\r\n\t-webkit-transition: color 0.3s;\r\n\ttransition: color 0.3s;\r\n}\r\n\r\n.morphsearch.open .morphsearch-input {\r\n\tfont-size: 7em;\r\n}\r\n\r\n/* placeholder */\r\n.morphsearch-input::-webkit-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input::-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-ms-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n/* hide placeholder when active in Chrome */\r\n.gn-search:focus::-webkit-input-placeholder {\r\n\tcolor: transparent;\r\n}\r\n\r\ninput[type=\"search\"] { /* reset normalize */\r\n\t-webkit-box-sizing: border-box; \r\n\tbox-sizing: border-box;\t\r\n}\r\n\r\n.morphsearch-input:focus,\r\n.morphsearch-submit:focus {\r\n\toutline: none;\r\n}\r\n\r\n.morphsearch-close {\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\tposition: absolute;\r\n\tright: 1em;\r\n\ttop: 1em;\r\n\toverflow: hidden;\r\n\ttext-indent: 100%;\r\n\tcursor: pointer;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\t-webkit-transform: scale3d(0,0,1);\r\n\ttransform: scale3d(0,0,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-close {\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n\t-webkit-transform: scale3d(1,1,1);\r\n\ttransform: scale3d(1,1,1);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch-close::before,\r\n.morphsearch-close::after {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\twidth: 2px;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 50%;\r\n\tborder-radius: 3px;\r\n\topacity: 0.2;\r\n\tbackground: #000;\r\n}\r\n\r\n.morphsearch-close:hover.morphsearch-close::before,\r\n.morphsearch-close:hover.morphsearch-close::after {\r\n\topacity: 1;\r\n}\r\n\r\n.morphsearch-close::before {\r\n\t-webkit-transform: rotate(45deg);\r\n\ttransform: rotate(45deg);\r\n}\r\n\r\n.morphsearch-close::after {\r\n\t-webkit-transform: rotate(-45deg);\r\n\ttransform: rotate(-45deg);\r\n}\r\n\r\n.morphsearch-content {\r\n\tcolor: #333;\r\n\tmargin-top: 4.5em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n}\r\n\r\n.shortcuts {\r\n\tcolor: #333;\r\n\tmargin-top: 44em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n\tflex-wrap: wrap;\r\n\tline-height: 16px;\r\n}\r\n\r\n.shortcuts bold {\r\n\tfont-size: 15px;\r\n}\r\n\r\n.shortcuts a {\r\n\tcolor: #dc3f3f;\r\n}\r\n\r\n.shortcuts a:hover {\r\n\tcolor: #ff4343;\r\n}\r\n\r\n.morphsearch.open .morphsearch-content {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.morphsearch.open .shortcuts {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.dummy-column {\r\n\twidth: 30%;\r\n\tpadding: 0 0 6em;\r\n\tfloat: left;\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,100px,0);\r\n\ttransform: translateY(100px);\r\n\t-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;\r\n\ttransition: transform 0.5s, opacity 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:first-child {\r\n\t-webkit-transition-delay: 0.4s;\r\n\ttransition-delay: 0.4s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(2) {\r\n\t-webkit-transition-delay: 0.45s;\r\n\ttransition-delay: 0.45s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(3) {\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column {\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}\r\n\r\n.dummy-column:nth-child(2) {\r\n\tmargin: 0 5%;\r\n}\r\n\r\n.dummy-column h2 {\r\n\tfont-size: 1em;\r\n\tletter-spacing: 1px;\r\n\ttext-transform: uppercase;\r\n\tfont-weight: 800;\r\n\tcolor: #c2c2c2;\r\n\tpadding: 0.5em 0;\r\n}\r\n\r\n.round {\r\n\tborder-radius: 50%;\r\n}\r\n\r\n.dummy-media-object {\r\n\tdisplay: block;\r\n\tmargin: 0.3em 0;\r\n\tcursor: pointer;\r\n\tborder-radius: 5px;\r\n\tbackground: rgba(118,117,128,0.05);\r\n}\r\n\r\n.dummy-media-object > a {\r\n\tpadding: 0.75em;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tdisplay: block;\r\n}\r\n\r\n.dummy-media-object:hover,\r\n.dummy-media-object:focus {\r\n\tbackground: rgba(118,117,128,0.1);\r\n}\r\n\r\n.dummy-media-object img {\r\n\tdisplay: inline-block;\r\n\twidth: 50px;\t\r\n\theight: 50px;\r\n\tmargin: 0 10px 0 0;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.dummy-media-object h3 {\r\n\tvertical-align: middle;\r\n\tfont-size: 0.85em;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tmargin: 0 0 0 0;\r\n\tcolor: rgba(99, 99, 99, 0.7);\r\n}\r\n\r\n.dummy-media-object:hover h3 {\r\n\tcolor: rgba(236,90,98,1);\r\n}\r\n\r\n/* Overlay */\r\n.overlay {\r\n\tposition: fixed;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tbackground: rgba(0,0,0,0.5);\r\n\topacity: 0;\r\n\tpointer-events: none;\r\n\t-webkit-transition: opacity 0.5s;\r\n\ttransition: opacity 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open ~ .overlay {\r\n\topacity: 1;\r\n}\r\n\r\nkbd {\r\n    -moz-border-radius:3px;\r\n    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    -webkit-border-radius:3px;\r\n    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    background-color:#f7f7f7;\r\n    border:1px solid #ccc;\r\n    border-radius:3px;\r\n    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    color:#333;\r\n    display:inline-block;\r\n    font-family:Arial,Helvetica,sans-serif;\r\n    font-size:11px;\r\n    line-height:1.4;\r\n    margin:0 .1em;\r\n    margin-right: 5px;\r\n    padding:.1em .6em;\r\n    text-shadow:0 1px 0 #fff;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n\t.morphsearch-input {\r\n\t\tpadding: 0 25% 0 10px;\r\n\t}\r\n\t.morphsearch.open .morphsearch-input {\r\n\t\tfont-size: 2em;\r\n\t}\r\n\t.dummy-column {\r\n\t\tfloat: none;\r\n\t\twidth: auto;\r\n\t\tpadding: 0 0 2em;\r\n\t}\r\n\t.dummy-column:nth-child(2) {\r\n\t\tmargin: 0;\r\n\t}\r\n\t.morphsearch.open .morphsearch-submit {\r\n\t\t-webkit-transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t\ttransform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t}\r\n\t.shortcuts {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.morphsearch {\r\n\t\twidth: 60%;\r\n\t\ttop: 1%;\r\n\t\tright: 10%;\r\n\t}\r\n}\r\n", ""]);
+	exports.push([module.id, ".onoffswitch {\r\n    position: relative; width: 108px;\r\n    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;\r\n    vertical-align: sub;\r\n    margin-left: 10px;\r\n}\r\n.onoffswitch-checkbox {\r\n    display: none;\r\n}\r\n.onoffswitch-label {\r\n    display: block; overflow: hidden; cursor: pointer;\r\n    border-radius: 50px;\r\n}\r\n.onoffswitch-inner {\r\n    display: block; width: 200%; margin-left: -100%;\r\n    transition: margin 0.3s ease-in 0s;\r\n}\r\n.onoffswitch-inner:before, .onoffswitch-inner:after {\r\n    display: block; float: left; width: 50%; height: 27px; padding: 0; line-height: 27px;\r\n    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;\r\n    box-sizing: border-box;\r\n}\r\n.onoffswitch-inner:before {\r\n    content: \"Attack\";\r\n    padding-left: 10px;\r\n    text-align: left;\r\n}\r\n.onoffswitch-inner:after {\r\n    content: \"Defense\";\r\n    padding-right: 10px;\r\n    text-align: right;\r\n}\r\n.onoffswitch-switch {\r\n    display: block; \r\n    width: 31px; \r\n    height: 31px; \r\n    margin: 0px;\r\n    position: absolute; top: 0; bottom: 0;\r\n    right: 77px;\r\n    border-radius: 50px;\r\n    transition: all 0.3s ease-in 0s; \r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {\r\n    margin-left: 0;\r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {\r\n    right: 0px; \r\n}", ""]);
 	
 	// exports
 
@@ -738,8 +758,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./switch.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./switch.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -757,7 +777,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".onoffswitch {\r\n    position: relative; width: 108px;\r\n    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;\r\n    vertical-align: sub;\r\n    margin-left: 10px;\r\n}\r\n.onoffswitch-checkbox {\r\n    display: none;\r\n}\r\n.onoffswitch-label {\r\n    display: block; overflow: hidden; cursor: pointer;\r\n    border-radius: 50px;\r\n}\r\n.onoffswitch-inner {\r\n    display: block; width: 200%; margin-left: -100%;\r\n    transition: margin 0.3s ease-in 0s;\r\n}\r\n.onoffswitch-inner:before, .onoffswitch-inner:after {\r\n    display: block; float: left; width: 50%; height: 27px; padding: 0; line-height: 27px;\r\n    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;\r\n    box-sizing: border-box;\r\n}\r\n.onoffswitch-inner:before {\r\n    content: \"Attack\";\r\n    padding-left: 10px; \r\n}\r\n.onoffswitch-inner:after {\r\n    content: \"Defense\";\r\n    padding-right: 10px;\r\n    text-align: right;\r\n}\r\n.onoffswitch-switch {\r\n    display: block; \r\n    width: 31px; \r\n    height: 31px; \r\n    margin: 0px;\r\n    position: absolute; top: 0; bottom: 0;\r\n    right: 77px;\r\n    border-radius: 50px;\r\n    transition: all 0.3s ease-in 0s; \r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {\r\n    margin-left: 0;\r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {\r\n    right: 0px; \r\n}", ""]);
+	exports.push([module.id, ".sk-three-bounce {\r\n    text-align: center;\r\n}\r\n.sk-three-bounce .sk-child {\r\n    width: 10px;\r\n    height: 10px;\r\n    background-color: #333;\r\n    border-radius: 100%;\r\n    display: inline-block;\r\n    -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;\r\n    animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;\r\n}\r\n.sk-three-bounce .sk-bounce1 {\r\n    -webkit-animation-delay: -0.32s;\r\n    animation-delay: -0.32s;\r\n}\r\n.sk-three-bounce .sk-bounce2 {\r\n    -webkit-animation-delay: -0.16s;\r\n    animation-delay: -0.16s;\r\n}\r\n@-webkit-keyframes sk-three-bounce {\r\n    0%, 80%, 100% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        opacity: 0;\r\n    }\r\n    40% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        opacity: 1;\r\n    }\r\n}\r\n@keyframes sk-three-bounce {\r\n    0%, 80%, 100% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        opacity: 0;\r\n    }\r\n    40% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        opacity: 1;\r\n    }\r\n}", ""]);
 	
 	// exports
 
@@ -778,8 +798,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltips.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltips.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -797,7 +817,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".sk-three-bounce {\r\n    text-align: center;\r\n}\r\n.sk-three-bounce .sk-child {\r\n    width: 10px;\r\n    height: 10px;\r\n    background-color: #333;\r\n    border-radius: 100%;\r\n    display: inline-block;\r\n    -webkit-animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;\r\n    animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;\r\n}\r\n.sk-three-bounce .sk-bounce1 {\r\n    -webkit-animation-delay: -0.32s;\r\n    animation-delay: -0.32s;\r\n}\r\n.sk-three-bounce .sk-bounce2 {\r\n    -webkit-animation-delay: -0.16s;\r\n    animation-delay: -0.16s;\r\n}\r\n@-webkit-keyframes sk-three-bounce {\r\n    0%, 80%, 100% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        opacity: 0;\r\n    }\r\n    40% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        opacity: 1;\r\n    }\r\n}\r\n@keyframes sk-three-bounce {\r\n    0%, 80%, 100% {\r\n        -webkit-transform: scale(0);\r\n        transform: scale(0);\r\n        opacity: 0;\r\n    }\r\n    40% {\r\n        -webkit-transform: scale(1);\r\n        transform: scale(1);\r\n        opacity: 1;\r\n    }\r\n}", ""]);
+	exports.push([module.id, "/* Codrops */\r\n\r\n.tooltip {\r\n\tposition: relative;\r\n\tz-index: 999;\r\n}\r\n\r\n/* Trigger text */\r\n\r\n.tooltip-item {\r\n\tcursor: pointer;\r\n\tz-index: 100;\r\n\tposition: relative;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\t-webkit-transition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-item {\r\n\topacity: .9;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n}\r\n\r\n/* Tooltip */\r\n\r\n.tooltip-content {\r\n\tposition: absolute;\r\n\tz-index: 99;\r\n\ttext-align: left;\r\n\topacity: 0;\r\n\tline-height: 1.5;\r\n\tpadding: 1.5em;\r\n\tcolor: #fff;\r\n\tcursor: default;\r\n\tpointer-events: none;\r\n\tborder-radius: 5px;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip-onright {\r\n\twidth: 450px;\r\n\tright: -5%;\r\n\tbottom: 8px;\r\n}\r\n\r\n.tooltip-onleft {\r\n\twidth: 360px;\r\n\tleft: -10%;\r\n\tbottom: -5px;\r\n}\r\n\r\n.tooltip-text {\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,1.5em,0);\r\n\ttransform: translate3d(0,1.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-content,\r\n.tooltip:hover .tooltip-text {\r\n\tpointer-events: auto;\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}", ""]);
 	
 	// exports
 
@@ -818,8 +838,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltips.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltips.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./mobile.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./mobile.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -837,7 +857,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "/* Codrops */\r\n\r\n.tooltip {\r\n\tposition: relative;\r\n\tz-index: 999;\r\n}\r\n\r\n/* Trigger text */\r\n\r\n.tooltip-item {\r\n\tcursor: pointer;\r\n\tz-index: 100;\r\n\tposition: relative;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\t-webkit-transition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-item {\r\n\topacity: .9;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n}\r\n\r\n/* Tooltip */\r\n\r\n.tooltip-content {\r\n\tposition: absolute;\r\n\tz-index: 99;\r\n\ttext-align: left;\r\n\topacity: 0;\r\n\tline-height: 1.5;\r\n\tpadding: 1.5em;\r\n\tcolor: #fff;\r\n\tcursor: default;\r\n\tpointer-events: none;\r\n\tborder-radius: 5px;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip-onright {\r\n\twidth: 450px;\r\n\tright: -5%;\r\n\tbottom: 8px;\r\n}\r\n\r\n.tooltip-onleft {\r\n\twidth: 360px;\r\n\tleft: -10%;\r\n\tbottom: -5px;\r\n}\r\n\r\n.tooltip-text {\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,1.5em,0);\r\n\ttransform: translate3d(0,1.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-content,\r\n.tooltip:hover .tooltip-text {\r\n\tpointer-events: auto;\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}", ""]);
+	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\tflex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\talign-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonDescription, .pokemonFamily {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n\t", ""]);
 	
 	// exports
 
@@ -3100,6 +3120,109 @@ return /******/ (function(modules) { // webpackBootstrap
 	        );
 	
 	      
+	        var handleUpdating = function(registration) {
+	          var sw = registration.installing || registration.waiting;
+	          var ignoreInstalling;
+	          var ignoreWaiting;
+	
+	          // No SW or already handled
+	          if (!sw || sw.onstatechange) return;
+	
+	          var stateChangeHandler;
+	
+	          // Already has SW
+	          if (registration.active) {
+	            onUpdateStateChange();
+	            stateChangeHandler = onUpdateStateChange;
+	          } else {
+	            onInstallStateChange();
+	            stateChangeHandler = onInstallStateChange;
+	          }
+	
+	          ignoreInstalling = true;
+	          if (registration.waiting) {
+	            ignoreWaiting = true;
+	          }
+	
+	          sw.onstatechange = stateChangeHandler;
+	
+	          function onUpdateStateChange() {
+	            switch (sw.state) {
+	              case 'redundant': {
+	                sendEvent('onUpdateFailed');
+	                sw.onstatechange = null;
+	              } break;
+	
+	              case 'installing': {
+	                if (!ignoreInstalling) {
+	                  sendEvent('onUpdating');
+	                }
+	              } break;
+	
+	              case 'installed': {
+	                if (!ignoreWaiting) {
+	                  sendEvent('onUpdateReady');
+	                }
+	              } break;
+	
+	              case 'activated': {
+	                sendEvent('onUpdated');
+	                sw.onstatechange = null;
+	              } break;
+	            }
+	          }
+	
+	          function onInstallStateChange() {
+	            switch (sw.state) {
+	              case 'redundant': {
+	                // Failed to install, ignore
+	                sw.onstatechange = null;
+	              } break;
+	
+	              case 'installing': {
+	                // Installing, ignore
+	              } break;
+	
+	              case 'installed': {
+	                // Installed, wait activation
+	              } break;
+	
+	              case 'activated': {
+	                sendEvent('onInstalled');
+	                sw.onstatechange = null;
+	              } break;
+	            }
+	          }
+	        };
+	
+	        var sendEvent = function(event) {
+	          if (typeof options[event] === 'function') {
+	            options[event]({
+	              source: 'ServiceWorker'
+	            });
+	          }
+	        };
+	
+	        registration.then(function(reg) {
+	          // WTF no reg?
+	          if (!reg) return;
+	
+	          // Installed but Shift-Reloaded (page is not controller by SW),
+	          // update might be ready at this point (more than one tab opened).
+	          // Anyway, if page is hard-reloaded, then it probably already have latest version
+	          // but it's not controlled by SW yet. Applying update will claim this page
+	          // to be controlled by SW. Maybe set flag to not reload it?
+	          // if (!navigator.serviceWorker.controller) return;
+	
+	          handleUpdating(reg);
+	          reg.onupdatefound = function() {
+	            handleUpdating(reg);
+	          };
+	        }).catch(function(err) {
+	          sendEvent('onError');
+	          return Promise.reject(err);
+	        });
+	      
 	
 	      return;
 	    }
@@ -3135,6 +3258,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function applyUpdate(callback, errback) {
+	  
+	    if (hasSW()) {
+	      navigator.serviceWorker.getRegistration().then(function(registration) {
+	        if (!registration || !registration.waiting) {
+	          errback && errback();
+	          return;
+	        }
+	
+	        registration.waiting.postMessage({
+	          action: 'skipWaiting'
+	        });
+	
+	        callback && callback();
+	      });
+	
+	      return;
+	    }
 	  
 	
 	  

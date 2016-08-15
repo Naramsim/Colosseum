@@ -2,11 +2,6 @@ var __wpo = {
   "assets": {
     "main": [
       "././dist/index.js",
-      "./",
-      "././src/include/morph.html",
-      "././src/scripts/defer/morph.js",
-      "././src/scripts/defer/classie.js",
-      "https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js",
@@ -16,10 +11,10 @@ var __wpo = {
     "optional": []
   },
   "hashesMap": {
-    "d25b485f96c02db27ef935c134cf2fdb": "././dist/index.js"
+    "19c987e5f53f8dad9634c6bd49a5e8d3": "././dist/index.js"
   },
   "strategy": "all",
-  "version": "2016-08-15 18:54:17",
+  "version": "2016-08-15 20:04:47",
   "name": "webpack-offline",
   "relativePaths": true
 };
