@@ -56,7 +56,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	var _run = __webpack_require__(3);
+	var _run = __webpack_require__(1);
 	
 	var _run2 = _interopRequireDefault(_run);
 	
@@ -64,47 +64,47 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _MainPokemon2 = _interopRequireDefault(_MainPokemon);
 	
-	var _PokemonFamily = __webpack_require__(11);
+	var _PokemonFamily = __webpack_require__(12);
 	
 	var _PokemonFamily2 = _interopRequireDefault(_PokemonFamily);
 	
-	var _Morph = __webpack_require__(14);
+	var _Morph = __webpack_require__(15);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
-	var _PokemonSearch = __webpack_require__(15);
+	var _PokemonSearch = __webpack_require__(16);
 	
 	var _PokemonSearch2 = _interopRequireDefault(_PokemonSearch);
 	
-	var _PokemonAbilities = __webpack_require__(16);
+	var _PokemonAbilities = __webpack_require__(17);
 	
 	var _PokemonAbilities2 = _interopRequireDefault(_PokemonAbilities);
 	
-	var _PokemonMultipliers = __webpack_require__(17);
+	var _PokemonMultipliers = __webpack_require__(18);
 	
 	var _PokemonMultipliers2 = _interopRequireDefault(_PokemonMultipliers);
 	
-	var _PokemonHeldItems = __webpack_require__(18);
+	var _PokemonHeldItems = __webpack_require__(19);
 	
 	var _PokemonHeldItems2 = _interopRequireDefault(_PokemonHeldItems);
 	
-	var _pokemonFilterStartFilter = __webpack_require__(19);
+	var _pokemonFilterStartFilter = __webpack_require__(20);
 	
 	var _pokemonFilterStartFilter2 = _interopRequireDefault(_pokemonFilterStartFilter);
 	
-	var _pokemonFilter = __webpack_require__(24);
+	var _pokemonFilter = __webpack_require__(21);
 	
 	var _pokemonFilter2 = _interopRequireDefault(_pokemonFilter);
 	
-	var _multiFilter = __webpack_require__(20);
+	var _multiFilter = __webpack_require__(22);
 	
 	var _multiFilter2 = _interopRequireDefault(_multiFilter);
 	
-	var _imageonloadDirective = __webpack_require__(21);
+	var _imageonloadDirective = __webpack_require__(23);
 	
 	var _imageonloadDirective2 = _interopRequireDefault(_imageonloadDirective);
 	
-	var _getInfoFactory = __webpack_require__(22);
+	var _getInfoFactory = __webpack_require__(24);
 	
 	var _getInfoFactory2 = _interopRequireDefault(_getInfoFactory);
 	
@@ -125,33 +125,103 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.currentPokemon = undefined;
+	exports.default = run;
 	
 	var _pokemons = __webpack_require__(2);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
+	var _quotes = __webpack_require__(3);
+	
+	var _quotes2 = _interopRequireDefault(_quotes);
+	
+	var _getColors = __webpack_require__(4);
+	
+	var _getColors2 = _interopRequireDefault(_getColors);
+	
+	var _getHappiness = __webpack_require__(6);
+	
+	var _getHappiness2 = _interopRequireDefault(_getHappiness);
+	
+	var _recentPokemons = __webpack_require__(7);
+	
+	var _currentPokemon = __webpack_require__(8);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var hash = window.location.hash;
-	var currentPokemon = /#\/?([\w-\d]+)/.exec(hash);
-	if (!currentPokemon) {
-	    exports.currentPokemon = currentPokemon = generateRandPokemon();
-	} else {
-	    if (_pokemons2.default.indexOf(currentPokemon[1]) >= 0) {
-	        exports.currentPokemon = currentPokemon = currentPokemon[1];
-	    } else {
-	        exports.currentPokemon = currentPokemon = generateRandPokemon();
-	    }
+	function run($http, $rootScope, getInfoFactory) {
+	    var quoteId = _quotes2.default[Math.floor(Math.random() * _quotes2.default.length)];
+	    $rootScope.quote = quoteId[1];
+	    $rootScope.quoteAuthor = quoteId[0];
+	    $rootScope.status = 'FETCHING';
+	    $rootScope.reloadHome = function (id) {
+	        window.location.hash = '';
+	        window.location.reload(true);
+	    };
+	
+	    var completed = 0;
+	    $rootScope.currentPokemon = _currentPokemon.currentPokemon;
+	    $rootScope.recentPokemons = _recentPokemons.recentPokemons;
+	
+	    $rootScope.up = function (string) {
+	        if (string) {
+	            return string.charAt(0).toUpperCase() + string.slice(1).replace('-', ' ');
+	        }
+	    };
+	    $rootScope.getPokemonName = function (id) {
+	        return _pokemons2.default[id - 1];
+	    };
+	    $rootScope.getPokemonId = function (name) {
+	        return _pokemons2.default.indexOf(name) + 1;
+	    };
+	    getInfoFactory.getPokemon(_currentPokemon.currentPokemon).then(function (res) {
+	        $rootScope.currentPokemon = res;
+	        (0, _getColors2.default)($rootScope.currentPokemon.id);
+	        completed += 1;
+	        if (completed = 2) {
+	            setTimeout(function () {
+	                $rootScope.status = 'READY';
+	            }, 300);
+	            $rootScope.$broadcast('init');
+	        }
+	    });
+	
+	    getInfoFactory.getSpecie(_currentPokemon.currentPokemon).then(function (res) {
+	        $rootScope.pokemonSpecie = res;
+	        $rootScope.happiness = (0, _getHappiness2.default)(res.base_happiness);
+	
+	        $rootScope.genere = res.genera.filter(function (text) {
+	            if (text.language.name === 'en') {
+	                return true;
+	            } else {
+	                return false;
+	            }
+	        })[0].genus;
+	
+	        $rootScope.jp = res.names.filter(function (text) {
+	            if (text.language.name === 'ja') {
+	                return true;
+	            } else {
+	                return false;
+	            }
+	        })[0].name;
+	
+	        $rootScope.description = res.flavor_text_entries.filter(function (text) {
+	            if (text.language.name === 'en') {
+	                return true;
+	            } else {
+	                return false;
+	            }
+	        })[0].flavor_text;
+	        completed += 1;
+	        if (completed = 2) {
+	            setTimeout(function () {
+	                $rootScope.status = 'READY';
+	            }, 300);
+	            $rootScope.$broadcast('init');
+	        }
+	    });
 	}
-	
-	console.log(currentPokemon);
-	
-	function generateRandPokemon() {
-	    return _pokemons2.default[Math.floor(0 + Math.random() * 750)];
-	}
-	
-	exports.currentPokemon = currentPokemon;
 
 /***/ },
 /* 2 */
@@ -883,113 +953,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = run;
-	
-	var _pokemons = __webpack_require__(2);
-	
-	var _pokemons2 = _interopRequireDefault(_pokemons);
-	
-	var _quotes = __webpack_require__(4);
-	
-	var _quotes2 = _interopRequireDefault(_quotes);
-	
-	var _getColors = __webpack_require__(5);
-	
-	var _getColors2 = _interopRequireDefault(_getColors);
-	
-	var _getHappiness = __webpack_require__(7);
-	
-	var _getHappiness2 = _interopRequireDefault(_getHappiness);
-	
-	var _recentPokemons = __webpack_require__(8);
-	
-	var _currentPokemon = __webpack_require__(1);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function run($http, $rootScope, getInfoFactory) {
-	    var quoteId = _quotes2.default[Math.floor(Math.random() * _quotes2.default.length)];
-	    $rootScope.quote = quoteId[1];
-	    $rootScope.quoteAuthor = quoteId[0];
-	    $rootScope.status = 'FETCHING';
-	    $rootScope.reloadHome = function (id) {
-	        window.location.hash = '';
-	        window.location.reload(true);
-	    };
-	
-	    var completed = 0;
-	    $rootScope.currentPokemon = _currentPokemon.currentPokemon;
-	    $rootScope.recentPokemons = _recentPokemons.recentPokemons;
-	
-	    $rootScope.up = function (string) {
-	        if (string) {
-	            return string.charAt(0).toUpperCase() + string.slice(1).replace('-', ' ');
-	        }
-	    };
-	    $rootScope.getPokemonName = function (id) {
-	        return _pokemons2.default[id - 1];
-	    };
-	    $rootScope.getPokemonId = function (name) {
-	        return _pokemons2.default.indexOf(name) + 1;
-	    };
-	    getInfoFactory.getPokemon(_currentPokemon.currentPokemon).then(function (res) {
-	        $rootScope.currentPokemon = res;
-	        (0, _getColors2.default)($rootScope.currentPokemon.id);
-	        completed += 1;
-	        if (completed = 2) {
-	            setTimeout(function () {
-	                $rootScope.status = 'READY';
-	            }, 300);
-	            $rootScope.$broadcast('init');
-	        }
-	    });
-	
-	    getInfoFactory.getSpecie(_currentPokemon.currentPokemon).then(function (res) {
-	        $rootScope.pokemonSpecie = res;
-	        $rootScope.happiness = (0, _getHappiness2.default)(res.base_happiness);
-	
-	        $rootScope.genere = res.genera.filter(function (text) {
-	            if (text.language.name === 'en') {
-	                return true;
-	            } else {
-	                return false;
-	            }
-	        })[0].genus;
-	
-	        $rootScope.jp = res.names.filter(function (text) {
-	            if (text.language.name === 'ja') {
-	                return true;
-	            } else {
-	                return false;
-	            }
-	        })[0].name;
-	
-	        $rootScope.description = res.flavor_text_entries.filter(function (text) {
-	            if (text.language.name === 'en') {
-	                return true;
-	            } else {
-	                return false;
-	            }
-	        })[0].flavor_text;
-	        completed += 1;
-	        if (completed = 2) {
-	            setTimeout(function () {
-	                $rootScope.status = 'READY';
-	            }, 300);
-	            $rootScope.$broadcast('init');
-	        }
-	    });
-	}
-
-/***/ },
-/* 4 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1104,7 +1067,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1117,7 +1080,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = getColors;
 	
-	var _rbg = __webpack_require__(6);
+	var _rbg = __webpack_require__(5);
 	
 	var _rbg2 = _interopRequireDefault(_rbg);
 	
@@ -1152,7 +1115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1166,7 +1129,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1190,7 +1153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1201,6 +1164,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	var recentPokemons = JSON.parse(localStorage.getItem('recents'));
 	
 	exports.recentPokemons = recentPokemons;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.currentPokemon = undefined;
+	
+	var _pokemons = __webpack_require__(2);
+	
+	var _pokemons2 = _interopRequireDefault(_pokemons);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var hash = window.location.hash;
+	var currentPokemon = /#\/?([\w-\d]+)/.exec(hash);
+	if (!currentPokemon) {
+	    exports.currentPokemon = currentPokemon = generateRandPokemon();
+	} else {
+	    if (_pokemons2.default.indexOf(currentPokemon[1]) >= 0) {
+	        exports.currentPokemon = currentPokemon = currentPokemon[1];
+	    } else {
+	        exports.currentPokemon = currentPokemon = generateRandPokemon();
+	    }
+	}
+	
+	console.log(currentPokemon);
+	
+	function generateRandPokemon() {
+	    return _pokemons2.default[Math.floor(0 + Math.random() * 750)];
+	}
+	
+	exports.currentPokemon = currentPokemon;
 
 /***/ },
 /* 9 */
@@ -1226,46 +1226,48 @@ return /******/ (function(modules) { // webpackBootstrap
 	    _classCallCheck(this, mainPokemon);
 	
 	    $scope.$on('init', function () {
-	        $scope.$storage = $localStorage;
-	        var types = $rootScope.currentPokemon.types.map(function (type) {
-	            return type.type.name;
-	        });
-	        $scope.multipliers = (0, _getMultipliers2.default)(types);
-	        var habitat = $rootScope.pokemonSpecie.habitat;
-	        if (habitat) {
-	            habitat = habitat.name;
-	        }
-	        $scope.imageUrl = 'images/pokemons/' + $rootScope.currentPokemon.id + '.svg';
-	        $scope.habitat = habitat ? habitat : 'in your pocket';
-	        $scope.unveil = function () {
-	            $rootScope.loaded = true;
-	            $timeout(function () {
-	                $rootScope.animationsEnded = true;
-	                $rootScope.$apply(function () {
-	                    $rootScope.animationsEnded = true;
-	                });
-	            }, 5000);
-	        };
-	
-	        $scope.getRarity = function (item) {
-	            var mean = 0;
-	            item.version_details.forEach(function (version) {
-	                if (!mean) {
-	                    mean = version.rarity;
-	                }
-	                mean = (mean + version.rarity) / 2;
+	        if ($rootScope.currentPokemon && $rootScope.currentPokemon.types) {
+	            $scope.$storage = $localStorage;
+	            var types = $rootScope.currentPokemon.types.map(function (type) {
+	                return type.type.name;
 	            });
-	            return mean;
-	        };
-	        $scope.getUrlItem = function (name) {
-	            return 'images/items/' + name + '.svg';
-	        };
-	        $scope.getUrlType = function (name) {
-	            return 'images/types/' + name + '.svg';
-	        };
-	        $scope.typeUrls = $rootScope.currentPokemon.types.map(function (type) {
-	            return 'images/types/' + type.type.name + '.svg';
-	        });
+	            $scope.multipliers = (0, _getMultipliers2.default)(types);
+	            var habitat = $rootScope.pokemonSpecie.habitat;
+	            if (habitat) {
+	                habitat = habitat.name;
+	            }
+	            $scope.imageUrl = 'images/pokemons/' + $rootScope.currentPokemon.id + '.svg';
+	            $scope.habitat = habitat ? habitat : 'in your pocket';
+	            $scope.unveil = function () {
+	                $rootScope.loaded = true;
+	                $timeout(function () {
+	                    $rootScope.animationsEnded = true;
+	                    $rootScope.$apply(function () {
+	                        $rootScope.animationsEnded = true;
+	                    });
+	                }, 5000);
+	            };
+	
+	            $scope.getRarity = function (item) {
+	                var mean = 0;
+	                item.version_details.forEach(function (version) {
+	                    if (!mean) {
+	                        mean = version.rarity;
+	                    }
+	                    mean = (mean + version.rarity) / 2;
+	                });
+	                return mean;
+	            };
+	            $scope.getUrlItem = function (name) {
+	                return 'images/items/' + name + '.svg';
+	            };
+	            $scope.getUrlType = function (name) {
+	                return 'images/types/' + name + '.svg';
+	            };
+	            $scope.typeUrls = $rootScope.currentPokemon.types.map(function (type) {
+	                return 'images/types/' + type.type.name + '.svg';
+	            });
+	        }
 	    });
 	};
 	mainPokemon.$inject = ["$scope", "$http", "$rootScope", "$timeout", "$localStorage"];
@@ -1283,7 +1285,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = getMultipliers;
 	
-	var _all_types = __webpack_require__(23);
+	var _all_types = __webpack_require__(11);
 	
 	var _all_types2 = _interopRequireDefault(_all_types);
 	
@@ -1350,418 +1352,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _getMemebers = __webpack_require__(12);
-	
-	var _getMemebers2 = _interopRequireDefault(_getMemebers);
-	
-	var _config = __webpack_require__(13);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var pokemonFamily = function pokemonFamily($scope, $rootScope, $http, $timeout) {
-	    'ngInject';
-	
-	    _classCallCheck(this, pokemonFamily);
-	
-	    $scope.$on('init', function () {
-	        $scope.getImageUrl = function (id) {
-	            return 'images/pokemons/' + id + '.svg';
-	        };
-	        $scope.reloadWith = function (id) {
-	            window.location.hash = '#' + pokemons[id - 1];
-	            window.location.reload(true);
-	        };
-	        var evolutionChainId = /chain\/(\d+)\/$/.exec($rootScope.pokemonSpecie.evolution_chain.url);
-	        if (evolutionChainId && evolutionChainId.length > 0) {
-	            $http.get(_config.config.baseUrl + '/evolution-chain/' + evolutionChainId[1] + '/index.json').success(function (res) {
-	                $scope.family = res;
-	                $scope.members = (0, _getMemebers2.default)(res);
-	            }).error(function (data) {
-	                console.log(data);
-	                Bugsnag.notify("ErrorName", "Something broke!", {
-	                    special_info: {
-	                        pokemon: currentPokemon
-	                    }
-	                });
-	            });
-	        }
-	    });
-	};
-	pokemonFamily.$inject = ["$scope", "$rootScope", "$http", "$timeout"];
-	
-	exports.default = pokemonFamily;
-
-/***/ },
-/* 12 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = getMemebers;
-	function getMemebers(json) {
-	    var blob = JSON.stringify(json);
-	    var myRe = /pokemon-species\/(\d+)\//g;
-	    var currMatch;
-	    var members = [];
-	    while ((currMatch = myRe.exec(blob)) !== null) {
-	        members.push(currMatch[1]);
-	    }
-	    return members.reverse();
-	}
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var config = {};
-	
-	config.baseUrl = 'https://cdn.rawgit.com/Naramsim/ninjask/master/data/api/v2';
-	
-	exports.config = config;
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _pokemons = __webpack_require__(2);
-	
-	var _pokemons2 = _interopRequireDefault(_pokemons);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var Morph = function Morph($scope) {
-		'ngInject';
-	
-		_classCallCheck(this, Morph);
-	
-		$scope.pokemons = _pokemons2.default;
-		$scope.initMorph = function () {
-			initMorph();
-		};
-	};
-	Morph.$inject = ["$scope"];
-	
-	exports.default = Morph;
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _pokemons = __webpack_require__(2);
-	
-	var _pokemons2 = _interopRequireDefault(_pokemons);
-	
-	var _recentPokemons = __webpack_require__(8);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var pokemonSearch = function pokemonSearch($scope) {
-	    'ngInject';
-	
-	    _classCallCheck(this, pokemonSearch);
-	
-	    $scope.$on('init', function () {
-	        $scope.pokemons = _pokemons2.default;
-	        $scope.recents = _recentPokemons.recentPokemons;
-	        $scope.getImageUrl = function (id) {
-	            return 'images/pokemons/' + (_pokemons2.default.indexOf(id) + 1) + '.svg';
-	        };
-	        $scope.saveAndReload = function (pokemon) {
-	            var recents = localStorage.getItem('recents');
-	            if (recents) {
-	                recents = JSON.parse(recents);
-	                recents.unshift(pokemon);
-	                localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)));
-	            } else {
-	                localStorage.setItem('recents', JSON.stringify([pokemon]));
-	            }
-	            window.location.hash = '#' + pokemon;
-	            window.location.reload(true);
-	        };
-	    });
-	};
-	pokemonSearch.$inject = ["$scope"];
-	
-	exports.default = pokemonSearch;
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _config = __webpack_require__(13);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var pokemonAbilities = function pokemonAbilities($scope, $http) {
-		'ngInject';
-	
-		_classCallCheck(this, pokemonAbilities);
-	
-		$scope.$on('init', function () {
-			$scope.getAbility = function (url) {
-				var id = /ability\/(\d+)\/$/.exec(url);
-				if (id && id.length > 0) {
-					var localAbility = localStorage.getItem('a' + id[1]);
-					if (!localAbility) {
-						$http.get(_config.config.baseUrl + '/ability/' + id[1] + '/index.json').success(function (res) {
-							$scope.abilityDescription = res.effect_entries[0].short_effect;
-							localStorage.setItem('a' + id[1], res.effect_entries[0].short_effect);
-						}).error(function (data) {
-							return "Nothing";
-						});
-					} else {
-						$scope.abilityDescription = localAbility;
-					}
-				}
-			};
-		});
-	};
-	pokemonAbilities.$inject = ["$scope", "$http"];
-	
-	exports.default = pokemonAbilities;
-
-/***/ },
-/* 17 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var pokemonMultipliers = function pokemonMultipliers($scope) {
-	    'ngInject';
-	
-	    _classCallCheck(this, pokemonMultipliers);
-	
-	    $scope.$on('init', function () {
-	        var multiplierAttackElement = document.getElementsByClassName('multiplierAttack')[0];
-	        var multiplierDefenseElement = document.getElementsByClassName('multiplierDefense')[0];
-	        angular.element(multiplierDefenseElement).ready(function () {
-	            var highestMultiplierHeight = Math.max(multiplierAttackElement.clientHeight, multiplierDefenseElement.clientHeight);
-	            var css = document.createElement('style');
-	            css.type = 'text/css';
-	            css.innerHTML = '   .pokemonMultipliers { \n                                        height: ' + (highestMultiplierHeight + 32 + 12) + 'px;\n                                            }\n                                    ';
-	            document.body.appendChild(css);
-	        });
-	    });
-	};
-	pokemonMultipliers.$inject = ["$scope"];
-	
-	exports.default = pokemonMultipliers;
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _config = __webpack_require__(13);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var pokemonHeldItems = function pokemonHeldItems($scope, $http) {
-		_classCallCheck(this, pokemonHeldItems);
-	
-		$scope.$on('init', function () {
-			'ngInject';
-	
-			$scope.getHeldItem = function (url) {
-				var id = /item\/(\d+)\/$/.exec(url);
-				if (id && id.length > 0) {
-					var localHeldItem = localStorage.getItem('h' + id[1]);
-					if (!localHeldItem) {
-						$http.get(_config.config.baseUrl + '/item/' + id[1] + '/index.json').success(function (res) {
-							$scope.heldItemDescription = res.effect_entries[0].short_effect;
-							localStorage.setItem('h' + id[1], res.effect_entries[0].short_effect);
-						}).error(function (data) {
-							return "Nothing";
-						});
-					} else {
-						$scope.heldItemDescription = localHeldItem;
-					}
-				}
-			};
-		});
-	};
-	
-	exports.default = pokemonHeldItems;
-
-/***/ },
-/* 19 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = pokemonFilterStartFilter;
-	function pokemonFilterStartFilter() {
-	    return function (arr, searchString) {
-	        if (!searchString) {
-	            return arr.slice(0, 6);
-	        }
-	        if (/^\w+$/.test(searchString)) {
-	            if (arr) {
-	                var result = [];
-	                searchString = searchString.toLowerCase();
-	                arr.forEach(function (item) {
-	                    if (item.indexOf(searchString) === 0) {
-	                        result.push(item);
-	                    }
-	                });
-	                return result.slice(0, 6);
-	            }
-	        }
-	    };
-	}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = multiFilter;
-	function multiFilter() {
-	    return function (arr, searchString) {
-	        var result = {};
-	        angular.forEach(arr, function (value, key) {
-	            if (value === searchString) {
-	                result[key] = value;
-	            }
-	        });
-	        return result;
-	    };
-	}
-
-/***/ },
-/* 21 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = imageonloadDirective;
-	function imageonloadDirective() {
-	    return {
-	        restrict: 'A',
-	        link: function link(scope, element, attrs) {
-	            element.bind('load', function () {
-	                //call the function that was passed
-	                scope.$apply(attrs.imageonload);
-	            });
-	        }
-	    };
-	}
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.default = getInfoFactory;
-	
-	var _config = __webpack_require__(13);
-	
-	var _pokemons = __webpack_require__(2);
-	
-	var _pokemons2 = _interopRequireDefault(_pokemons);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function getInfoFactory($http, $q) {
-	    return {
-	        getPokemon: function getPokemon(currentPokemon) {
-	            var deferred = $q.defer();
-	            $http.get(_config.config.baseUrl + '/pokemon/' + (_pokemons2.default.indexOf(currentPokemon) + 1) + '/index.json').success(function (res) {
-	                deferred.resolve(res);
-	            }).error(function (data) {
-	                console.log(data);
-	                Bugsnag.notify("ErrorName", "Something broke!", {
-	                    special_info: {
-	                        pokemon: currentPokemon
-	                    }
-	                });
-	            });
-	            return deferred.promise;
-	        },
-	        getSpecie: function getSpecie(currentPokemon) {
-	            var deferred = $q.defer();
-	            $http.get(_config.config.baseUrl + '/pokemon-species/' + (_pokemons2.default.indexOf(currentPokemon) + 1) + '/index.json').success(function (res) {
-	                deferred.resolve(res);
-	            }).error(function (data) {
-	                console.log(data);
-	                Bugsnag.notify("ErrorName", "Something broke!", {
-	                    special_info: {
-	                        pokemon: currentPokemon
-	                    }
-	                });
-	            });
-	            return deferred.promise;
-	        }
-	    };
-	}
-
-/***/ },
-/* 23 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2311,7 +1901,323 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 24 */
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _getMemebers = __webpack_require__(13);
+	
+	var _getMemebers2 = _interopRequireDefault(_getMemebers);
+	
+	var _config = __webpack_require__(14);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var pokemonFamily = function pokemonFamily($scope, $rootScope, $http, $timeout) {
+	    'ngInject';
+	
+	    _classCallCheck(this, pokemonFamily);
+	
+	    $scope.$on('init', function () {
+	        $scope.getImageUrl = function (id) {
+	            return 'images/pokemons/' + id + '.svg';
+	        };
+	        $scope.reloadWith = function (id) {
+	            window.location.hash = '#' + pokemons[id - 1];
+	            window.location.reload(true);
+	        };
+	        var evolutionChainId = /chain\/(\d+)\/$/.exec($rootScope.pokemonSpecie.evolution_chain.url);
+	        if (evolutionChainId && evolutionChainId.length > 0) {
+	            $http.get(_config.config.baseUrl + '/evolution-chain/' + evolutionChainId[1] + '/index.json').success(function (res) {
+	                $scope.family = res;
+	                $scope.members = (0, _getMemebers2.default)(res);
+	            }).error(function (data) {
+	                console.log(data);
+	                Bugsnag.notify("ErrorName", "Something broke!", {
+	                    special_info: {
+	                        pokemon: currentPokemon
+	                    }
+	                });
+	            });
+	        }
+	    });
+	};
+	pokemonFamily.$inject = ["$scope", "$rootScope", "$http", "$timeout"];
+	
+	exports.default = pokemonFamily;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = getMemebers;
+	function getMemebers(json) {
+	    var blob = JSON.stringify(json);
+	    var myRe = /pokemon-species\/(\d+)\//g;
+	    var currMatch;
+	    var members = [];
+	    while ((currMatch = myRe.exec(blob)) !== null) {
+	        members.push(currMatch[1]);
+	    }
+	    return members.reverse();
+	}
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var config = {};
+	
+	config.baseUrl = 'https://cdn.rawgit.com/Naramsim/ninjask/master/data/api/v2';
+	
+	exports.config = config;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _pokemons = __webpack_require__(2);
+	
+	var _pokemons2 = _interopRequireDefault(_pokemons);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var Morph = function Morph($scope) {
+		'ngInject';
+	
+		_classCallCheck(this, Morph);
+	
+		$scope.pokemons = _pokemons2.default;
+		$scope.initMorph = function () {
+			initMorph();
+		};
+	};
+	Morph.$inject = ["$scope"];
+	
+	exports.default = Morph;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _pokemons = __webpack_require__(2);
+	
+	var _pokemons2 = _interopRequireDefault(_pokemons);
+	
+	var _recentPokemons = __webpack_require__(7);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var pokemonSearch = function pokemonSearch($scope) {
+	    'ngInject';
+	
+	    _classCallCheck(this, pokemonSearch);
+	
+	    $scope.$on('init', function () {
+	        $scope.pokemons = _pokemons2.default;
+	        $scope.recents = _recentPokemons.recentPokemons;
+	        $scope.getImageUrl = function (id) {
+	            return 'images/pokemons/' + (_pokemons2.default.indexOf(id) + 1) + '.svg';
+	        };
+	        $scope.saveAndReload = function (pokemon) {
+	            var recents = localStorage.getItem('recents');
+	            if (recents) {
+	                recents = JSON.parse(recents);
+	                recents.unshift(pokemon);
+	                localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)));
+	            } else {
+	                localStorage.setItem('recents', JSON.stringify([pokemon]));
+	            }
+	            window.location.hash = '#' + pokemon;
+	            window.location.reload(true);
+	        };
+	    });
+	};
+	pokemonSearch.$inject = ["$scope"];
+	
+	exports.default = pokemonSearch;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _config = __webpack_require__(14);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var pokemonAbilities = function pokemonAbilities($scope, $http) {
+		'ngInject';
+	
+		_classCallCheck(this, pokemonAbilities);
+	
+		$scope.$on('init', function () {
+			$scope.getAbility = function (url) {
+				var id = /ability\/(\d+)\/$/.exec(url);
+				if (id && id.length > 0) {
+					var localAbility = localStorage.getItem('a' + id[1]);
+					if (!localAbility) {
+						$http.get(_config.config.baseUrl + '/ability/' + id[1] + '/index.json').success(function (res) {
+							$scope.abilityDescription = res.effect_entries[0].short_effect;
+							localStorage.setItem('a' + id[1], res.effect_entries[0].short_effect);
+						}).error(function (data) {
+							return "Nothing";
+						});
+					} else {
+						$scope.abilityDescription = localAbility;
+					}
+				}
+			};
+		});
+	};
+	pokemonAbilities.$inject = ["$scope", "$http"];
+	
+	exports.default = pokemonAbilities;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var pokemonMultipliers = function pokemonMultipliers($scope) {
+	    'ngInject';
+	
+	    _classCallCheck(this, pokemonMultipliers);
+	
+	    $scope.$on('init', function () {
+	        var multiplierAttackElement = document.getElementsByClassName('multiplierAttack')[0];
+	        var multiplierDefenseElement = document.getElementsByClassName('multiplierDefense')[0];
+	        angular.element(multiplierDefenseElement).ready(function () {
+	            var highestMultiplierHeight = Math.max(multiplierAttackElement.clientHeight, multiplierDefenseElement.clientHeight);
+	            var css = document.createElement('style');
+	            css.type = 'text/css';
+	            css.innerHTML = '   .pokemonMultipliers { \n                                        height: ' + (highestMultiplierHeight + 32 + 12) + 'px;\n                                            }\n                                    ';
+	            document.body.appendChild(css);
+	        });
+	    });
+	};
+	pokemonMultipliers.$inject = ["$scope"];
+	
+	exports.default = pokemonMultipliers;
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _config = __webpack_require__(14);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var pokemonHeldItems = function pokemonHeldItems($scope, $http) {
+		_classCallCheck(this, pokemonHeldItems);
+	
+		$scope.$on('init', function () {
+			'ngInject';
+	
+			$scope.getHeldItem = function (url) {
+				var id = /item\/(\d+)\/$/.exec(url);
+				if (id && id.length > 0) {
+					var localHeldItem = localStorage.getItem('h' + id[1]);
+					if (!localHeldItem) {
+						$http.get(_config.config.baseUrl + '/item/' + id[1] + '/index.json').success(function (res) {
+							$scope.heldItemDescription = res.effect_entries[0].short_effect;
+							localStorage.setItem('h' + id[1], res.effect_entries[0].short_effect);
+						}).error(function (data) {
+							return "Nothing";
+						});
+					} else {
+						$scope.heldItemDescription = localHeldItem;
+					}
+				}
+			};
+		});
+	};
+	
+	exports.default = pokemonHeldItems;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = pokemonFilterStartFilter;
+	function pokemonFilterStartFilter() {
+	    return function (arr, searchString) {
+	        if (!searchString) {
+	            return arr.slice(0, 6);
+	        }
+	        if (/^\w+$/.test(searchString)) {
+	            if (arr) {
+	                var result = [];
+	                searchString = searchString.toLowerCase();
+	                arr.forEach(function (item) {
+	                    if (item.indexOf(searchString) === 0) {
+	                        result.push(item);
+	                    }
+	                });
+	                return result.slice(0, 6);
+	            }
+	        }
+	    };
+	}
+
+/***/ },
+/* 21 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2342,6 +2248,102 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	            return result.slice(0, 6);
+	        }
+	    };
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = multiFilter;
+	function multiFilter() {
+	    return function (arr, searchString) {
+	        var result = {};
+	        angular.forEach(arr, function (value, key) {
+	            if (value === searchString) {
+	                result[key] = value;
+	            }
+	        });
+	        return result;
+	    };
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = imageonloadDirective;
+	function imageonloadDirective() {
+	    return {
+	        restrict: 'A',
+	        link: function link(scope, element, attrs) {
+	            element.bind('load', function () {
+	                //call the function that was passed
+	                scope.$apply(attrs.imageonload);
+	            });
+	        }
+	    };
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = getInfoFactory;
+	
+	var _config = __webpack_require__(14);
+	
+	var _pokemons = __webpack_require__(2);
+	
+	var _pokemons2 = _interopRequireDefault(_pokemons);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function getInfoFactory($http, $q) {
+	    return {
+	        getPokemon: function getPokemon(currentPokemon) {
+	            var deferred = $q.defer();
+	            $http.get(_config.config.baseUrl + '/pokemon/' + (_pokemons2.default.indexOf(currentPokemon) + 1) + '/index.json').success(function (res) {
+	                deferred.resolve(res);
+	            }).error(function (data) {
+	                console.log(data);
+	                Bugsnag.notify("ErrorName", "Something broke!", {
+	                    special_info: {
+	                        pokemon: currentPokemon
+	                    }
+	                });
+	            });
+	            return deferred.promise;
+	        },
+	        getSpecie: function getSpecie(currentPokemon) {
+	            var deferred = $q.defer();
+	            $http.get(_config.config.baseUrl + '/pokemon-species/' + (_pokemons2.default.indexOf(currentPokemon) + 1) + '/index.json').success(function (res) {
+	                deferred.resolve(res);
+	            }).error(function (data) {
+	                console.log(data);
+	                Bugsnag.notify("ErrorName", "Something broke!", {
+	                    special_info: {
+	                        pokemon: currentPokemon
+	                    }
+	                });
+	            });
+	            return deferred.promise;
 	        }
 	    };
 	}

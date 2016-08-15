@@ -1,32 +1,36 @@
 <!doctype html>
 <html lang="" ng-app="App">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Colosseum</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Pokemons at their maximum level">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel="stylesheet" href="src/styles/main.css">
-    <link rel="stylesheet" href="src/styles/morph.css">
-    <link rel="stylesheet" href="src/styles/loading.css">
-    <link rel="stylesheet" href="src/styles/animations.css">
-    <link rel="stylesheet" href="src/styles/tooltips.css">
-    <link rel="stylesheet" href="src/styles/switch.css">
-    <link rel="stylesheet" href="src/styles/tooltipLoader.css">
-    <link rel="stylesheet" href="src/styles/logo.css">
-    <link rel="stylesheet" media="(max-width: 900px)" href="src/styles/mobile.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
+        <title>Colosseum</title>
 
-    <script data-apikey="a5c9247914387e79f30123dac3f6835c" src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    <script src="index.js"></script>
-    <script src="src/scripts/morph.js"></script>
-    <script src="src/scripts/classie.js"></script>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+        <link rel="manifest" href="./manifest.json">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="src/styles/main.css">
+        <link rel="stylesheet" href="src/styles/morph.css">
+        <link rel="stylesheet" href="src/styles/loading.css">
+        <link rel="stylesheet" href="src/styles/animations.css">
+        <link rel="stylesheet" href="src/styles/tooltips.css">
+        <link rel="stylesheet" href="src/styles/switch.css">
+        <link rel="stylesheet" href="src/styles/tooltipLoader.css">
+        <link rel="stylesheet" href="src/styles/logo.css">
+        <link rel="stylesheet" media="(max-width: 900px)" href="src/styles/mobile.css" />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
+
+        <script data-apikey="a5c9247914387e79f30123dac3f6835c" src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
+        <script src="index.js"></script>
     </head>
   <body class="bgColor">
     <!--[if lt IE 10]>
@@ -205,11 +209,10 @@
             </div>
         </div>
             
-        <script src="src/scripts/classie.js"></script>
-        <script src="src/scripts/morph.js"></script>
-        <div ng-controller="Morph" ng-include="'morph.html'" onload="initMorph()"></div>
+        <script src="src/scripts/defer/classie.js" async defer></script>
+        <script src="src/scripts/defer/morph.js" async defer></script>
+        <div ng-controller="Morph" ng-include="'src/include/morph.html'" onload="initMorph()"></div>
         
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
           (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
           function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
