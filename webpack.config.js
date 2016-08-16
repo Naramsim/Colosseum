@@ -22,7 +22,7 @@ const offlinePluginOptions = {
     ServiceWorker: {
         events: true
     },
-    publicPath: '/dist/',
+    publicPath: '/Colosseum/dist/',
     relativePaths: false
 }
 

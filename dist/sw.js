@@ -1,7 +1,7 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/dist/index.js",
+      "/Colosseum/dist/index.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js",
@@ -11,10 +11,10 @@ var __wpo = {
     "optional": []
   },
   "hashesMap": {
-    "a437c720b735995049e5e0db9ce15468": "/dist/index.js"
+    "7a2b65ecbe99f1c2ce355fb18a79ca4c": "/Colosseum/dist/index.js"
   },
   "strategy": "all",
-  "version": "8/16/2016, 4:52:15 PM",
+  "version": "8/16/2016, 4:58:03 PM",
   "name": "webpack-offline",
   "relativePaths": false
 };
