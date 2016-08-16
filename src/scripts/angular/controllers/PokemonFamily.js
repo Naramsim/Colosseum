@@ -1,5 +1,6 @@
 import getMemebers from '../../helpers/getMemebers.js'
 import { config } from '../../config/config.js'
+import pokemons from '../../../data/pokemons.json'
 
 export default class pokemonFamily {
     constructor($scope, $rootScope, $http, $timeout) { 'ngInject';

@@ -4,7 +4,7 @@
     "description": "Displays Pokemons in a beatiful way",
     "icons": [
         {
-            "src": "images/icons/launcher.png",
+            "src": "images/icons/launcher-48.png",
             "sizes": "48x48",
             "type": "image/png"
         },

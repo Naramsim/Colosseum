@@ -1,7 +1,7 @@
 var __wpo = {
   "assets": {
     "main": [
-      "././dist/index.js",
+      "/dist/index.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js",
@@ -11,12 +11,12 @@ var __wpo = {
     "optional": []
   },
   "hashesMap": {
-    "19c987e5f53f8dad9634c6bd49a5e8d3": "././dist/index.js"
+    "a437c720b735995049e5e0db9ce15468": "/dist/index.js"
   },
   "strategy": "all",
-  "version": "2016-08-15 20:04:47",
+  "version": "8/16/2016, 4:52:15 PM",
   "name": "webpack-offline",
-  "relativePaths": true
+  "relativePaths": false
 };
 
 /******/ (function(modules) { // webpackBootstrap
@@ -55,7 +55,7 @@ var __wpo = {
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "dist/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);

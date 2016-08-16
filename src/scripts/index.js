@@ -1,3 +1,5 @@
+import '../include/index.html'
+
 import '../styles/reset.css'
 import '../styles/animations.css'
 import '../styles/loading.css'

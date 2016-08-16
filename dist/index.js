@@ -44,7 +44,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "dist/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -58,79 +58,81 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	__webpack_require__(1);
 	
-	__webpack_require__(5);
+	__webpack_require__(4);
 	
-	__webpack_require__(7);
+	__webpack_require__(8);
 	
-	__webpack_require__(9);
+	__webpack_require__(10);
 	
-	__webpack_require__(11);
+	__webpack_require__(12);
 	
-	__webpack_require__(13);
+	__webpack_require__(14);
 	
-	__webpack_require__(15);
+	__webpack_require__(16);
 	
-	__webpack_require__(17);
+	__webpack_require__(18);
 	
-	__webpack_require__(19);
+	__webpack_require__(20);
 	
-	__webpack_require__(21);
+	__webpack_require__(22);
 	
-	var _run = __webpack_require__(23);
+	__webpack_require__(24);
+	
+	var _run = __webpack_require__(26);
 	
 	var _run2 = _interopRequireDefault(_run);
 	
-	var _MainPokemon = __webpack_require__(31);
+	var _MainPokemon = __webpack_require__(34);
 	
 	var _MainPokemon2 = _interopRequireDefault(_MainPokemon);
 	
-	var _PokemonFamily = __webpack_require__(34);
+	var _PokemonFamily = __webpack_require__(37);
 	
 	var _PokemonFamily2 = _interopRequireDefault(_PokemonFamily);
 	
-	var _Morph = __webpack_require__(37);
+	var _Morph = __webpack_require__(40);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
-	var _PokemonSearch = __webpack_require__(38);
+	var _PokemonSearch = __webpack_require__(41);
 	
 	var _PokemonSearch2 = _interopRequireDefault(_PokemonSearch);
 	
-	var _PokemonAbilities = __webpack_require__(39);
+	var _PokemonAbilities = __webpack_require__(42);
 	
 	var _PokemonAbilities2 = _interopRequireDefault(_PokemonAbilities);
 	
-	var _PokemonMultipliers = __webpack_require__(40);
+	var _PokemonMultipliers = __webpack_require__(43);
 	
 	var _PokemonMultipliers2 = _interopRequireDefault(_PokemonMultipliers);
 	
-	var _PokemonHeldItems = __webpack_require__(41);
+	var _PokemonHeldItems = __webpack_require__(44);
 	
 	var _PokemonHeldItems2 = _interopRequireDefault(_PokemonHeldItems);
 	
-	var _pokemonFilterStartFilter = __webpack_require__(42);
+	var _pokemonFilterStartFilter = __webpack_require__(45);
 	
 	var _pokemonFilterStartFilter2 = _interopRequireDefault(_pokemonFilterStartFilter);
 	
-	var _pokemonFilter = __webpack_require__(43);
+	var _pokemonFilter = __webpack_require__(46);
 	
 	var _pokemonFilter2 = _interopRequireDefault(_pokemonFilter);
 	
-	var _multiFilter = __webpack_require__(44);
+	var _multiFilter = __webpack_require__(47);
 	
 	var _multiFilter2 = _interopRequireDefault(_multiFilter);
 	
-	var _imageonloadDirective = __webpack_require__(45);
+	var _imageonloadDirective = __webpack_require__(48);
 	
 	var _imageonloadDirective2 = _interopRequireDefault(_imageonloadDirective);
 	
-	var _getInfoFactory = __webpack_require__(46);
+	var _getInfoFactory = __webpack_require__(49);
 	
 	var _getInfoFactory2 = _interopRequireDefault(_getInfoFactory);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var runtime = __webpack_require__(47);
+	var runtime = __webpack_require__(50);
 	
 	runtime.install({
 	  onUpdating: function onUpdating() {
@@ -158,20 +160,38 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = "<html lang=\"\" ng-app=\"App\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"description\" content=\"Pokemons at their maximum level\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0\">\n\n        <title>Colosseum</title>\n\n        <link rel=\"shortcut icon\" href=\"images/favicon.ico\">\n        <link rel=\"apple-touch-icon\" href=\"images/apple-touch-icon.png\">\n\n        <link rel=\"manifest\" href=\"./manifest.json\">\n\n        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>\n        <!-- <link href=\"http://fonts.googleapis.com/earlyaccess/notosansjapanese.css\" rel=\"stylesheet\" type=\"text/css\"> -->\n\n        <script data-apikey=\"a5c9247914387e79f30123dac3f6835c\" src=\"https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js\"></script>\n    </head>\n  <body class=\"bgColor\">\n    <!--[if lt IE 10]>\n        <p class=\"browserupgrade\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>\n    <![endif]-->\n    <div class=\"container\">\n        <div class=\"loadingContainer fadeout\" ng-show=\"!loaded\">\n            <div class=\"loader\">\n                <div class=\"loader-wrapper\">\n                    <div class=\"infiniteLoader\">\n                        <div class=\"roller first\"></div>\n                        <div class=\"roller first\"></div>\n                    </div>\n                    <div id=\"loader2\" class=\"infiniteLoader\">\n                        <div class=\"roller second\"></div>\n                        <div class=\"roller second\"></div>\n                    </div>\n                    <div id=\"loader3\" class=\"infiniteLoader\">\n                        <div class=\"roller third\"></div>\n                        <div class=\"roller third\"></div>\n                    </div>\n                </div>\n                <div class=\"quote\">{{ ::quote }}</div>\n                <div class=\"quoteBy\">\n                    <i>\n                        <div class=\"by inline\">By</div>\n                        <div class=\"author inline\">@{{ ::quoteAuthor }}</div>\n                    </i>\n                </div>\n                <div class=\"status\">{{status}}</div>\n            </div>\n        </div>\n        <div class=\"mainContainer container\" ng-class=\"{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }\" ng-controller=\"MainPokemon\">\n            <div class=\"logo to-bottom-logo delay-3\">\n                <img src=\"" + __webpack_require__(2) + "\" ng-click=\"reloadHome()\">\n            </div>\n            <div class=\"innerContainer\">\n                <div class=\"pokemonImage to-scale delay-1\">\n                    <div class=\"jp thirdyColor\">{{ ::jp}}</div>\n                    <img ng-src=\"{{ ::imageUrl }}\" imageonload=\"unveil()\">\n                </div>\n                <div class=\"pokemonStats\">\n                    <div class=\"pokemonVCard to-left\">\n                        <div class=\"pokemonGenere secondaryColor\">{{ ::genere }}</div>\n                        <div class=\"pokemonName primaryColor borderColor\">{{ ::up(currentPokemon.name) }}</div>\n                        <div class=\"pokemonId\">{{ ::currentPokemon.id }}</div>\n                        <div class=\"pokemonTypesContainer\">\n                            <div class=\"pokemonTypes \">\n                                <ul>\n                                    <li class=\"padded inline\" ng-repeat=\"type in typeUrls\">\n                                        <img class=\"pokemonTypeVc\" ng-src=\"{{ ::type }}\">\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"padded pokemonHabitat primaryColor\">Loves to stay in {{ ::habitat }}s {{ ::happiness }}</div>\n                        </div>\n                    </div>\n                    <div class=\"to-fade\">\n                        <div class=\"pokemonHeight primaryColor verticalPadded\">Height {{ currentPokemon.height/10 }} meters</div>\n                        <div class=\"pokemonWeight primaryColor\">Weight {{ currentPokemon.weight/10 }} kilograms</div>\n                        <div class=\"pokemonBaseStats mediumSize\">\n                            <ul>\n                                <li ng-repeat=\"stat in currentPokemon.stats\" class=\"liStat\">\n                                    <div class=\"inline thirdyColor\">{{ ::up(stat.stat.name) }}</div>\n                                    <div class=\"inline padded\"> - </div>\n                                    <div class=\"inline secondaryColor\">{{ ::stat.base_stat }}</div>\n                                </li>\n                            </ul>\n                        </div>\n                        <div class=\"pokemonDescription primaryColor verticalPadded\">\n                            {{ ::description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"secondaryContainer\">\n                <div class=\"pokemonAbilities to-top delay-1\" ng-controller=\"PokemonAbilities\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Abilities</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"ability in currentPokemon.abilities\" ng-mouseover=\"getAbility(ability.ability.url)\">\n                            <span class=\"tooltip-item\">\n                                {{ ::up(ability.ability.name) }}\n                            </span>\n                            <span class=\"tooltip-content tooltipColor tooltip-onleft\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : abilityDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                <span class=\"tooltip-text\" ng-class=\"{ hidden : !abilityDescription }\">\n                                    {{ abilityDescription }}\n                                </span>\n                            </span>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"pokemonFamily to-top delay-2\" ng-controller=\"PokemonFamily\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Family</div>\n                    <ul>\n                        <li class=\"padded verticalPadded inline\" ng-repeat=\"pokemon in members\">\n                            <img    ng-click=\"reloadWith(pokemon)\" \n                                    title=\"{{ ::getPokemonName(pokemon) }}\" \n                                    class=\"pokemonMember to-top\" \n                                    ng-src=\"{{ ::getImageUrl(pokemon) }}\" \n                                    style=\"transition-delay: {{($index + 4 * 3)/10}}s;\">\n                        </li>\n                    </ul>\n                </div>\n                <div    class=\"pokemonMultipliers to-top delay-3\" \n                        ng-class=\"{ switchMultiplier : $storage.multiplier }\" \n                        ng-controller=\"PokemonMultipliers\">\n                    <div class=\"secondaryColor mediumSize primaryColor pointer inline\">Multipliers</div>\n                    <div class=\"onoffswitch inline\">\n                        <input  type=\"checkbox\" \n                                name=\"onoffswitch\" \n                                class=\"onoffswitch-checkbox\" \n                                id=\"myonoffswitch\" \n                                ng-checked=\"!$storage.multiplier\" \n                                ng-click=\"$storage.multiplier = !$storage.multiplier\">\n                        <label class=\"onoffswitch-label\" for=\"myonoffswitch\">\n                            <span class=\"onoffswitch-inner\"></span>\n                            <span class=\"onoffswitch-switch\"></span>\n                        </label>\n                    </div>\n                    <ul class=\"multiplierAttack\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.attack | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                    <ul class=\"multiplierDefense softHidden\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.defense | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>  \n                </div>\n                <div class=\"pokemonHeldItems to-top delay-4\" ng-controller=\"PokemonHeldItems\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Held Items</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"item in currentPokemon.held_items\" ng-mouseover=\"getHeldItem(item.item.url)\">\n                            <div class=\"centerAligned\">\n                                <span class=\"tooltip-item\">\n                                    <img class=\"middleRow inline\" title=\"{{ ::item.item.name }}\" src=\"{{ ::getUrlItem(item.item.name) }}\">\n                                    <div class=\"padded inline\">\n                                        {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%\n                                    </div>\n                                </span>\n                                <span class=\"tooltip-content tooltipColor tooltip-onright\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : heldItemDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                    <span class=\"tooltip-text\" ng-class=\"{ hidden : !heldItemDescription }\">\n                                        {{ heldItemDescription }}\n                                    </span>\n                                </span>\n                            </div>\n                        </li>\n                        <li class=\"padded verticalPadded thirdyColor\" ng-show=\"!currentPokemon.held_items.length\">None</li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n            \n        <script src=\"src/scripts/defer/classie.js\"></script>\n        <script src=\"src/scripts/defer/morph.js\"></script>\n        <div ng-controller=\"Morph\">" + __webpack_require__(3) + "</div>\n        \n        <script>\n          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=\n          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;\n          e=o.createElement(i);r=o.getElementsByTagName(i)[0];\n          e.src='https://www.google-analytics.com/analytics.js';\n          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));\n          ga('create','UA-XXXXX-X');ga('send','pageview');\n        </script>\n    </div>\n    <!-- build:js scripts/vendor.js -->\n    <!-- bower:js -->\n    <!-- endbower -->\n    <!-- endbuild -->\n    \n    <!-- build:js scripts/main.js -->\n    <!-- <script src=\"index.js\"></script> -->\n    <!-- endbuild -->\n  </body>\n</html>\n";
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg";
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	module.exports = "<div id=\"morphsearch\" class=\"morphsearch\" ng-controller=\"PokemonSearch\">\n    <div class=\"container morphContainer\">\n        <div class=\"searchContainer\">\n            <form class=\"morphsearch-form\">\n                <input class=\"morphsearch-input\" type=\"search\" ng-model=\"searchString\" placeholder=\"Search...\"/>\n                \n            </form>\n            <div class=\"morphsearch-content\">\n                <div class=\"dummy-column\">\n                    <h2>Starting with</h2>\n                    <li class=\"dummy-media-object\" ng-click=\"saveAndReload(pokemon)\" ng-repeat=\"pokemon in pokemons | pokemonFilterStart:searchString\">\n                        <a href=\"\">\n                            <img src=\"{{getImageUrl(pokemon)}}\" alt=\"{{pokemon}}\"/>\n                            <h3 class=\"inline\">{{up(pokemon)}}</h3>\n                            <h1 class=\"inline pokemonSearchId\">{{getPokemonId(pokemon)}}</h1>\n                        </a>\n                    </li>\n                </div>\n                <div class=\"dummy-column\">\n                    <h2>Results</h2>\n                    <li class=\"dummy-media-object\" ng-click=\"saveAndReload(pokemon)\" ng-repeat=\"pokemon in pokemons | pokemonFilter:searchString\">\n                        <a href=\"\">\n                            <img src=\"{{getImageUrl(pokemon)}}\" alt=\"{{pokemon}}\"/>\n                            <h3>{{up(pokemon)}}</h3>\n                            <h1 class=\"inline pokemonSearchId\">{{getPokemonId(pokemon)}}</h1>\n                        </a>\n                    </li>\n                </div>\n                <div class=\"dummy-column\">\n                    <h2>Recent</h2>\n                    <li class=\"dummy-media-object\" ng-click=\"saveAndReload(pokemon)\" ng-repeat=\"pokemon in recents track by $index\">\n                        <a href=\"\">\n                            <img src=\"{{getImageUrl(pokemon)}}\" alt=\"{{pokemon}}\"/>\n                            <h3>{{up(pokemon)}}</h3>\n                            <h1 class=\"inline pokemonSearchId\">{{getPokemonId(pokemon)}}</h1>\n                        </a>\n                    </li>\n                </div>\n            </div><!-- /morphsearch-content -->\n            <div class=\"shortcuts\">\n                <div class=\"padded verticalPadded centerHorizontally\"><kbd>F</kbd>Find a Pokémon</div>\n                <div class=\"padded verticalPadded centerHorizontally\"><kbd>Tab</kbd>Moves between search elements</div>\n                <div class=\"padded verticalPadded centerHorizontally\"><kbd>Esc</kbd>Exit the search</div>\n                <div class=\"padded verticalPadded centerHorizontally\"><kbd>R</kbd>Random Pokémon</div>\n                <div class=\"padded verticalPadded centerHorizontally\"><bold>@</bold>Powered by <a href=\"https://github.com/PokeAPI/pokeapi\">Pokéapi</a></div>\n            </div>\n            <span class=\"morphsearch-close\"></span>\n        </div>\n    </div>\n</div><!-- /morphsearch -->\n<div class=\"overlay\"></div>\n<script type=\"text/javascript\">\n    initMorph();\n</script>";
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(2);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./reset.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./reset.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./reset.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./reset.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -181,10 +201,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 2 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 	
 	
@@ -195,7 +215,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/*
@@ -251,7 +271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 4 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -503,263 +523,183 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(6);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./animations.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./animations.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".fadein,\r\n.fadeout {\r\n  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n}\r\n\r\n.fadein.ng-hide-remove,\r\n.fadeout.ng-hide-add.ng-hide-add-active {\r\n  opacity: 0;\r\n}\r\n\r\n.fadeout.ng-hide-add,\r\n.fadein.ng-hide-remove.ng-hide-remove-active {\r\n  opacity: 1;\r\n}\r\n\r\n.to-left{\r\n\ttransform: translateX(150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-top{\r\n\ttransform: translateY(150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-bottom-logo{\r\n\ttransform: translateY(-150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-fade{\r\n\topacity: 0;\r\n}\r\n\r\n.to-scale{\r\n\ttransform: \tscale(.7);\r\n\topacity: \t0;\r\n}\r\n\r\n.animation .to-fade{\r\n\ttransition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animation .to-left, .animation .to-scale, .animation .to-top, .animation .to-bottom-logo{\r\n\ttransition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animation .to-left{\r\n\ttransition-delay: 1.4s;\r\n}\r\n\r\n\r\n.animation .to-fade{\r\n\ttransition-delay: 1.6s;\r\n}\r\n\r\n.animation .to-fade{\r\n\topacity: 1\r\n}\r\n\r\n.animation .to-left{\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n}\r\n\r\n.animation .to-top{\r\n\topacity: 1;\r\n\ttransform: translateY(0);\r\n}\r\n\r\n.animation .to-bottom-logo{\r\n\topacity: 1;\r\n\ttransform: translateY(0);\r\n}\r\n\r\n.animation .to-scale{\r\n\ttransform: \tscale(1);\r\n\topacity: \t1;\r\n\tanimation: blur 350ms;\r\n}\r\n\r\n.animation .delay-1{\r\n\ttransition-delay: 1.5s;\r\n}\r\n\r\n.animation .delay-2{\r\n\ttransition-delay: 1.6s;\r\n}\r\n\r\n.animation .delay-3{\r\n\ttransition-delay: 1.7s;\r\n}\r\n\r\n.animation .delay-4{\r\n\ttransition-delay: 1.8s;\r\n}\r\n\r\n@keyframes blur {\r\n\t0% { -webkit-filter: blur(0px); }\r\n\t50% { -webkit-filter: blur(1px); }\r\n\t100% { -webkit-filter: blur(0px); }\r\n}\r\n\t\r\n.animationEnded .to-fade{\r\n\ttransition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animationEnded .to-left, .animationEnded .to-scale, .animationEnded .to-top{\r\n\ttransition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animationEnded .to-fade{\r\n\topacity: 1;\r\n}\r\n\r\n.animationEnded .to-left{\r\n\topacity: 1;\r\n\ttransform: translateX(0);\r\n}\r\n\r\n.animationEnded .to-top{\r\n\topacity: 1;\r\n\ttransform: translateY(0);\r\n}\r\n\r\n.animationEnded .to-bottom-logo{\r\n\topacity: 1;\r\n\ttransform: translateY(0);\r\n}\r\n\r\n.animationEnded .to-scale{\r\n\ttransform: \tscale(1);\r\n\topacity: \t1;\r\n}", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(8);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./loading.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./loading.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
-	// imports
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	
-	// module
-	exports.push([module.id, "/*\r\n* Infinite Loader \r\n*\r\n* Author: Jonathan Silva with Naramsim\r\n* Url: http://portfolio.jonathansilva.com.br\r\n*\r\n*/\r\n/* ----- Base ----- */\r\n/* ----- Loader ----- */\r\n.quote {\r\n\tmargin-top: 60px;\r\n\tcolor: #DCDCDC;\r\n\ttext-align: center;\r\n  max-width: 80%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n\r\n.quoteBy {\r\n\tfont-size: 12px;\r\n\ttext-align: center;\r\n}\r\n\r\n.by {\r\n\tcolor: #5A5A5A;\r\n}\r\n\r\n.author {\r\n\tcolor: gray;\r\n}\r\n\r\n.loader-wrapper {\r\n  width: 148px;\r\n  height: 100px;\r\n  position: absolute;\r\n  margin: -50px 0 0 -74px;\r\n  left: 50%;\r\n}\r\n\r\n.infiniteLoader {\r\n  width: 148px;\r\n  height: 100px;\r\n  top: 0;\r\n  left: 0;\r\n  position: absolute;\r\n}\r\n.infiniteLoader:after {\r\n  content: \"\";\r\n  top: auto;\r\n  position: absolute;\r\n  display: block;\r\n  animation: shadow 1.5s infinite linear;\r\n  -moz-animation: shadow 1.5s infinite linear;\r\n  bottom: 0em;\r\n  left: 0;\r\n  height: .25em;\r\n  width: 1em;\r\n  border-radius: 50%;\r\n  background-color: #EAEAEA;\r\n  opacity: 0.3;\r\n}\r\n\r\n.roller,\r\n.roller:last-child {\r\n  opacity: 0;\r\n  width: 70px;\r\n  height: 70px;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  -webkit-animation: rollercoaster 1.5s infinite linear;\r\n  -webkit-transform: rotate(105deg);\r\n  -moz-animation: rollercoaster 1.5s infinite linear;\r\n  -moz-transform: rotate(105deg);\r\n  animation: rollercoaster 1.5s infinite linear;\r\n  transform: rotate(105deg);\r\n}\r\n\r\n.roller:last-child {\r\n  left: auto;\r\n  right: 0;\r\n  -webkit-transform: rotate(-45deg);\r\n  -webkit-animation: rollercoaster2 1.5s infinite linear;\r\n  -moz-transform: rotate(-45deg);\r\n  -moz-animation: rollercoaster2 1.5s infinite linear;\r\n  transform: rotate(-45deg);\r\n  animation: rollercoaster2 1.5s infinite linear;\r\n}\r\n\r\n.roller:before,\r\n.roller:last-child:before {\r\n  display: block;\r\n  width: 15px;\r\n  height: 15px;\r\n}\r\n\r\n.first:before,\r\n.first:last-child:before {\r\n  transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/dive-ball.png\");\r\n}\r\n\r\n.second:before,\r\n.second:last-child:before {\r\n  transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/quick-ball.png\");\r\n}\r\n\r\n.third:before,\r\n.third:last-child:before {\r\n  transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/master-ball.png\");\r\n}\r\n\r\n@-webkit-keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@-webkit-keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n  }\r\n}\r\n@-webkit-keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n/* Moz */\r\n@-moz-keyframes rollercoaster {\r\n  0% {\r\n    -moz-transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -moz-transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -moz-transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -moz-transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -moz-transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -moz-transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -moz-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -moz-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@-moz-keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -moz-transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -moz-transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -moz-transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -moz-transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -moz-transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -moz-transform: rotate(-405deg);\r\n  }\r\n}\r\n@-moz-keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -moz-transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -moz-transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -moz-transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -moz-transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -moz-transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -moz-transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -moz-transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -moz-transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -moz-transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -moz-transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n/* No-prefix */\r\n@keyframes rollercoaster {\r\n  0% {\r\n    transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    transform: rotate(-405deg);\r\n  }\r\n}\r\n@keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n#loader2:after {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n#loader2 .roller {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n\r\n#loader3:after {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n#loader3 .roller {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n", ""]);
-	
-	// exports
-
+	// load the styles
+	var content = __webpack_require__(9);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./animations.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./animations.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	exports = module.exports = __webpack_require__(6)();
+	// imports
 	
-	// load the styles
-	var content = __webpack_require__(10);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./logo.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./logo.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	
+	// module
+	exports.push([module.id, ".fadein,\r\n.fadeout {\r\n  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;\r\n}\r\n\r\n.fadein.ng-hide-remove,\r\n.fadeout.ng-hide-add.ng-hide-add-active {\r\n  opacity: 0;\r\n}\r\n\r\n.fadeout.ng-hide-add,\r\n.fadein.ng-hide-remove.ng-hide-remove-active {\r\n  opacity: 1;\r\n}\r\n\r\n.to-left{\r\n\t-webkit-transform: translateX(150px);\r\n\t        transform: translateX(150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-top{\r\n\t-webkit-transform: translateY(150px);\r\n\t        transform: translateY(150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-bottom-logo{\r\n\t-webkit-transform: translateY(-150px);\r\n\t        transform: translateY(-150px);\r\n\topacity: 0;\r\n}\r\n\r\n.to-fade{\r\n\topacity: 0;\r\n}\r\n\r\n.to-scale{\r\n\t-webkit-transform: \tscale(.7);\r\n\t        transform: \tscale(.7);\r\n\topacity: \t0;\r\n}\r\n\r\n.animation .to-fade{\r\n\t-webkit-transition:0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n\ttransition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animation .to-left, .animation .to-scale, .animation .to-top, .animation .to-bottom-logo{\r\n\t-webkit-transition:0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n\ttransition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animation .to-left{\r\n\t-webkit-transition-delay: 1.4s;\r\n\t        transition-delay: 1.4s;\r\n}\r\n\r\n\r\n.animation .to-fade{\r\n\t-webkit-transition-delay: 1.6s;\r\n\t        transition-delay: 1.6s;\r\n}\r\n\r\n.animation .to-fade{\r\n\topacity: 1\r\n}\r\n\r\n.animation .to-left{\r\n\topacity: 1;\r\n\t-webkit-transform: translateX(0);\r\n\t        transform: translateX(0);\r\n}\r\n\r\n.animation .to-top{\r\n\topacity: 1;\r\n\t-webkit-transform: translateY(0);\r\n\t        transform: translateY(0);\r\n}\r\n\r\n.animation .to-bottom-logo{\r\n\topacity: 1;\r\n\t-webkit-transform: translateY(0);\r\n\t        transform: translateY(0);\r\n}\r\n\r\n.animation .to-scale{\r\n\t-webkit-transform: \tscale(1);\r\n\t        transform: \tscale(1);\r\n\topacity: \t1;\r\n\t-webkit-animation: blur 350ms;\r\n\t        animation: blur 350ms;\r\n}\r\n\r\n.animation .delay-1{\r\n\t-webkit-transition-delay: 1.5s;\r\n\t        transition-delay: 1.5s;\r\n}\r\n\r\n.animation .delay-2{\r\n\t-webkit-transition-delay: 1.6s;\r\n\t        transition-delay: 1.6s;\r\n}\r\n\r\n.animation .delay-3{\r\n\t-webkit-transition-delay: 1.7s;\r\n\t        transition-delay: 1.7s;\r\n}\r\n\r\n.animation .delay-4{\r\n\t-webkit-transition-delay: 1.8s;\r\n\t        transition-delay: 1.8s;\r\n}\r\n\r\n@-webkit-keyframes blur {\r\n\t0% { -webkit-filter: blur(0px); }\r\n\t50% { -webkit-filter: blur(1px); }\r\n\t100% { -webkit-filter: blur(0px); }\r\n}\r\n\r\n@keyframes blur {\r\n\t0% { -webkit-filter: blur(0px); }\r\n\t50% { -webkit-filter: blur(1px); }\r\n\t100% { -webkit-filter: blur(0px); }\r\n}\r\n\t\r\n.animationEnded .to-fade{\r\n\t-webkit-transition:0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n\ttransition: 0.5s opacity cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animationEnded .to-left, .animationEnded .to-scale, .animationEnded .to-top{\r\n\t-webkit-transition:0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n\ttransition: 0.3s cubic-bezier(0.65, 0.18, 0.41, 1.34);\r\n}\r\n\r\n.animationEnded .to-fade{\r\n\topacity: 1;\r\n}\r\n\r\n.animationEnded .to-left{\r\n\topacity: 1;\r\n\t-webkit-transform: translateX(0);\r\n\t        transform: translateX(0);\r\n}\r\n\r\n.animationEnded .to-top{\r\n\topacity: 1;\r\n\t-webkit-transform: translateY(0);\r\n\t        transform: translateY(0);\r\n}\r\n\r\n.animationEnded .to-bottom-logo{\r\n\topacity: 1;\r\n\t-webkit-transform: translateY(0);\r\n\t        transform: translateY(0);\r\n}\r\n\r\n.animationEnded .to-scale{\r\n\t-webkit-transform: \tscale(1);\r\n\t        transform: \tscale(1);\r\n\topacity: \t1;\r\n}", ""]);
+	
+	// exports
+
 
 /***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
-	// imports
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	
-	// module
-	exports.push([module.id, ".logo:hover{\r\n  animation: rattle linear 0.3s;\r\n  animation-iteration-count: 1;\r\n  transform-origin: 50% 50%;\r\n  -webkit-animation: rattle linear 0.3s;\r\n  -webkit-animation-iteration-count: 1;\r\n  -webkit-transform-origin: 50% 50%;\r\n  -moz-animation: rattle linear 0.3s;\r\n  -moz-animation-iteration-count: 1;\r\n  -moz-transform-origin: 50% 50%;\r\n  -o-animation: rattle linear 0.3s;\r\n  -o-animation-iteration-count: 1;\r\n  -o-transform-origin: 50% 50%;\r\n  -ms-animation: rattle linear 0.3s;\r\n  -ms-animation-iteration-count: 1;\r\n  -ms-transform-origin: 50% 50%;\r\n}\r\n\r\n@keyframes rattle{\r\n  0% {\r\n    transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}\r\n\r\n@-moz-keyframes rattle{\r\n  0% {\r\n    -moz-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -moz-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -moz-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -moz-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -moz-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -moz-transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -moz-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}\r\n\r\n@-webkit-keyframes rattle {\r\n  0% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -webkit-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -webkit-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -webkit-transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}\r\n\r\n@-o-keyframes rattle {\r\n  0% {\r\n    -o-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -o-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -o-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -o-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -o-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -o-transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -o-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}\r\n\r\n@-ms-keyframes rattle {\r\n  0% {\r\n    -ms-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -ms-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -ms-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -ms-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -ms-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -ms-transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -ms-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}", ""]);
-	
-	// exports
-
+	// load the styles
+	var content = __webpack_require__(11);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./loading.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./loading.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	exports = module.exports = __webpack_require__(6)();
+	// imports
 	
-	// load the styles
-	var content = __webpack_require__(12);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./main.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./main.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	
+	// module
+	exports.push([module.id, "/*\r\n* Infinite Loader \r\n*\r\n* Author: Jonathan Silva with Naramsim\r\n* Url: http://portfolio.jonathansilva.com.br\r\n*\r\n*/\r\n/* ----- Base ----- */\r\n/* ----- Loader ----- */\r\n.quote {\r\n\tmargin-top: 60px;\r\n\tcolor: #DCDCDC;\r\n\ttext-align: center;\r\n  max-width: 80%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n\r\n.quoteBy {\r\n\tfont-size: 12px;\r\n\ttext-align: center;\r\n}\r\n\r\n.by {\r\n\tcolor: #5A5A5A;\r\n}\r\n\r\n.author {\r\n\tcolor: gray;\r\n}\r\n\r\n.loader-wrapper {\r\n  width: 148px;\r\n  height: 100px;\r\n  position: absolute;\r\n  margin: -50px 0 0 -74px;\r\n  left: 50%;\r\n}\r\n\r\n.infiniteLoader {\r\n  width: 148px;\r\n  height: 100px;\r\n  top: 0;\r\n  left: 0;\r\n  position: absolute;\r\n}\r\n.infiniteLoader:after {\r\n  content: \"\";\r\n  top: auto;\r\n  position: absolute;\r\n  display: block;\r\n  -webkit-animation: shadow 1.5s infinite linear;\r\n          animation: shadow 1.5s infinite linear;\r\n  -moz-animation: shadow 1.5s infinite linear;\r\n  bottom: 0em;\r\n  left: 0;\r\n  height: .25em;\r\n  width: 1em;\r\n  border-radius: 50%;\r\n  background-color: #EAEAEA;\r\n  opacity: 0.3;\r\n}\r\n\r\n.roller,\r\n.roller:last-child {\r\n  opacity: 0;\r\n  width: 70px;\r\n  height: 70px;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  -webkit-animation: rollercoaster 1.5s infinite linear;\r\n  -webkit-transform: rotate(105deg);\r\n  -moz-animation: rollercoaster 1.5s infinite linear;\r\n  -moz-transform: rotate(105deg);\r\n  animation: rollercoaster 1.5s infinite linear;\r\n  transform: rotate(105deg);\r\n}\r\n\r\n.roller:last-child {\r\n  left: auto;\r\n  right: 0;\r\n  -webkit-transform: rotate(-45deg);\r\n  -webkit-animation: rollercoaster2 1.5s infinite linear;\r\n  -moz-transform: rotate(-45deg);\r\n  -moz-animation: rollercoaster2 1.5s infinite linear;\r\n  transform: rotate(-45deg);\r\n  animation: rollercoaster2 1.5s infinite linear;\r\n}\r\n\r\n.roller:before,\r\n.roller:last-child:before {\r\n  display: block;\r\n  width: 15px;\r\n  height: 15px;\r\n}\r\n\r\n.first:before,\r\n.first:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/dive-ball.png\");\r\n}\r\n\r\n.second:before,\r\n.second:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/quick-ball.png\");\r\n}\r\n\r\n.third:before,\r\n.third:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/master-ball.png\");\r\n}\r\n\r\n@-webkit-keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@-webkit-keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n  }\r\n}\r\n@-webkit-keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n/* Moz */\r\n/* No-prefix */\r\n@keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n            transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n            transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n            transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n            transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n            transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n            transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n            transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n            transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n            transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n            transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n            transform: rotate(-405deg);\r\n  }\r\n}\r\n@keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n            transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n            transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n            transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n            transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n            transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n            transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n            transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n            transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n            transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n            transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n#loader2:after {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n#loader2 .roller {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n\r\n#loader3:after {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n#loader3 .roller {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n", ""]);
+	
+	// exports
+
 
 /***/ },
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
-	// imports
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	
-	// module
-	exports.push([module.id, "*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n\tbackground-color: \ttransparent;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n\twidth: 8px;\r\n\tbackground-color: \ttransparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n\tbackground-color: \t#555;\r\n\tborder-radius: \t\t4px;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\tflex-grow: 1;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-around;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: space-around;\r\n\talign-items: center;\r\n\talign-content: center;\r\n\tflex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\tflex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: flex;\r\n    justify-content: center;\r\n    align-content: center;\r\n    align-items: center;\r\n    flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}", ""]);
-	
-	// exports
-
+	// load the styles
+	var content = __webpack_require__(13);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./logo.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./logo.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
+	exports = module.exports = __webpack_require__(6)();
+	// imports
 	
-	// load the styles
-	var content = __webpack_require__(14);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./morph.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./morph.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
+	
+	// module
+	exports.push([module.id, ".logo:hover{\r\n  animation: rattle linear 0.3s;\r\n  animation-iteration-count: 1;\r\n  transform-origin: 50% 50%;\r\n  -webkit-animation: rattle linear 0.3s;\r\n  -webkit-animation-iteration-count: 1;\r\n  -webkit-transform-origin: 50% 50%;\r\n  -moz-animation: rattle linear 0.3s;\r\n  -moz-animation-iteration-count: 1;\r\n  -moz-transform-origin: 50% 50%;\r\n  -o-animation: rattle linear 0.3s;\r\n  -o-animation-iteration-count: 1;\r\n  -o-transform-origin: 50% 50%;\r\n  -ms-animation: rattle linear 0.3s;\r\n  -ms-animation-iteration-count: 1;\r\n  -ms-transform-origin: 50% 50%;\r\n}\r\n\r\n@keyframes rattle{\r\n  0% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n            transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -webkit-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n            transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n            transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -webkit-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n            transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n            transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -webkit-transform:  translate(3px,0px)  rotate(4deg) ;\r\n            transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n            transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}\r\n\r\n@-webkit-keyframes rattle {\r\n  0% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  24% {\r\n    -webkit-transform:  translate(2px,-1px)  rotate(10deg) ;\r\n  }\r\n  50% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  71% {\r\n    -webkit-transform:  translate(-12px,0px)  rotate(-29deg) ;\r\n  }\r\n  93% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n  97% {\r\n    -webkit-transform:  translate(3px,0px)  rotate(4deg) ;\r\n  }\r\n  100% {\r\n    -webkit-transform:  translate(0px,0px)  rotate(0deg) ;\r\n  }\r\n}", ""]);
+	
+	// exports
+
 
 /***/ },
 /* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
-	// imports
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
-	
-	// module
-	exports.push([module.id, "/* Codrops */\r\n\r\nhtml, body {\r\n\theight: 100%;\r\n}\r\n\r\nbody {\r\n\toverflow-x: hidden;\r\n\toverflow-y: scroll;\r\n}\r\n\r\n.morphsearch {\r\n\tborder-radius: 23px;\r\n\twidth: 200px;\r\n\tmin-height: 40px;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tz-index: 10000;\r\n\ttop: 50px;\r\n\tright: 50px;\r\n\t-webkit-transform-origin: 100% 0;\r\n\ttransform-origin: 100% 0;\r\n\t-webkit-transition-property: min-height, width, top, right;\r\n\ttransition-property: min-height, width, top, right;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open {\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n\ttop: 0px;\r\n\tright: 0px;\r\n}\r\n\r\n.morphsearch-form {\r\n\twidth: 100%;\r\n\theight: 40px;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\t-webkit-transition-property: width, height, -webkit-transform;\r\n\ttransition-property: width, height, transform;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-form {\r\n\twidth: 80%;\r\n\theight: 160px;\r\n\t-webkit-transform: translate3d(0,3em,0);\r\n\ttransform: translate3d(0,3em,0);\r\n}\r\n\r\n.morphsearch-input {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tpadding: 0 10% 0 10px;\r\n\tfont-weight: 700;\r\n\tborder: none;\r\n\tbackground: transparent;\r\n\tfont-size: 0.8em;\r\n\tcolor: #ec5a62;\r\n\t-webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n\ttransition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch-input::-ms-clear { /* remove cross in IE */\r\n    display: none;\r\n}\r\n\r\n.morphsearch.hideInput .morphsearch-input {\r\n\tcolor: transparent;\r\n\t-webkit-transition: color 0.3s;\r\n\ttransition: color 0.3s;\r\n}\r\n\r\n.morphsearch.open .morphsearch-input {\r\n\tfont-size: 7em;\r\n}\r\n\r\n/* placeholder */\r\n.morphsearch-input::-webkit-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input::-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-ms-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n/* hide placeholder when active in Chrome */\r\n.gn-search:focus::-webkit-input-placeholder {\r\n\tcolor: transparent;\r\n}\r\n\r\ninput[type=\"search\"] { /* reset normalize */\r\n\t-webkit-box-sizing: border-box; \r\n\tbox-sizing: border-box;\t\r\n}\r\n\r\n.morphsearch-input:focus,\r\n.morphsearch-submit:focus {\r\n\toutline: none;\r\n}\r\n\r\n.morphsearch-close {\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\tposition: absolute;\r\n\tright: 1em;\r\n\ttop: 1em;\r\n\toverflow: hidden;\r\n\ttext-indent: 100%;\r\n\tcursor: pointer;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\t-webkit-transform: scale3d(0,0,1);\r\n\ttransform: scale3d(0,0,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-close {\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n\t-webkit-transform: scale3d(1,1,1);\r\n\ttransform: scale3d(1,1,1);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch-close::before,\r\n.morphsearch-close::after {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\twidth: 2px;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 50%;\r\n\tborder-radius: 3px;\r\n\topacity: 0.2;\r\n\tbackground: #000;\r\n}\r\n\r\n.morphsearch-close:hover.morphsearch-close::before,\r\n.morphsearch-close:hover.morphsearch-close::after {\r\n\topacity: 1;\r\n}\r\n\r\n.morphsearch-close::before {\r\n\t-webkit-transform: rotate(45deg);\r\n\ttransform: rotate(45deg);\r\n}\r\n\r\n.morphsearch-close::after {\r\n\t-webkit-transform: rotate(-45deg);\r\n\ttransform: rotate(-45deg);\r\n}\r\n\r\n.morphsearch-content {\r\n\tcolor: #333;\r\n\tmargin-top: 4.5em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n}\r\n\r\n.shortcuts {\r\n\tcolor: #333;\r\n\tmargin-top: 44em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\tdisplay: flex;\r\n\tflex-direction: row;\r\n\tjustify-content: flex-start;\r\n\tflex-wrap: wrap;\r\n\tline-height: 16px;\r\n}\r\n\r\n.shortcuts bold {\r\n\tfont-size: 15px;\r\n}\r\n\r\n.shortcuts a {\r\n\tcolor: #dc3f3f;\r\n}\r\n\r\n.shortcuts a:hover {\r\n\tcolor: #ff4343;\r\n}\r\n\r\n.morphsearch.open .morphsearch-content {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.morphsearch.open .shortcuts {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.dummy-column {\r\n\twidth: 30%;\r\n\tpadding: 0 0 6em;\r\n\tfloat: left;\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,100px,0);\r\n\ttransform: translateY(100px);\r\n\t-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;\r\n\ttransition: transform 0.5s, opacity 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:first-child {\r\n\t-webkit-transition-delay: 0.4s;\r\n\ttransition-delay: 0.4s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(2) {\r\n\t-webkit-transition-delay: 0.45s;\r\n\ttransition-delay: 0.45s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(3) {\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column {\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}\r\n\r\n.dummy-column:nth-child(2) {\r\n\tmargin: 0 5%;\r\n}\r\n\r\n.dummy-column h2 {\r\n\tfont-size: 1em;\r\n\tletter-spacing: 1px;\r\n\ttext-transform: uppercase;\r\n\tfont-weight: 800;\r\n\tcolor: #c2c2c2;\r\n\tpadding: 0.5em 0;\r\n}\r\n\r\n.round {\r\n\tborder-radius: 50%;\r\n}\r\n\r\n.dummy-media-object {\r\n\tdisplay: block;\r\n\tmargin: 0.3em 0;\r\n\tcursor: pointer;\r\n\tborder-radius: 5px;\r\n\tbackground: rgba(118,117,128,0.05);\r\n}\r\n\r\n.dummy-media-object > a {\r\n\tpadding: 0.75em;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tdisplay: block;\r\n}\r\n\r\n.dummy-media-object:hover,\r\n.dummy-media-object:focus {\r\n\tbackground: rgba(118,117,128,0.1);\r\n}\r\n\r\n.dummy-media-object img {\r\n\tdisplay: inline-block;\r\n\twidth: 50px;\t\r\n\theight: 50px;\r\n\tmargin: 0 10px 0 0;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.dummy-media-object h3 {\r\n\tvertical-align: middle;\r\n\tfont-size: 0.85em;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tmargin: 0 0 0 0;\r\n\tcolor: rgba(99, 99, 99, 0.7);\r\n}\r\n\r\n.dummy-media-object:hover h3 {\r\n\tcolor: rgba(236,90,98,1);\r\n}\r\n\r\n/* Overlay */\r\n.overlay {\r\n\tposition: fixed;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tbackground: rgba(0,0,0,0.5);\r\n\topacity: 0;\r\n\tpointer-events: none;\r\n\t-webkit-transition: opacity 0.5s;\r\n\ttransition: opacity 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open ~ .overlay {\r\n\topacity: 1;\r\n}\r\n\r\nkbd {\r\n    -moz-border-radius:3px;\r\n    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    -webkit-border-radius:3px;\r\n    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    background-color:#f7f7f7;\r\n    border:1px solid #ccc;\r\n    border-radius:3px;\r\n    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    color:#333;\r\n    display:inline-block;\r\n    font-family:Arial,Helvetica,sans-serif;\r\n    font-size:11px;\r\n    line-height:1.4;\r\n    margin:0 .1em;\r\n    margin-right: 5px;\r\n    padding:.1em .6em;\r\n    text-shadow:0 1px 0 #fff;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n\t.morphsearch-input {\r\n\t\tpadding: 0 25% 0 10px;\r\n\t}\r\n\t.morphsearch.open .morphsearch-input {\r\n\t\tfont-size: 2em;\r\n\t}\r\n\t.dummy-column {\r\n\t\tfloat: none;\r\n\t\twidth: auto;\r\n\t\tpadding: 0 0 2em;\r\n\t}\r\n\t.dummy-column:nth-child(2) {\r\n\t\tmargin: 0;\r\n\t}\r\n\t.morphsearch.open .morphsearch-submit {\r\n\t\t-webkit-transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t\ttransform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t}\r\n\t.shortcuts {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.morphsearch {\r\n\t\twidth: 60%;\r\n\t\ttop: 1%;\r\n\t\tright: 10%;\r\n\t}\r\n}\r\n", ""]);
-	
-	// exports
-
+	// load the styles
+	var content = __webpack_require__(15);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./main.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./main.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(16);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./switch.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./switch.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".onoffswitch {\r\n    position: relative; width: 108px;\r\n    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;\r\n    vertical-align: sub;\r\n    margin-left: 10px;\r\n}\r\n.onoffswitch-checkbox {\r\n    display: none;\r\n}\r\n.onoffswitch-label {\r\n    display: block; overflow: hidden; cursor: pointer;\r\n    border-radius: 50px;\r\n}\r\n.onoffswitch-inner {\r\n    display: block; width: 200%; margin-left: -100%;\r\n    transition: margin 0.3s ease-in 0s;\r\n}\r\n.onoffswitch-inner:before, .onoffswitch-inner:after {\r\n    display: block; float: left; width: 50%; height: 27px; padding: 0; line-height: 27px;\r\n    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;\r\n    box-sizing: border-box;\r\n}\r\n.onoffswitch-inner:before {\r\n    content: \"Attack\";\r\n    padding-left: 10px;\r\n    text-align: left;\r\n}\r\n.onoffswitch-inner:after {\r\n    content: \"Defense\";\r\n    padding-right: 10px;\r\n    text-align: right;\r\n}\r\n.onoffswitch-switch {\r\n    display: block; \r\n    width: 31px; \r\n    height: 31px; \r\n    margin: 0px;\r\n    position: absolute; top: 0; bottom: 0;\r\n    right: 77px;\r\n    border-radius: 50px;\r\n    transition: all 0.3s ease-in 0s; \r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {\r\n    margin-left: 0;\r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {\r\n    right: 0px; \r\n}", ""]);
+	exports.push([module.id, "*, *:after, *:before { box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n\tbackground-color: \ttransparent;\r\n}\r\n\r\n::-webkit-scrollbar {\r\n\twidth: 8px;\r\n\tbackground-color: \ttransparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n\tbackground-color: \t#555;\r\n\tborder-radius: \t\t4px;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\t-ms-flex-line-pack: center;\r\n\t    align-content: center;\r\n\t-webkit-box-flex: 5;\r\n\t    -ms-flex-positive: 5;\r\n\t        flex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: -webkit-inline-box;\r\n\tdisplay: -ms-inline-flexbox;\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\t-ms-flex-preferred-size: 350px;\r\n\t    flex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(17);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltipLoader.css");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./morph.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./morph.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -769,10 +709,90 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/* Codrops */\r\n\r\nhtml, body {\r\n\theight: 100%;\r\n}\r\n\r\nbody {\r\n\toverflow-x: hidden;\r\n\toverflow-y: scroll;\r\n}\r\n\r\n.morphsearch {\r\n\tborder-radius: 23px;\r\n\twidth: 200px;\r\n\tmin-height: 40px;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tz-index: 10000;\r\n\ttop: 50px;\r\n\tright: 50px;\r\n\t-webkit-transform-origin: 100% 0;\r\n\ttransform-origin: 100% 0;\r\n\t-webkit-transition-property: min-height, width, top, right;\r\n\ttransition-property: min-height, width, top, right;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open {\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n\ttop: 0px;\r\n\tright: 0px;\r\n}\r\n\r\n.morphsearch-form {\r\n\twidth: 100%;\r\n\theight: 40px;\r\n\tmargin: 0 auto;\r\n\tposition: relative;\r\n\t-webkit-transition-property: width, height, -webkit-transform;\r\n\ttransition-property: width, height, -webkit-transform;\r\n\ttransition-property: width, height, transform;\r\n\ttransition-property: width, height, transform, -webkit-transform;\r\n\t-webkit-transition-duration: 0.5s;\r\n\ttransition-duration: 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-form {\r\n\twidth: 80%;\r\n\theight: 160px;\r\n\t-webkit-transform: translate3d(0,3em,0);\r\n\ttransform: translate3d(0,3em,0);\r\n}\r\n\r\n.morphsearch-input {\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tpadding: 0 10% 0 10px;\r\n\tfont-weight: 700;\r\n\tborder: none;\r\n\tbackground: transparent;\r\n\tfont-size: 0.8em;\r\n\tcolor: #ec5a62;\r\n\t-webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n\ttransition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch-input::-ms-clear { /* remove cross in IE */\r\n    display: none;\r\n}\r\n\r\n.morphsearch.hideInput .morphsearch-input {\r\n\tcolor: transparent;\r\n\t-webkit-transition: color 0.3s;\r\n\ttransition: color 0.3s;\r\n}\r\n\r\n.morphsearch.open .morphsearch-input {\r\n\tfont-size: 7em;\r\n}\r\n\r\n/* placeholder */\r\n.morphsearch-input::-webkit-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input::-moz-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n.morphsearch-input:-ms-input-placeholder {\r\n\tcolor: #c2c2c2;\r\n}\r\n\r\n/* hide placeholder when active in Chrome */\r\n.gn-search:focus::-webkit-input-placeholder {\r\n\tcolor: transparent;\r\n}\r\n\r\ninput[type=\"search\"] { /* reset normalize */ \r\n\tbox-sizing: border-box;\t\r\n}\r\n\r\n.morphsearch-input:focus,\r\n.morphsearch-submit:focus {\r\n\toutline: none;\r\n}\r\n\r\n.morphsearch-close {\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\tposition: absolute;\r\n\tright: 1em;\r\n\ttop: 1em;\r\n\toverflow: hidden;\r\n\ttext-indent: 100%;\r\n\tcursor: pointer;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\t-webkit-transform: scale3d(0,0,1);\r\n\ttransform: scale3d(0,0,1);\r\n}\r\n\r\n.morphsearch.open .morphsearch-close {\r\n\topacity: 1;\r\n\tpointer-events: auto;\r\n\t-webkit-transform: scale3d(1,1,1);\r\n\ttransform: scale3d(1,1,1);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch-close::before,\r\n.morphsearch-close::after {\r\n\tcontent: '';\r\n\tposition: absolute;\r\n\twidth: 2px;\r\n\theight: 100%;\r\n\ttop: 0;\r\n\tleft: 50%;\r\n\tborder-radius: 3px;\r\n\topacity: 0.2;\r\n\tbackground: #000;\r\n}\r\n\r\n.morphsearch-close:hover.morphsearch-close::before,\r\n.morphsearch-close:hover.morphsearch-close::after {\r\n\topacity: 1;\r\n}\r\n\r\n.morphsearch-close::before {\r\n\t-webkit-transform: rotate(45deg);\r\n\ttransform: rotate(45deg);\r\n}\r\n\r\n.morphsearch-close::after {\r\n\t-webkit-transform: rotate(-45deg);\r\n\ttransform: rotate(-45deg);\r\n}\r\n\r\n.morphsearch-content {\r\n\tcolor: #333;\r\n\tmargin-top: 4.5em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n}\r\n\r\n.shortcuts {\r\n\tcolor: #333;\r\n\tmargin-top: 44em;\r\n\twidth: 100%;\r\n\theight: 0;\r\n\toverflow: hidden;\r\n\tpadding: 0 10.5%;\r\n\tbackground: #f1f1f1;\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\topacity: 0;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n\t-ms-flex-wrap: wrap;\r\n\t    flex-wrap: wrap;\r\n\tline-height: 16px;\r\n}\r\n\r\n.shortcuts bold {\r\n\tfont-size: 15px;\r\n}\r\n\r\n.shortcuts a {\r\n\tcolor: #dc3f3f;\r\n}\r\n\r\n.shortcuts a:hover {\r\n\tcolor: #ff4343;\r\n}\r\n\r\n.morphsearch.open .morphsearch-content {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.morphsearch.open .shortcuts {\r\n\topacity: 1;\r\n\theight: auto;\r\n\toverflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */\r\n\tpointer-events: auto;\r\n\t-webkit-transition: opacity 0.3s 0.5s;\r\n\ttransition: opacity 0.3s 0.5s;\r\n}\r\n\r\n.dummy-column {\r\n\twidth: 30%;\r\n\tpadding: 0 0 6em;\r\n\tfloat: left;\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,100px,0);\r\n\ttransform: translateY(100px);\r\n\t-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;\r\n\t-webkit-transition: opacity 0.5s, -webkit-transform 0.5s;\r\n\ttransition: opacity 0.5s, -webkit-transform 0.5s;\r\n\ttransition: transform 0.5s, opacity 0.5s;\r\n\ttransition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:first-child {\r\n\t-webkit-transition-delay: 0.4s;\r\n\ttransition-delay: 0.4s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(2) {\r\n\t-webkit-transition-delay: 0.45s;\r\n\ttransition-delay: 0.45s;\r\n}\r\n\r\n.morphsearch.open .dummy-column:nth-child(3) {\r\n\t-webkit-transition-delay: 0.5s;\r\n\ttransition-delay: 0.5s;\r\n}\r\n\r\n.morphsearch.open .dummy-column {\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}\r\n\r\n.dummy-column:nth-child(2) {\r\n\tmargin: 0 5%;\r\n}\r\n\r\n.dummy-column h2 {\r\n\tfont-size: 1em;\r\n\tletter-spacing: 1px;\r\n\ttext-transform: uppercase;\r\n\tfont-weight: 800;\r\n\tcolor: #c2c2c2;\r\n\tpadding: 0.5em 0;\r\n}\r\n\r\n.round {\r\n\tborder-radius: 50%;\r\n}\r\n\r\n.dummy-media-object {\r\n\tdisplay: block;\r\n\tmargin: 0.3em 0;\r\n\tcursor: pointer;\r\n\tborder-radius: 5px;\r\n\tbackground: rgba(118,117,128,0.05);\r\n}\r\n\r\n.dummy-media-object > a {\r\n\tpadding: 0.75em;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tdisplay: block;\r\n}\r\n\r\n.dummy-media-object:hover,\r\n.dummy-media-object:focus {\r\n\tbackground: rgba(118,117,128,0.1);\r\n}\r\n\r\n.dummy-media-object img {\r\n\tdisplay: inline-block;\r\n\twidth: 50px;\t\r\n\theight: 50px;\r\n\tmargin: 0 10px 0 0;\r\n\tvertical-align: middle;\r\n}\r\n\r\n.dummy-media-object h3 {\r\n\tvertical-align: middle;\r\n\tfont-size: 0.85em;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\tmargin: 0 0 0 0;\r\n\tcolor: rgba(99, 99, 99, 0.7);\r\n}\r\n\r\n.dummy-media-object:hover h3 {\r\n\tcolor: rgba(236,90,98,1);\r\n}\r\n\r\n/* Overlay */\r\n.overlay {\r\n\tposition: fixed;\r\n\ttop: 0;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 100%;\r\n\tbackground: rgba(0,0,0,0.5);\r\n\topacity: 0;\r\n\tpointer-events: none;\r\n\t-webkit-transition: opacity 0.5s;\r\n\ttransition: opacity 0.5s;\r\n\t-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n\ttransition-timing-function: cubic-bezier(0.7,0,0.3,1);\r\n}\r\n\r\n.morphsearch.open ~ .overlay {\r\n\topacity: 1;\r\n}\r\n\r\nkbd {\r\n    -moz-border-radius:3px;\r\n    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    -webkit-border-radius:3px;\r\n    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    background-color:#f7f7f7;\r\n    border:1px solid #ccc;\r\n    border-radius:3px;\r\n    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;\r\n    color:#333;\r\n    display:inline-block;\r\n    font-family:Arial,Helvetica,sans-serif;\r\n    font-size:11px;\r\n    line-height:1.4;\r\n    margin:0 .1em;\r\n    margin-right: 5px;\r\n    padding:.1em .6em;\r\n    text-shadow:0 1px 0 #fff;\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n\t.morphsearch-input {\r\n\t\tpadding: 0 25% 0 10px;\r\n\t}\r\n\t.morphsearch.open .morphsearch-input {\r\n\t\tfont-size: 2em;\r\n\t}\r\n\t.dummy-column {\r\n\t\tfloat: none;\r\n\t\twidth: auto;\r\n\t\tpadding: 0 0 2em;\r\n\t}\r\n\t.dummy-column:nth-child(2) {\r\n\t\tmargin: 0;\r\n\t}\r\n\t.morphsearch.open .morphsearch-submit {\r\n\t\t-webkit-transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t\ttransform: translate3d(0,-50%,0) scale3d(0.5,0.5,1);\r\n\t}\r\n\t.shortcuts {\r\n\t\tdisplay: none;\r\n\t}\r\n\t.morphsearch {\r\n\t\twidth: 60%;\r\n\t\ttop: 1%;\r\n\t\tright: 10%;\r\n\t}\r\n}\r\n", ""]);
+	
+	// exports
+
+
+/***/ },
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(19);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./switch.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./switch.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".onoffswitch {\r\n    position: relative; width: 108px;\r\n    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;\r\n    vertical-align: sub;\r\n    margin-left: 10px;\r\n}\r\n.onoffswitch-checkbox {\r\n    display: none;\r\n}\r\n.onoffswitch-label {\r\n    display: block; overflow: hidden; cursor: pointer;\r\n    border-radius: 50px;\r\n}\r\n.onoffswitch-inner {\r\n    display: block; width: 200%; margin-left: -100%;\r\n    -webkit-transition: margin 0.3s ease-in 0s;\r\n    transition: margin 0.3s ease-in 0s;\r\n}\r\n.onoffswitch-inner:before, .onoffswitch-inner:after {\r\n    display: block; float: left; width: 50%; height: 27px; padding: 0; line-height: 27px;\r\n    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;\r\n    box-sizing: border-box;\r\n}\r\n.onoffswitch-inner:before {\r\n    content: \"Attack\";\r\n    padding-left: 10px;\r\n    text-align: left;\r\n}\r\n.onoffswitch-inner:after {\r\n    content: \"Defense\";\r\n    padding-right: 10px;\r\n    text-align: right;\r\n}\r\n.onoffswitch-switch {\r\n    display: block; \r\n    width: 31px; \r\n    height: 31px; \r\n    margin: 0px;\r\n    position: absolute; top: 0; bottom: 0;\r\n    right: 77px;\r\n    border-radius: 50px;\r\n    -webkit-transition: all 0.3s ease-in 0s;\r\n    transition: all 0.3s ease-in 0s; \r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {\r\n    margin-left: 0;\r\n}\r\n.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {\r\n    right: 0px; \r\n}", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(21);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./tooltipLoader.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./tooltipLoader.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 	
 	
@@ -783,87 +803,87 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(20);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./tooltips.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./tooltips.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/* Codrops */\r\n\r\n.tooltip {\r\n\tposition: relative;\r\n\tz-index: 999;\r\n}\r\n\r\n/* Trigger text */\r\n\r\n.tooltip-item {\r\n\tcursor: pointer;\r\n\tz-index: 100;\r\n\tposition: relative;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\t-webkit-transition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-item {\r\n\topacity: .9;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n}\r\n\r\n/* Tooltip */\r\n\r\n.tooltip-content {\r\n\tposition: absolute;\r\n\tz-index: 99;\r\n\ttext-align: left;\r\n\topacity: 0;\r\n\tline-height: 1.5;\r\n\tpadding: 1.5em;\r\n\tcolor: #fff;\r\n\tcursor: default;\r\n\tpointer-events: none;\r\n\tborder-radius: 5px;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip-onright {\r\n\twidth: 450px;\r\n\tright: -5%;\r\n\tbottom: 8px;\r\n}\r\n\r\n.tooltip-onleft {\r\n\twidth: 360px;\r\n\tleft: -10%;\r\n\tbottom: -5px;\r\n}\r\n\r\n.tooltip-text {\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,1.5em,0);\r\n\ttransform: translate3d(0,1.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-content,\r\n.tooltip:hover .tooltip-text {\r\n\tpointer-events: auto;\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(22);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./mobile.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./mobile.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(3)();
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(23);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./tooltips.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./tooltips.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\tflex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\talign-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonDescription, .pokemonFamily {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n\t", ""]);
+	exports.push([module.id, "/* Codrops */\r\n\r\n.tooltip {\r\n\tposition: relative;\r\n\tz-index: 999;\r\n}\r\n\r\n/* Trigger text */\r\n\r\n.tooltip-item {\r\n\tcursor: pointer;\r\n\tz-index: 100;\r\n\tposition: relative;\r\n\tdisplay: inline-block;\r\n\tfont-weight: 700;\r\n\t-webkit-transition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, -webkit-transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, transform 0.3s;\r\n\ttransition: background-color 0.3s, color 0.3s, transform 0.3s, -webkit-transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-item {\r\n\topacity: .9;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n}\r\n\r\n/* Tooltip */\r\n\r\n.tooltip-content {\r\n\tposition: absolute;\r\n\tz-index: 99;\r\n\ttext-align: left;\r\n\topacity: 0;\r\n\tline-height: 1.5;\r\n\tpadding: 1.5em;\r\n\tcolor: #fff;\r\n\tcursor: default;\r\n\tpointer-events: none;\r\n\tborder-radius: 5px;\r\n\t-webkit-transform: translate3d(0,-0.5em,0);\r\n\ttransform: translate3d(0,-0.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;\r\n}\r\n\r\n.tooltip-onright {\r\n\twidth: 450px;\r\n\tright: -5%;\r\n\tbottom: 8px;\r\n}\r\n\r\n.tooltip-onleft {\r\n\twidth: 360px;\r\n\tleft: -10%;\r\n\tbottom: -5px;\r\n}\r\n\r\n.tooltip-text {\r\n\topacity: 0;\r\n\t-webkit-transform: translate3d(0,1.5em,0);\r\n\ttransform: translate3d(0,1.5em,0);\r\n\t-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, -webkit-transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s;\r\n\ttransition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;\r\n}\r\n\r\n.tooltip:hover .tooltip-content,\r\n.tooltip:hover .tooltip-text {\r\n\tpointer-events: auto;\r\n\topacity: 1;\r\n\t-webkit-transform: translate3d(0,0,0);\r\n\ttransform: translate3d(0,0,0);\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 23 */
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(25);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./mobile.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/autoprefixer-loader/index.js!./mobile.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\t-webkit-box-orient: vertical;\r\n\t\t-webkit-box-direction: normal;\r\n\t\t    -ms-flex-direction: column;\r\n\t\t        flex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t            -ms-grid-row-align: center;\r\n\t\t        align-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonDescription, .pokemonFamily {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    -ms-flex-preferred-size: 1px;\r\n\t        flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n\t", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -873,25 +893,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = run;
 	
-	var _pokemons = __webpack_require__(24);
+	var _pokemons = __webpack_require__(27);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
-	var _quotes = __webpack_require__(25);
+	var _quotes = __webpack_require__(28);
 	
 	var _quotes2 = _interopRequireDefault(_quotes);
 	
-	var _getColors = __webpack_require__(26);
+	var _getColors = __webpack_require__(29);
 	
 	var _getColors2 = _interopRequireDefault(_getColors);
 	
-	var _getHappiness = __webpack_require__(28);
+	var _getHappiness = __webpack_require__(31);
 	
 	var _getHappiness2 = _interopRequireDefault(_getHappiness);
 	
-	var _recentPokemons = __webpack_require__(29);
+	var _recentPokemons = __webpack_require__(32);
 	
-	var _currentPokemon = __webpack_require__(30);
+	var _currentPokemon = __webpack_require__(33);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -970,7 +990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1698,7 +1718,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1813,7 +1833,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1826,7 +1846,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = getColors;
 	
-	var _rbg = __webpack_require__(27);
+	var _rbg = __webpack_require__(30);
 	
 	var _rbg2 = _interopRequireDefault(_rbg);
 	
@@ -1861,7 +1881,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1875,7 +1895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1899,7 +1919,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1912,7 +1932,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.recentPokemons = recentPokemons;
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1922,7 +1942,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.currentPokemon = undefined;
 	
-	var _pokemons = __webpack_require__(24);
+	var _pokemons = __webpack_require__(27);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -1949,7 +1969,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.currentPokemon = currentPokemon;
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1958,7 +1978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _getMultipliers = __webpack_require__(32);
+	var _getMultipliers = __webpack_require__(35);
 	
 	var _getMultipliers2 = _interopRequireDefault(_getMultipliers);
 	
@@ -2021,7 +2041,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = mainPokemon;
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2031,7 +2051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = getMultipliers;
 	
-	var _all_types = __webpack_require__(33);
+	var _all_types = __webpack_require__(36);
 	
 	var _all_types2 = _interopRequireDefault(_all_types);
 	
@@ -2097,7 +2117,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2647,7 +2667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2656,11 +2676,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _getMemebers = __webpack_require__(35);
+	var _getMemebers = __webpack_require__(38);
 	
 	var _getMemebers2 = _interopRequireDefault(_getMemebers);
 	
-	var _config = __webpack_require__(36);
+	var _config = __webpack_require__(39);
+	
+	var _pokemons = __webpack_require__(27);
+	
+	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2676,7 +2700,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return 'images/pokemons/' + id + '.svg';
 	        };
 	        $scope.reloadWith = function (id) {
-	            window.location.hash = '#' + pokemons[id - 1];
+	            window.location.hash = '#' + _pokemons2.default[id - 1];
 	            window.location.reload(true);
 	        };
 	        var evolutionChainId = /chain\/(\d+)\/$/.exec($rootScope.pokemonSpecie.evolution_chain.url);
@@ -2700,7 +2724,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonFamily;
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2721,7 +2745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2736,7 +2760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.config = config;
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2745,7 +2769,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _pokemons = __webpack_require__(24);
+	var _pokemons = __webpack_require__(27);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -2768,7 +2792,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Morph;
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2777,11 +2801,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _pokemons = __webpack_require__(24);
+	var _pokemons = __webpack_require__(27);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
-	var _recentPokemons = __webpack_require__(29);
+	var _recentPokemons = __webpack_require__(32);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2817,7 +2841,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonSearch;
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2826,7 +2850,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _config = __webpack_require__(36);
+	var _config = __webpack_require__(39);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -2859,7 +2883,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonAbilities;
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2892,7 +2916,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonMultipliers;
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2901,7 +2925,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _config = __webpack_require__(36);
+	var _config = __webpack_require__(39);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -2933,7 +2957,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonHeldItems;
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2963,7 +2987,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2999,7 +3023,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3021,7 +3045,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3043,7 +3067,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3053,9 +3077,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = getInfoFactory;
 	
-	var _config = __webpack_require__(36);
+	var _config = __webpack_require__(39);
 	
-	var _pokemons = __webpack_require__(24);
+	var _pokemons = __webpack_require__(27);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -3095,7 +3119,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports) {
 
 	var appCacheIframe;
@@ -3115,7 +3139,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (hasSW()) {
 	      var registration = navigator.serviceWorker
 	        .register(
-	          "sw.js"
+	          "/dist/sw.js"
 	          
 	        );
 	
@@ -3230,7 +3254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  
 	    if (window.applicationCache) {
-	      var directory = "appcache/";
+	      var directory = "/dist/appcache/";
 	      var name = "manifest";
 	
 	      var doLoad = function() {

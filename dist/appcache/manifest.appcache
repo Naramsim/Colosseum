@@ -1,8 +1,8 @@
 CACHE MANIFEST
-#ver:2016-08-15 20:04:47
+#ver:8/16/2016, 4:52:15 PM
 
 CACHE:
-.././dist/index.js
+/dist/index.js
 https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js
 https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js
 https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js
