@@ -28,5 +28,12 @@
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#29BDBB",
-    "background_color": "#80b5ff"
+    "background_color": "#80b5ff",
+    "prefer_related_applications": true,
+	"related_applications": [
+	  {
+	    "platform": "play",
+	    "id": "com.laowch.githubtrends"
+	  }
+	]
 }

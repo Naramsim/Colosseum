@@ -1,14 +1,14 @@
 {
   "name": "colosseum",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Displays Pokemons in a pretty way",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch",
-    "copyHTMLToRoot": "cp ./dist/index.html .",
+    "copyManifest": "cp ./manifest.json ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npm run build:watch | http-server"
+    "serve": "http-server ./dist"
   },
   "repository": {
     "type": "git",
@@ -38,10 +38,9 @@
     "offline-plugin": "^3.4.2",
     "style-loader": "^0.13.1",
     "webpack-dev-server": "^1.14.1",
-    "webpack-shell-plugin": "^0.4.2"
-  },
-  "dependencies": {
+    "webpack-shell-plugin": "^0.4.2",
     "babel-core": "^6.13.2",
     "webpack": "^1.13.1"
-  }
+  },
+  "dependencies": {}
 }

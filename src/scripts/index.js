@@ -10,6 +10,7 @@ import '../styles/switch.css'
 import '../styles/tooltipLoader.css'
 import '../styles/tooltips.css'
 import '../styles/mobile.css'
+import '../styles/desktop.css'
 
 import run from './angular/run.js'
 import MainPokemon from './angular/controllers/MainPokemon.js'
@@ -24,6 +25,9 @@ import pokemonFilter from './angular/pokemonFilter.js'
 import multiFilter from './angular/multiFilter.js'
 import imageonloadDirective from './angular/imageonloadDirective.js'
 import getInfoFactory from './angular/getInfoFactory.js'
+
+require('./defer/classie.js')
+require('./defer/morph.js')
 
 const runtime = require('offline-plugin/runtime');
 

@@ -33,20 +33,6 @@ a:hover, a:active {
     outline: 0;
 }
 
-::-webkit-scrollbar-track {
-	background-color: 	transparent;
-}
-
-::-webkit-scrollbar {
-	width: 8px;
-	background-color: 	transparent;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: 	#555;
-	border-radius: 		4px;
-}
-
 .container {
 	position: relative;
 	height: 100%;

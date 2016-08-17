@@ -7,23 +7,25 @@ const offlinePluginOptions = {
     caches:{
         main:[
             'index.js',
+            'index.html',
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
-            'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
+            'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
+            'https://fonts.googleapis.com/css?family=Montserrat:400,700'
         ]
     },
     externals: [
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
+        'https://fonts.googleapis.com/css?family=Montserrat:400,700'
     ],
     ServiceWorker: {
         events: true
     },
-    publicPath: '/Colosseum/dist/',
-    relativePaths: false
+    version: '[hash]'
 }
 
 module.exports = {
@@ -35,8 +37,7 @@ module.exports = {
     output: {
         libraryTarget: 'umd',
         path: 'dist/',
-        filename: '[name].js',
-        publicPath: 'dist/'
+        filename: '[name].js'
     },
     module: {
         loaders: [
@@ -67,7 +68,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new WebpackShellPlugin({onBuildStart:[], onBuildEnd:['npm run copyHTMLToRoot'], dev: 0}),
+        new WebpackShellPlugin({onBuildStart:[], onBuildEnd:['npm run copyManifest'], dev: 0}),
         new HtmlWebpackPlugin({
             template: 'src/include/index.html',
             inject: 'head',

@@ -1,0 +1,15 @@
+@media screen and (min-width: 900px) {
+	::-webkit-scrollbar-track {	
+		background-color: 	transparent;
+	}
+
+	::-webkit-scrollbar {
+		width: 8px;
+		background-color: 	transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: 	#555;
+		border-radius: 		4px;
+	}
+}
