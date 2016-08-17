@@ -255,6 +255,7 @@ a:hover, a:active {
 	top: 50px;
 	left: 50px;
 	cursor: pointer;
+	z-index: 1;
 }
 
 .logo > img {
@@ -279,4 +280,20 @@ a:hover, a:active {
 	body {
 		font-size: 12px;
 	}
+}
+
+@media screen and (min-aspect-ratio: 19/9) and (min-width: 900px) {
+	.multiplierRow .centerAligned {
+		align-items: center;
+	    display: flex;
+	    flex-direction: row-reverse;
+	}
+	.miniLabel {
+	    display: inline-flex;
+	}
+
+	.multiplierRow li:nth-child(n+2) .miniLabel {
+	    display: none;
+	}
+
 }

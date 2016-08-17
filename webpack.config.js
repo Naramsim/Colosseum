@@ -11,16 +11,14 @@ const offlinePluginOptions = {
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
-            'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
-            'https://fonts.googleapis.com/css?family=Montserrat:400,700'
+            'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
         ]
     },
     externals: [
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
-        'https://fonts.googleapis.com/css?family=Montserrat:400,700'
+        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
     ],
     ServiceWorker: {
         events: true

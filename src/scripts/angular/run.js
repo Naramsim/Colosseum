@@ -7,6 +7,18 @@ import getHappiness from '../helpers/getHappiness.js'
 import { recentPokemons } from '../getters/recentPokemons.js'
 import { currentPokemon } from '../getters/currentPokemon.js'
 
+function hasCompleted(completed, $rootScope) {
+    if(completed = 2){
+        setTimeout(() => {$rootScope.status = 'READY'},300)
+        $rootScope.$broadcast('init');  
+    }
+}
+
+function handleErrors($rootScope) {
+    $rootScope.status = 'ERROR'
+    setTimeout(() => {$rootScope.status = 'RELODING'},300)
+    setTimeout(() => {location.reload(1)},600)
+}
 
 export default function run($http, $rootScope, getInfoFactory) {
     var quoteId = quotes[Math.floor(Math.random()*quotes.length)]
@@ -37,10 +49,9 @@ export default function run($http, $rootScope, getInfoFactory) {
         $rootScope.currentPokemon = res;
         getColors($rootScope.currentPokemon.id);
         completed += 1;
-        if(completed = 2){
-            setTimeout(() => {$rootScope.status = 'READY'},300)
-            $rootScope.$broadcast('init');  
-        }
+        hasCompleted(completed, $rootScope)        
+    }).catch(function(err) {
+        handleErrors($rootScope)
     });
     
     getInfoFactory.getSpecie(currentPokemon).then(function(res) {
@@ -71,9 +82,8 @@ export default function run($http, $rootScope, getInfoFactory) {
             }
         })[0].flavor_text;  
         completed += 1;
-        if(completed = 2) {
-            setTimeout(() => {$rootScope.status = 'READY'},300)
-            $rootScope.$broadcast('init');  
-        }
+        hasCompleted(completed, $rootScope)
+    }).catch(function(err) {
+        handleErrors($rootScope)
     });
 }
