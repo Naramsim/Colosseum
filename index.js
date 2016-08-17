@@ -682,7 +682,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "*, *:after, *:before { box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\t-ms-flex-line-pack: center;\r\n\t    align-content: center;\r\n\t-webkit-box-flex: 5;\r\n\t    -ms-flex-positive: 5;\r\n\t        flex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: -webkit-inline-box;\r\n\tdisplay: -ms-inline-flexbox;\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\t-ms-flex-preferred-size: 350px;\r\n\t    flex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}", ""]);
+	exports.push([module.id, "*, *:after, *:before { box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\t-ms-flex-line-pack: center;\r\n\t    align-content: center;\r\n\t-webkit-box-flex: 5;\r\n\t    -ms-flex-positive: 5;\r\n\t        flex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: -webkit-inline-box;\r\n\tdisplay: -ms-inline-flexbox;\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\t-ms-flex-preferred-size: 350px;\r\n\t    flex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n\tz-index: 1;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}\r\n\r\n@media screen and (min-aspect-ratio: 19/9) and (min-width: 900px) {\r\n\t.multiplierRow .centerAligned {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t        align-items: center;\r\n\t    display: -webkit-box;\r\n\t    display: -ms-flexbox;\r\n\t    display: flex;\r\n\t    -webkit-box-orient: horizontal;\r\n\t    -webkit-box-direction: reverse;\r\n\t        -ms-flex-direction: row-reverse;\r\n\t            flex-direction: row-reverse;\r\n\t}\r\n\t.miniLabel {\r\n\t    display: -webkit-inline-box;\r\n\t    display: -ms-inline-flexbox;\r\n\t    display: inline-flex;\r\n\t}\r\n\r\n\t.multiplierRow li:nth-child(n+2) .miniLabel {\r\n\t    display: none;\r\n\t}\r\n\r\n}", ""]);
 	
 	// exports
 
@@ -960,6 +960,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function hasCompleted(completed, $rootScope) {
+	    if (completed = 2) {
+	        setTimeout(function () {
+	            $rootScope.status = 'READY';
+	        }, 300);
+	        $rootScope.$broadcast('init');
+	    }
+	}
+	
+	function handleErrors($rootScope) {
+	    $rootScope.status = 'ERROR';
+	    setTimeout(function () {
+	        $rootScope.status = 'RELODING';
+	    }, 300);
+	    setTimeout(function () {
+	        location.reload(1);
+	    }, 600);
+	}
+	
 	function run($http, $rootScope, getInfoFactory) {
 	    var quoteId = _quotes2.default[Math.floor(Math.random() * _quotes2.default.length)];
 	    $rootScope.quote = quoteId[1];
@@ -989,12 +1008,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        $rootScope.currentPokemon = res;
 	        (0, _getColors2.default)($rootScope.currentPokemon.id);
 	        completed += 1;
-	        if (completed = 2) {
-	            setTimeout(function () {
-	                $rootScope.status = 'READY';
-	            }, 300);
-	            $rootScope.$broadcast('init');
-	        }
+	        hasCompleted(completed, $rootScope);
+	    }).catch(function (err) {
+	        handleErrors($rootScope);
 	    });
 	
 	    getInfoFactory.getSpecie(_currentPokemon.currentPokemon).then(function (res) {
@@ -1025,12 +1041,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	        })[0].flavor_text;
 	        completed += 1;
-	        if (completed = 2) {
-	            setTimeout(function () {
-	                $rootScope.status = 'READY';
-	            }, 300);
-	            $rootScope.$broadcast('init');
-	        }
+	        hasCompleted(completed, $rootScope);
+	    }).catch(function (err) {
+	        handleErrors($rootScope);
 	    });
 	}
 
@@ -3171,29 +3184,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	(function (window) {
 	
-	  // class helper functions from bonzo https://github.com/ded/bonzo
+	    // class helper functions from bonzo https://github.com/ded/bonzo
 	
-	  function classReg(className) {
-	    return new RegExp('(^|\\s+)' + className + '(\\s+|$)');
-	  }
-	
-	  console.log("ok");
-	
-	  window.classie = {
-	    has: function has(elem, c) {
-	      return elem.classList.contains(c);
-	    },
-	    add: function add(elem, c) {
-	      elem.classList.add(c);
-	    },
-	    remove: function remove(elem, c) {
-	      return classReg(c).test(elem.className);
-	    },
-	    toggle: function toggleClass(elem, c) {
-	      var fn = hasClass(elem, c) ? removeClass : addClass;
-	      fn(elem, c);
+	    function classReg(className) {
+	        return new RegExp('(^|\\s+)' + className + '(\\s+|$)');
 	    }
-	  };
+	
+	    window.classie = {
+	        has: function has(elem, c) {
+	            return elem.classList.contains(c);
+	        },
+	        add: function add(elem, c) {
+	            elem.classList.add(c);
+	        },
+	        remove: function remove(elem, c) {
+	            return classReg(c).test(elem.className);
+	        },
+	        toggle: function toggleClass(elem, c) {
+	            var fn = hasClass(elem, c) ? removeClass : addClass;
+	            fn(elem, c);
+	        }
+	    };
 	})(window);
 
 /***/ },
@@ -3203,61 +3214,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 	
 	(function (window) {
-		window.initMorph = function () {
-			console.log("ok");
-			var morphSearch = document.getElementById('morphsearch'),
-			    input = morphSearch.querySelector('input.morphsearch-input'),
-			    ctrlClose = morphSearch.querySelector('span.morphsearch-close'),
-			    isOpen = false,
-			    isAnimating = false,
+	    window.initMorph = function () {
+	        var morphSearch = document.getElementById('morphsearch'),
+	            input = morphSearch.querySelector('input.morphsearch-input'),
+	            ctrlClose = morphSearch.querySelector('span.morphsearch-close'),
+	            isOpen = false,
+	            isAnimating = false,
 	
-			// show/hide search area
-			toggleSearch = function toggleSearch(evt) {
-				// return if open and the input gets focused
-				if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
+	        // show/hide search area
+	        toggleSearch = function toggleSearch(evt) {
+	            // return if open and the input gets focused
+	            if (evt.type.toLowerCase() === 'focus' && isOpen) return false;
 	
-				if (isOpen) {
-					classie.remove(morphSearch, 'open');
-					// trick to hide input text once the search overlay closes 
-					// todo: hardcoded times, should be done after transition ends
-					if (input.value !== '') {
-						setTimeout(function () {
-							classie.add(morphSearch, 'hideInput');
-							setTimeout(function () {
-								classie.remove(morphSearch, 'hideInput');
-								input.value = '';
-							}, 300);
-						}, 500);
-					}
+	            if (isOpen) {
+	                classie.remove(morphSearch, 'open');
+	                // trick to hide input text once the search overlay closes 
+	                // todo: hardcoded times, should be done after transition ends
+	                if (input.value !== '') {
+	                    setTimeout(function () {
+	                        classie.add(morphSearch, 'hideInput');
+	                        setTimeout(function () {
+	                            classie.remove(morphSearch, 'hideInput');
+	                            input.value = '';
+	                        }, 300);
+	                    }, 500);
+	                }
 	
-					input.blur();
-				} else {
-					classie.add(morphSearch, 'open');
-				}
-				isOpen = !isOpen;
-			};
-			// events
-			input.addEventListener('focus', toggleSearch);
-			ctrlClose.addEventListener('click', toggleSearch);
-			// esc key closes search overlay
-			// keyboard navigation events
-			document.addEventListener('keydown', function (ev) {
-				var keyCode = ev.keyCode || ev.which;
-				if (keyCode === 27 && isOpen) {
-					toggleSearch(ev);
-				}
-				if (keyCode === 70 && !isOpen) {
-					toggleSearch(ev);
-					setTimeout(function () {
-						input.focus();
-					}, 600);
-				}
-				if (keyCode === 82 && !isOpen) {
-					window.location.hash = '';
-					window.location.reload(true);
-				}
-			});
-		};
+	                input.blur();
+	            } else {
+	                classie.add(morphSearch, 'open');
+	            }
+	            isOpen = !isOpen;
+	        };
+	        // events
+	        input.addEventListener('focus', toggleSearch);
+	        ctrlClose.addEventListener('click', toggleSearch);
+	        // esc key closes search overlay
+	        // keyboard navigation events
+	        document.addEventListener('keydown', function (ev) {
+	            var keyCode = ev.keyCode || ev.which;
+	            if (keyCode === 27 && isOpen) {
+	                toggleSearch(ev);
+	            }
+	            if (keyCode === 70 && !isOpen) {
+	                toggleSearch(ev);
+	                setTimeout(function () {
+	                    input.focus();
+	                }, 600);
+	            }
+	            if (keyCode === 82 && !isOpen) {
+	                window.location.hash = '';
+	                window.location.reload(true);
+	            }
+	        });
+	    };
 	})(window);
 
 /***/ },
