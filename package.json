@@ -7,6 +7,7 @@
     "build": "webpack",
     "build:watch": "webpack --watch",
     "copyManifest": "cp ./manifest.json ./dist",
+    "gh-deploy": "git checkout gh-pages && git rebase master && npm run build && del-cli './*' '!./dist' && mv ./dist/* ./ && del-cli ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "http-server ./dist"
   },
