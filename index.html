@@ -19,7 +19,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    </head>
+    <script type="text/javascript" src="index.js?5f22e0774660ff7bb1b3"></script></head>
   <body class="bgColor">
     <!--[if lt IE 10]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -53,7 +53,7 @@
         </div>
         <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
             <div class="logo to-bottom-logo delay-3">
-                <img src="${require('../../images/items/master-ball.svg')}" ng-click="reloadHome()">
+                <img src="master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg" ng-click="reloadHome()">
             </div>
             <div class="innerContainer">
                 <div class="pokemonImage to-scale delay-1">
@@ -99,19 +99,19 @@
                     <div class="secondaryColor mediumSize primaryColor">Abilities</div>
                     <ul>
                         <li class="padded verticalPadded thirdyColor tooltip" ng-repeat="ability in currentPokemon.abilities" ng-mouseover="getAbility(ability.ability.url)">
-	                        <span class="tooltip-item">
-	                        	{{ ::up(ability.ability.name) }}
-					        </span>
-	                        <span class="tooltip-content tooltipColor tooltip-onleft">
+                            <span class="tooltip-item">
+                                {{ ::up(ability.ability.name) }}
+                            </span>
+                            <span class="tooltip-content tooltipColor tooltip-onleft">
                                     <div class="sk-three-bounce" ng-class="{ hidden : abilityDescription }">
                                         <div class="sk-child sk-bounce1"></div>
                                         <div class="sk-child sk-bounce2"></div>
                                         <div class="sk-child sk-bounce3"></div>
                                     </div>
-	                        	<span class="tooltip-text" ng-class="{ hidden : !abilityDescription }">
-	                        		{{ abilityDescription }}
-	                        	</span>
-					        </span>
+                                <span class="tooltip-text" ng-class="{ hidden : !abilityDescription }">
+                                    {{ abilityDescription }}
+                                </span>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -197,7 +197,60 @@
             </div>
         </div>
             
-        <div ng-controller="Morph">${require('./morph.html')}</div>
+        <div ng-controller="Morph"><div id="morphsearch" class="morphsearch" ng-controller="PokemonSearch">
+    <div class="container morphContainer">
+        <div class="searchContainer">
+            <form class="morphsearch-form">
+                <input class="morphsearch-input" type="search" ng-model="searchString" placeholder="Search..."/>
+                
+            </form>
+            <div class="morphsearch-content">
+                <div class="dummy-column">
+                    <h2>Starting with</h2>
+                    <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilterStart:searchString">
+                        <a href="">
+                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <h3 class="inline">{{up(pokemon)}}</h3>
+                            <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+                        </a>
+                    </li>
+                </div>
+                <div class="dummy-column">
+                    <h2>Results</h2>
+                    <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilter:searchString">
+                        <a href="">
+                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <h3>{{up(pokemon)}}</h3>
+                            <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+                        </a>
+                    </li>
+                </div>
+                <div class="dummy-column">
+                    <h2>Recent</h2>
+                    <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in recents track by $index">
+                        <a href="">
+                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <h3>{{up(pokemon)}}</h3>
+                            <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
+                        </a>
+                    </li>
+                </div>
+            </div><!-- /morphsearch-content -->
+            <div class="shortcuts">
+                <div class="padded verticalPadded centerHorizontally"><kbd>F</kbd>Find a Pokémon</div>
+                <div class="padded verticalPadded centerHorizontally"><kbd>Tab</kbd>Moves between search elements</div>
+                <div class="padded verticalPadded centerHorizontally"><kbd>Esc</kbd>Exit the search</div>
+                <div class="padded verticalPadded centerHorizontally"><kbd>R</kbd>Random Pokémon</div>
+                <div class="padded verticalPadded centerHorizontally"><bold>@</bold>Powered by <a href="https://github.com/PokeAPI/pokeapi">Pokéapi</a></div>
+            </div>
+            <span class="morphsearch-close"></span>
+        </div>
+    </div>
+</div><!-- /morphsearch -->
+<div class="overlay"></div>
+<script type="text/javascript">
+    initMorph();
+</script></div>
         
         <script>
           (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
