@@ -15,7 +15,8 @@ export default function getInfoFactory($http, $q) {
                         special_info: {
                             pokemon: currentPokemon
                         }
-                    })
+                    });
+                    deferred.reject(data);
                });
             return deferred.promise;
         },
@@ -31,7 +32,8 @@ export default function getInfoFactory($http, $q) {
                         special_info: {
                             pokemon: currentPokemon
                         }
-                    })
+                    });
+                    deferred.reject(data);
                });
             return deferred.promise;
         }

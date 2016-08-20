@@ -48,6 +48,7 @@ export default function getColors(id) {
                             }
                             `;
         document.body.appendChild(css);
+        document.head.querySelectorAll('meta[name=theme-color]')[0].content = bgColor;
     }
     image.src = 'images/pokemons/'+ id + '.svg';
     image.crossOrigin = 'Anonymous';

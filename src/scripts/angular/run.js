@@ -9,24 +9,24 @@ import { currentPokemon } from '../getters/currentPokemon.js'
 
 function hasCompleted(completed, $rootScope) {
     if(completed = 2){
-        setTimeout(() => {$rootScope.status = 'READY'},300)
+        setTimeout(() => {$rootScope.status = 'READY'},300);
         $rootScope.$broadcast('init');  
     }
 }
 
 function handleErrors($rootScope) {
-    $rootScope.status = 'ERROR'
-    setTimeout(() => {$rootScope.status = 'RELODING'},300)
-    setTimeout(() => {location.reload(1)},600)
+    $rootScope.status = 'SOMETHING BROKE :(';
+    setTimeout(() => {$rootScope.status = 'RELODING'},300);
+    setTimeout(() => {location.reload(1)},600);
 }
 
 export default function run($http, $rootScope, getInfoFactory) {
-    var quoteId = quotes[Math.floor(Math.random()*quotes.length)]
-    $rootScope.quote = quoteId[1]
-    $rootScope.quoteAuthor = quoteId[0]
-    $rootScope.status = 'FETCHING'
+    var quoteId = quotes[Math.floor(Math.random()*quotes.length)];
+    $rootScope.quote = quoteId[1];
+    $rootScope.quoteAuthor = quoteId[0];
+    $rootScope.status = 'FETCHING';
     $rootScope.reloadHome = function(id) {
-            window.location.hash = ''
+            window.location.hash = '';
             window.location.reload(true);
         }
 
@@ -51,7 +51,7 @@ export default function run($http, $rootScope, getInfoFactory) {
         completed += 1;
         hasCompleted(completed, $rootScope)        
     }).catch(function(err) {
-        handleErrors($rootScope)
+        handleErrors($rootScope);
     });
     
     getInfoFactory.getSpecie(currentPokemon).then(function(res) {
@@ -82,8 +82,8 @@ export default function run($http, $rootScope, getInfoFactory) {
             }
         })[0].flavor_text;  
         completed += 1;
-        hasCompleted(completed, $rootScope)
+        hasCompleted(completed, $rootScope);
     }).catch(function(err) {
-        handleErrors($rootScope)
+        handleErrors($rootScope);
     });
 }

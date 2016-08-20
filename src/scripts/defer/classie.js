@@ -14,7 +14,7 @@
                 elem.classList.add( c );
             },
         remove: function( elem, c ) {
-                return classReg( c ).test( elem.className );
+                elem.classList.remove( c );
             },
         toggle: function toggleClass( elem, c ) {
                 var fn = hasClass( elem, c ) ? removeClass : addClass;
