@@ -97,19 +97,19 @@
 .first:before,
 .first:last-child:before {
   transform: scale(0.2);
-  content: url("https://naramsim.github.io/Colosseum/images/items/dive-ball.png");
+  content: url("../../images/items/dive-ball.png");
 }
 
 .second:before,
 .second:last-child:before {
   transform: scale(0.2);
-  content: url("https://naramsim.github.io/Colosseum/images/items/quick-ball.png");
+  content: url("../../images/items/quick-ball.png");
 }
 
 .third:before,
 .third:last-child:before {
   transform: scale(0.2);
-  content: url("https://naramsim.github.io/Colosseum/images/items/master-ball.png");
+  content: url("../../images/items/master-ball.png");
 }
 
 @-webkit-keyframes rollercoaster {
