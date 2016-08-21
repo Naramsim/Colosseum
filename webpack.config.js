@@ -31,7 +31,11 @@ const offlinePluginOptions = {
         events: true
     },
     version: '[hash]',
-    safeToUseOptionalCaches: true
+    safeToUseOptionalCaches: true,
+    ServiceWorker: {
+       // Entry in your project, will be included into SW file
+        entry: './src/scripts/sw/swApiCalls.js'
+    } 
 }
 
 module.exports = {
