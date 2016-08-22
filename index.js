@@ -64,80 +64,80 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	__webpack_require__(10);
 	
-	__webpack_require__(12);
+	__webpack_require__(15);
 	
-	__webpack_require__(14);
+	__webpack_require__(17);
 	
-	__webpack_require__(16);
+	__webpack_require__(19);
 	
-	__webpack_require__(18);
+	__webpack_require__(21);
 	
-	__webpack_require__(20);
+	__webpack_require__(23);
 	
-	__webpack_require__(22);
+	__webpack_require__(25);
 	
-	__webpack_require__(24);
+	__webpack_require__(27);
 	
-	__webpack_require__(26);
+	__webpack_require__(29);
 	
-	var _run = __webpack_require__(28);
+	var _run = __webpack_require__(31);
 	
 	var _run2 = _interopRequireDefault(_run);
 	
-	var _MainPokemon = __webpack_require__(36);
+	var _MainPokemon = __webpack_require__(39);
 	
 	var _MainPokemon2 = _interopRequireDefault(_MainPokemon);
 	
-	var _PokemonFamily = __webpack_require__(39);
+	var _PokemonFamily = __webpack_require__(42);
 	
 	var _PokemonFamily2 = _interopRequireDefault(_PokemonFamily);
 	
-	var _Morph = __webpack_require__(42);
+	var _Morph = __webpack_require__(45);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
-	var _PokemonSearch = __webpack_require__(43);
+	var _PokemonSearch = __webpack_require__(46);
 	
 	var _PokemonSearch2 = _interopRequireDefault(_PokemonSearch);
 	
-	var _PokemonAbilities = __webpack_require__(44);
+	var _PokemonAbilities = __webpack_require__(47);
 	
 	var _PokemonAbilities2 = _interopRequireDefault(_PokemonAbilities);
 	
-	var _PokemonMultipliers = __webpack_require__(45);
+	var _PokemonMultipliers = __webpack_require__(48);
 	
 	var _PokemonMultipliers2 = _interopRequireDefault(_PokemonMultipliers);
 	
-	var _PokemonHeldItems = __webpack_require__(46);
+	var _PokemonHeldItems = __webpack_require__(49);
 	
 	var _PokemonHeldItems2 = _interopRequireDefault(_PokemonHeldItems);
 	
-	var _pokemonFilterStartFilter = __webpack_require__(47);
+	var _pokemonFilterStartFilter = __webpack_require__(50);
 	
 	var _pokemonFilterStartFilter2 = _interopRequireDefault(_pokemonFilterStartFilter);
 	
-	var _pokemonFilter = __webpack_require__(48);
+	var _pokemonFilter = __webpack_require__(51);
 	
 	var _pokemonFilter2 = _interopRequireDefault(_pokemonFilter);
 	
-	var _multiFilter = __webpack_require__(49);
+	var _multiFilter = __webpack_require__(52);
 	
 	var _multiFilter2 = _interopRequireDefault(_multiFilter);
 	
-	var _imageonloadDirective = __webpack_require__(50);
+	var _imageonloadDirective = __webpack_require__(53);
 	
 	var _imageonloadDirective2 = _interopRequireDefault(_imageonloadDirective);
 	
-	var _getInfoFactory = __webpack_require__(51);
+	var _getInfoFactory = __webpack_require__(54);
 	
 	var _getInfoFactory2 = _interopRequireDefault(_getInfoFactory);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(52);
-	__webpack_require__(53);
+	__webpack_require__(55);
+	__webpack_require__(56);
 	
-	var runtime = __webpack_require__(54);
+	var runtime = __webpack_require__(57);
 	
 	runtime.install({
 	  onUpdating: function onUpdating() {
@@ -165,7 +165,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<html lang=\"\" ng-app=\"App\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"description\" content=\"Pokemons at their maximum level\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0\">\n\n        <title>Colosseum</title>\n\n        <link rel=\"shortcut icon\" href=\"images/icons/favicon.ico\">\n        <link rel=\"apple-touch-icon\" href=\"images/icons/apple-touch-icon.png\">\n\n        <link rel=\"manifest\" href=\"manifest.json\">\n\n        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>\n        <!-- <link href=\"http://fonts.googleapis.com/earlyaccess/notosansjapanese.css\" rel=\"stylesheet\" type=\"text/css\"> -->\n\n        <script data-apikey=\"a5c9247914387e79f30123dac3f6835c\" src=\"https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js\"></script>\n    </head>\n  <body class=\"bgColor\">\n    <!--[if lt IE 10]>\n        <p class=\"browserupgrade\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>\n    <![endif]-->\n    <div class=\"container\">\n        <div class=\"loadingContainer fadeout\" ng-show=\"!loaded\">\n            <div class=\"loader\">\n                <div class=\"loader-wrapper\">\n                    <div class=\"infiniteLoader\">\n                        <div class=\"roller first\"></div>\n                        <div class=\"roller first\"></div>\n                    </div>\n                    <div id=\"loader2\" class=\"infiniteLoader\">\n                        <div class=\"roller second\"></div>\n                        <div class=\"roller second\"></div>\n                    </div>\n                    <div id=\"loader3\" class=\"infiniteLoader\">\n                        <div class=\"roller third\"></div>\n                        <div class=\"roller third\"></div>\n                    </div>\n                </div>\n                <div class=\"quote\">{{ ::quote }}</div>\n                <div class=\"quoteBy\">\n                    <i>\n                        <div class=\"by inline\">By</div>\n                        <div class=\"author inline\">@{{ ::quoteAuthor }}</div>\n                    </i>\n                </div>\n                <div class=\"status\">{{status}}</div>\n            </div>\n        </div>\n        <div class=\"mainContainer container\" ng-class=\"{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }\" ng-controller=\"MainPokemon\">\n            <div class=\"logo to-bottom-logo delay-3\">\n                <img src=\"" + __webpack_require__(2) + "\" ng-click=\"reloadHome()\">\n            </div>\n            <div class=\"innerContainer\">\n                <div class=\"pokemonImage to-scale delay-1\">\n                    <div class=\"jp thirdyColor\">{{ ::jp}}</div>\n                    <img ng-src=\"{{ ::imageUrl }}\" imageonload=\"unveil()\">\n                </div>\n                <div class=\"pokemonStats\">\n                    <div class=\"pokemonVCard to-left\">\n                        <div class=\"pokemonGenere secondaryColor\">{{ ::genere }}</div>\n                        <div class=\"pokemonName primaryColor borderColor\">{{ ::up(currentPokemon.name) }}</div>\n                        <div class=\"pokemonId\">{{ ::currentPokemon.id }}</div>\n                        <div class=\"pokemonTypesContainer\">\n                            <div class=\"pokemonTypes \">\n                                <ul>\n                                    <li class=\"padded inline\" ng-repeat=\"type in typeUrls\">\n                                        <img class=\"pokemonTypeVc\" ng-src=\"{{ ::type }}\">\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"padded pokemonHabitat primaryColor\">Loves to stay in {{ ::habitat }}s {{ ::happiness }}</div>\n                        </div>\n                    </div>\n                    <div class=\"to-fade\">\n                        <div class=\"pokemonHeight primaryColor verticalPadded\">Height {{ currentPokemon.height/10 }} meters</div>\n                        <div class=\"pokemonWeight primaryColor\">Weight {{ currentPokemon.weight/10 }} kilograms</div>\n                        <div class=\"pokemonBaseStats mediumSize\">\n                            <ul>\n                                <li ng-repeat=\"stat in currentPokemon.stats\" class=\"liStat\">\n                                    <div class=\"inline thirdyColor\">{{ ::up(stat.stat.name) }}</div>\n                                    <div class=\"inline padded\"> - </div>\n                                    <div class=\"inline secondaryColor\">{{ ::stat.base_stat }}</div>\n                                </li>\n                            </ul>\n                        </div>\n                        <div class=\"pokemonDescription primaryColor verticalPadded\">\n                            {{ ::description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"secondaryContainer\">\n                <div class=\"pokemonAbilities to-top delay-1\" ng-controller=\"PokemonAbilities\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Abilities</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"ability in currentPokemon.abilities\" ng-mouseover=\"getAbility(ability.ability.url)\">\n                            <span class=\"tooltip-item\">\n                                {{ ::up(ability.ability.name) }}\n                            </span>\n                            <span class=\"tooltip-content tooltipColor tooltip-onleft\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : abilityDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                <span class=\"tooltip-text\" ng-class=\"{ hidden : !abilityDescription }\">\n                                    {{ abilityDescription }}\n                                </span>\n                            </span>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"pokemonFamily to-top delay-2\" ng-controller=\"PokemonFamily\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Family</div>\n                    <ul>\n                        <li class=\"padded verticalPadded inline\" ng-repeat=\"pokemon in members\">\n                            <img    ng-click=\"reloadWith(pokemon)\" \n                                    title=\"{{ ::getPokemonName(pokemon) }}\" \n                                    class=\"pokemonMember to-top\" \n                                    ng-src=\"{{ ::getImageUrl(pokemon) }}\" \n                                    style=\"transition-delay: {{($index + 4 * 3)/10}}s;\">\n                        </li>\n                    </ul>\n                </div>\n                <div    class=\"pokemonMultipliers to-top delay-3\" \n                        ng-class=\"{ switchMultiplier : $storage.multiplier }\" \n                        ng-controller=\"PokemonMultipliers\">\n                    <div class=\"secondaryColor mediumSize primaryColor pointer inline\">Multipliers</div>\n                    <div class=\"onoffswitch inline\">\n                        <input  type=\"checkbox\" \n                                name=\"onoffswitch\" \n                                class=\"onoffswitch-checkbox\" \n                                id=\"myonoffswitch\" \n                                ng-checked=\"!$storage.multiplier\" \n                                ng-click=\"$storage.multiplier = !$storage.multiplier\">\n                        <label class=\"onoffswitch-label\" for=\"myonoffswitch\">\n                            <span class=\"onoffswitch-inner\"></span>\n                            <span class=\"onoffswitch-switch\"></span>\n                        </label>\n                    </div>\n                    <ul class=\"multiplierAttack\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.attack | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                    <ul class=\"multiplierDefense softHidden\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.defense | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>  \n                </div>\n                <div class=\"pokemonHeldItems to-top delay-4\" ng-controller=\"PokemonHeldItems\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Held Items</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"item in currentPokemon.held_items\" ng-mouseover=\"getHeldItem(item.item.url)\">\n                            <div class=\"centerAligned\">\n                                <span class=\"tooltip-item\">\n                                    <img class=\"middleRow inline\" title=\"{{ ::item.item.name }}\" src=\"{{ ::getUrlItem(item.item.name) }}\">\n                                    <div class=\"padded inline\">\n                                        {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%\n                                    </div>\n                                </span>\n                                <span class=\"tooltip-content tooltipColor tooltip-onright\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : heldItemDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                    <span class=\"tooltip-text\" ng-class=\"{ hidden : !heldItemDescription }\">\n                                        {{ heldItemDescription }}\n                                    </span>\n                                </span>\n                            </div>\n                        </li>\n                        <li class=\"padded verticalPadded thirdyColor\" ng-show=\"!currentPokemon.held_items.length\">None</li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n            \n        <div ng-controller=\"Morph\">" + __webpack_require__(3) + "</div>\n        \n        <script>\n          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=\n          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;\n          e=o.createElement(i);r=o.getElementsByTagName(i)[0];\n          e.src='https://www.google-analytics.com/analytics.js';\n          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));\n          ga('create','UA-XXXXX-X');ga('send','pageview');\n        </script>\n    </div>\n    <!-- build:js scripts/vendor.js -->\n    <!-- bower:js -->\n    <!-- endbower -->\n    <!-- endbuild -->\n    \n    <!-- build:js scripts/main.js -->\n    <!-- <script src=\"index.js\"></script> -->\n    <!-- endbuild -->\n  </body>\n</html>\n";
+	module.exports = "<html lang=\"\" ng-app=\"App\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"description\" content=\"Pokemons at their maximum level\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0\">\n\n        <meta name=\"theme-color\" content=\"#282b30\">\n        <meta name=\"msapplication-navbutton-color\" content=\"#282b30\">\n        <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#282b30\">\n\n        <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n        <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#282b30\">\n        <meta name=\"apple-mobile-web-app-title\" content=\"Colosseum\">\n        <meta name=\"msapplication-TileImage\" content=\"images/icons/launcher-192.png\">\n        <meta name=\"msapplication-TileColor\" content=\"#3f51b5\">\n\n        <title>Colosseum</title>\n\n        <link rel=\"manifest\" href=\"manifest.json\">\n        <link rel=\"shortcut icon\" href=\"images/icons/favicon.ico\">\n        <link rel=\"apple-touch-icon\" href=\"images/icons/apple-touch-icon.png\">\n        <link rel=\"icon\" sizes=\"192x192\" href=\"images/icons/launcher-192.png\">\n\n        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>\n\n        <script data-apikey=\"a5c9247914387e79f30123dac3f6835c\" src=\"https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js\" async defer></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js\"></script>\n    </head>\n  <body class=\"bgColor\">\n    <!--[if lt IE 8]>\n        <p class=\"browserupgrade\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>\n    <![endif]-->\n    <div class=\"container\">\n        <div class=\"loadingContainer fadeout\" ng-show=\"!loaded\">\n            <div class=\"loader\">\n                <div class=\"loader-wrapper\">\n                    <div class=\"infiniteLoader\">\n                        <div class=\"roller first\"></div>\n                        <div class=\"roller first\"></div>\n                    </div>\n                    <div id=\"loader2\" class=\"infiniteLoader\">\n                        <div class=\"roller second\"></div>\n                        <div class=\"roller second\"></div>\n                    </div>\n                    <div id=\"loader3\" class=\"infiniteLoader\">\n                        <div class=\"roller third\"></div>\n                        <div class=\"roller third\"></div>\n                    </div>\n                </div>\n                <div class=\"quote\">{{ ::quote }}</div>\n                <div class=\"quoteBy\">\n                    <i>\n                        <div class=\"by inline\">By</div>\n                        <div class=\"author inline\">@{{ ::quoteAuthor }}</div>\n                    </i>\n                </div>\n                <div class=\"status\">{{ status }}</div>\n            </div>\n        </div>\n        <div class=\"mainContainer container\" ng-class=\"{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }\" ng-controller=\"MainPokemon\">\n            <div class=\"logo to-bottom-logo delay-3\">\n                <img src=\"" + __webpack_require__(2) + "\" ng-click=\"reloadHome()\">\n            </div>\n            <div class=\"innerContainer\">\n                <div class=\"pokemonImage to-scale delay-1\">\n                    <div class=\"jp thirdyColor\">{{ ::jp}}</div>\n                    <img ng-src=\"{{ ::imageUrl }}\" imageonload=\"unveil()\">\n                </div>\n                <div class=\"pokemonStats\">\n                    <div class=\"pokemonVCard to-left\">\n                        <div class=\"pokemonGenere secondaryColor\">{{ ::genere }}</div>\n                        <div class=\"pokemonName primaryColor borderColor\">{{ ::up(currentPokemon.name) }}</div>\n                        <div class=\"pokemonId\">{{ ::currentPokemon.id }}</div>\n                        <div class=\"pokemonTypesContainer\">\n                            <div class=\"pokemonTypes \">\n                                <ul>\n                                    <li class=\"padded inline\" ng-repeat=\"type in typeUrls\">\n                                        <img class=\"pokemonTypeVc\" ng-src=\"{{ ::type }}\">\n                                    </li>\n                                </ul>\n                            </div>\n                            <div class=\"padded pokemonHabitat primaryColor\">Loves to stay in {{ ::habitat }}s {{ ::happiness }}</div>\n                        </div>\n                    </div>\n                    <div class=\"to-fade\">\n                        <div class=\"pokemonHeight primaryColor verticalPadded\">Height {{ currentPokemon.height/10 }} meters</div>\n                        <div class=\"pokemonWeight primaryColor\">Weight {{ currentPokemon.weight/10 }} kilograms</div>\n                        <div class=\"pokemonBaseStats mediumSize\">\n                            <ul>\n                                <li ng-repeat=\"stat in currentPokemon.stats\" class=\"liStat\">\n                                    <div class=\"inline thirdyColor\">{{ ::up(stat.stat.name) }}</div>\n                                    <div class=\"inline padded\"> - </div>\n                                    <div class=\"inline secondaryColor\">{{ ::stat.base_stat }}</div>\n                                </li>\n                            </ul>\n                        </div>\n                        <div class=\"pokemonDescription primaryColor verticalPadded\">\n                            {{ ::description }}\n                        </div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"secondaryContainer\">\n                <div class=\"pokemonAbilities to-top delay-1\" ng-controller=\"PokemonAbilities\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Abilities</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"ability in currentPokemon.abilities\" ng-mouseover=\"getAbility(ability.ability.url)\">\n                            <span class=\"tooltip-item\">\n                                {{ ::up(ability.ability.name) }}\n                            </span>\n                            <span class=\"tooltip-content tooltipColor tooltip-onleft\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : abilityDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                <span class=\"tooltip-text\" ng-class=\"{ hidden : !abilityDescription }\">\n                                    {{ abilityDescription }}\n                                </span>\n                            </span>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"pokemonFamily to-top delay-2\" ng-controller=\"PokemonFamily\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Family</div>\n                    <ul>\n                        <li class=\"padded verticalPadded inline\" ng-repeat=\"pokemon in members\">\n                            <img    ng-click=\"reloadWith(pokemon)\" \n                                    title=\"{{ ::getPokemonName(pokemon) }}\" \n                                    class=\"pokemonMember to-top\" \n                                    ng-src=\"{{ ::getImageUrl(pokemon) }}\" \n                                    style=\"transition-delay: {{($index + 4 * 3)/10}}s;\">\n                        </li>\n                    </ul>\n                </div>\n                <div    class=\"pokemonMultipliers to-top delay-3\" \n                        ng-class=\"{ switchMultiplier : $storage.multiplier }\" \n                        ng-controller=\"PokemonMultipliers\">\n                    <div class=\"secondaryColor mediumSize primaryColor pointer inline\">Multipliers</div>\n                    <div class=\"onoffswitch inline\">\n                        <input  type=\"checkbox\" \n                                name=\"onoffswitch\" \n                                class=\"onoffswitch-checkbox\" \n                                id=\"myonoffswitch\" \n                                ng-checked=\"!$storage.multiplier\" \n                                ng-click=\"$storage.multiplier = !$storage.multiplier\">\n                        <label class=\"onoffswitch-label\" for=\"myonoffswitch\">\n                            <span class=\"onoffswitch-inner\"></span>\n                            <span class=\"onoffswitch-switch\"></span>\n                        </label>\n                    </div>\n                    <ul class=\"multiplierAttack\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.attack | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>\n                    <ul class=\"multiplierDefense softHidden\">\n                        <li ng-repeat=\"multiplier in [0,0.25,0.5,1,2,4]\">\n                            <ul class=\"multiplierRow\">\n                                <li class=\"padded topPadded inline\" ng-repeat=\"(name, percentage) in multipliers.defense | multi:multiplier\">\n                                    <div class=\"centerAligned\">\n                                        <img class=\"topPadded inline pokemonType\" title=\"{{ ::name }}\" src=\"{{ ::getUrlType(name) }}\">\n                                        <div class=\"miniLabel thirdyColor\">x{{multiplier}}</div>\n                                    </div>\n                                </li>\n                            </ul>\n                        </li>\n                    </ul>  \n                </div>\n                <div class=\"pokemonHeldItems to-top delay-4\" ng-controller=\"PokemonHeldItems\">\n                    <div class=\"secondaryColor mediumSize primaryColor\">Held Items</div>\n                    <ul>\n                        <li class=\"padded verticalPadded thirdyColor tooltip\" ng-repeat=\"item in currentPokemon.held_items\" ng-mouseover=\"getHeldItem(item.item.url)\">\n                            <div class=\"centerAligned\">\n                                <span class=\"tooltip-item\">\n                                    <img class=\"middleRow inline\" title=\"{{ ::item.item.name }}\" src=\"{{ ::getUrlItem(item.item.name) }}\">\n                                    <div class=\"padded inline\">\n                                        {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%\n                                    </div>\n                                </span>\n                                <span class=\"tooltip-content tooltipColor tooltip-onright\">\n                                    <div class=\"sk-three-bounce\" ng-class=\"{ hidden : heldItemDescription }\">\n                                        <div class=\"sk-child sk-bounce1\"></div>\n                                        <div class=\"sk-child sk-bounce2\"></div>\n                                        <div class=\"sk-child sk-bounce3\"></div>\n                                    </div>\n                                    <span class=\"tooltip-text\" ng-class=\"{ hidden : !heldItemDescription }\">\n                                        {{ heldItemDescription }}\n                                    </span>\n                                </span>\n                            </div>\n                        </li>\n                        <li class=\"padded verticalPadded thirdyColor\" ng-show=\"!currentPokemon.held_items.length\">None</li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n            \n        <div ng-controller=\"Morph\">" + __webpack_require__(3) + "</div>\n        \n        <script>\n            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n            ga('create', 'UA-69090146-3', 'auto');\n            ga('send', 'pageview');\n        </script>\n    </div>\n    <!-- build:js scripts/vendor.js -->\n    <!-- bower:js -->\n    <!-- endbower -->\n    <!-- endbuild -->\n    \n    <!-- build:js scripts/main.js -->\n    <!-- <script src=\"index.js\"></script> -->\n    <!-- endbuild -->\n  </body>\n</html>\n";
 
 /***/ },
 /* 2 */
@@ -602,7 +602,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "/*\r\n* Infinite Loader \r\n*\r\n* Author: Jonathan Silva with Naramsim\r\n* Url: http://portfolio.jonathansilva.com.br\r\n*\r\n*/\r\n/* ----- Base ----- */\r\n/* ----- Loader ----- */\r\n.quote {\r\n\tmargin-top: 60px;\r\n\tcolor: #DCDCDC;\r\n\ttext-align: center;\r\n  max-width: 80%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n\r\n.quoteBy {\r\n\tfont-size: 12px;\r\n\ttext-align: center;\r\n}\r\n\r\n.by {\r\n\tcolor: #5A5A5A;\r\n}\r\n\r\n.author {\r\n\tcolor: gray;\r\n}\r\n\r\n.loader-wrapper {\r\n  width: 148px;\r\n  height: 100px;\r\n  position: absolute;\r\n  margin: -50px 0 0 -74px;\r\n  left: 50%;\r\n}\r\n\r\n.infiniteLoader {\r\n  width: 148px;\r\n  height: 100px;\r\n  top: 0;\r\n  left: 0;\r\n  position: absolute;\r\n}\r\n.infiniteLoader:after {\r\n  content: \"\";\r\n  top: auto;\r\n  position: absolute;\r\n  display: block;\r\n  -webkit-animation: shadow 1.5s infinite linear;\r\n          animation: shadow 1.5s infinite linear;\r\n  -moz-animation: shadow 1.5s infinite linear;\r\n  bottom: 0em;\r\n  left: 0;\r\n  height: .25em;\r\n  width: 1em;\r\n  border-radius: 50%;\r\n  background-color: #EAEAEA;\r\n  opacity: 0.3;\r\n}\r\n\r\n.roller,\r\n.roller:last-child {\r\n  opacity: 0;\r\n  width: 70px;\r\n  height: 70px;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  -webkit-animation: rollercoaster 1.5s infinite linear;\r\n  -webkit-transform: rotate(105deg);\r\n  -moz-animation: rollercoaster 1.5s infinite linear;\r\n  -moz-transform: rotate(105deg);\r\n  animation: rollercoaster 1.5s infinite linear;\r\n  transform: rotate(105deg);\r\n}\r\n\r\n.roller:last-child {\r\n  left: auto;\r\n  right: 0;\r\n  -webkit-transform: rotate(-45deg);\r\n  -webkit-animation: rollercoaster2 1.5s infinite linear;\r\n  -moz-transform: rotate(-45deg);\r\n  -moz-animation: rollercoaster2 1.5s infinite linear;\r\n  transform: rotate(-45deg);\r\n  animation: rollercoaster2 1.5s infinite linear;\r\n}\r\n\r\n.roller:before,\r\n.roller:last-child:before {\r\n  display: block;\r\n  width: 15px;\r\n  height: 15px;\r\n}\r\n\r\n.first:before,\r\n.first:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/dive-ball.png\");\r\n}\r\n\r\n.second:before,\r\n.second:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/quick-ball.png\");\r\n}\r\n\r\n.third:before,\r\n.third:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(\"https://naramsim.github.io/Colosseum/images/items/master-ball.png\");\r\n}\r\n\r\n@-webkit-keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@-webkit-keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n  }\r\n}\r\n@-webkit-keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n/* Moz */\r\n/* No-prefix */\r\n@keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n            transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n            transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n            transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n            transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n            transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n            transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n            transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n            transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n            transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n            transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n            transform: rotate(-405deg);\r\n  }\r\n}\r\n@keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n            transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n            transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n            transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n            transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n            transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n            transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n            transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n            transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n            transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n            transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n#loader2:after {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n#loader2 .roller {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n\r\n#loader3:after {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n#loader3 .roller {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n", ""]);
+	exports.push([module.id, "/*\r\n* Infinite Loader \r\n*\r\n* Author: Jonathan Silva with Naramsim\r\n* Url: http://portfolio.jonathansilva.com.br\r\n*\r\n*/\r\n/* ----- Base ----- */\r\n/* ----- Loader ----- */\r\n.quote {\r\n\tmargin-top: 60px;\r\n\tcolor: #DCDCDC;\r\n\ttext-align: center;\r\n  max-width: 80%;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n}\r\n\r\n.quoteBy {\r\n\tfont-size: 12px;\r\n\ttext-align: center;\r\n}\r\n\r\n.by {\r\n\tcolor: #5A5A5A;\r\n}\r\n\r\n.author {\r\n\tcolor: gray;\r\n}\r\n\r\n.loader-wrapper {\r\n  width: 148px;\r\n  height: 100px;\r\n  position: absolute;\r\n  margin: -50px 0 0 -74px;\r\n  left: 50%;\r\n}\r\n\r\n.infiniteLoader {\r\n  width: 148px;\r\n  height: 100px;\r\n  top: 0;\r\n  left: 0;\r\n  position: absolute;\r\n}\r\n.infiniteLoader:after {\r\n  content: \"\";\r\n  top: auto;\r\n  position: absolute;\r\n  display: block;\r\n  -webkit-animation: shadow 1.5s infinite linear;\r\n          animation: shadow 1.5s infinite linear;\r\n  -moz-animation: shadow 1.5s infinite linear;\r\n  bottom: 0em;\r\n  left: 0;\r\n  height: .25em;\r\n  width: 1em;\r\n  border-radius: 50%;\r\n  background-color: #EAEAEA;\r\n  opacity: 0.3;\r\n}\r\n\r\n.roller,\r\n.roller:last-child {\r\n  opacity: 0;\r\n  width: 70px;\r\n  height: 70px;\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  -webkit-animation: rollercoaster 1.5s infinite linear;\r\n  -webkit-transform: rotate(105deg);\r\n  -moz-animation: rollercoaster 1.5s infinite linear;\r\n  -moz-transform: rotate(105deg);\r\n  animation: rollercoaster 1.5s infinite linear;\r\n  transform: rotate(105deg);\r\n}\r\n\r\n.roller:last-child {\r\n  left: auto;\r\n  right: 0;\r\n  -webkit-transform: rotate(-45deg);\r\n  -webkit-animation: rollercoaster2 1.5s infinite linear;\r\n  -moz-transform: rotate(-45deg);\r\n  -moz-animation: rollercoaster2 1.5s infinite linear;\r\n  transform: rotate(-45deg);\r\n  animation: rollercoaster2 1.5s infinite linear;\r\n}\r\n\r\n.roller:before,\r\n.roller:last-child:before {\r\n  display: block;\r\n  width: 15px;\r\n  height: 15px;\r\n}\r\n\r\n.first:before,\r\n.first:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(" + __webpack_require__(12) + ");\r\n}\r\n\r\n.second:before,\r\n.second:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(" + __webpack_require__(13) + ");\r\n}\r\n\r\n.third:before,\r\n.third:last-child:before {\r\n  -webkit-transform: scale(0.2);\r\n          transform: scale(0.2);\r\n  content: url(" + __webpack_require__(14) + ");\r\n}\r\n\r\n@-webkit-keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@-webkit-keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n  }\r\n}\r\n@-webkit-keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n/* Moz */\r\n/* No-prefix */\r\n@keyframes rollercoaster {\r\n  0% {\r\n    -webkit-transform: rotate(135deg);\r\n            transform: rotate(135deg);\r\n  }\r\n  8% {\r\n    -webkit-transform: rotate(240deg);\r\n            transform: rotate(240deg);\r\n  }\r\n  20% {\r\n    opacity: .8;\r\n    -webkit-transform: rotate(300deg);\r\n            transform: rotate(300deg);\r\n  }\r\n  40% {\r\n    -webkit-transform: rotate(380deg);\r\n            transform: rotate(380deg);\r\n  }\r\n  45% {\r\n    -webkit-transform: rotate(440deg);\r\n            transform: rotate(440deg);\r\n  }\r\n  50% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 1;\r\n  }\r\n  50.1% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(495deg);\r\n            transform: rotate(495deg);\r\n    opacity: 0;\r\n  }\r\n}\r\n@keyframes rollercoaster2 {\r\n  0% {\r\n    opacity: 0;\r\n  }\r\n  49.9% {\r\n    opacity: 0;\r\n  }\r\n  50% {\r\n    opacity: 1;\r\n    -webkit-transform: rotate(-45deg);\r\n            transform: rotate(-45deg);\r\n  }\r\n  58% {\r\n    -webkit-transform: rotate(-160deg);\r\n            transform: rotate(-160deg);\r\n  }\r\n  70% {\r\n    -webkit-transform: rotate(-240deg);\r\n            transform: rotate(-240deg);\r\n  }\r\n  80% {\r\n    -webkit-transform: rotate(-300deg);\r\n            transform: rotate(-300deg);\r\n  }\r\n  90% {\r\n    -webkit-transform: rotate(-340deg);\r\n            transform: rotate(-340deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(-405deg);\r\n            transform: rotate(-405deg);\r\n  }\r\n}\r\n@keyframes shadow {\r\n  0% {\r\n    opacity: .3;\r\n    -webkit-transform: translateX(65px) scale(0.5, 0.5);\r\n            transform: translateX(65px) scale(0.5, 0.5);\r\n  }\r\n  8% {\r\n    -webkit-transform: translateX(30px) scale(2, 2);\r\n            transform: translateX(30px) scale(2, 2);\r\n  }\r\n  13% {\r\n    -webkit-transform: translateX(0px) scale(1.3, 1.3);\r\n            transform: translateX(0px) scale(1.3, 1.3);\r\n  }\r\n  30% {\r\n    -webkit-transform: translateX(-15px) scale(0.5, 0.5);\r\n            transform: translateX(-15px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  50% {\r\n    -webkit-transform: translateX(60px) scale(1.2, 1.2);\r\n            transform: translateX(60px) scale(1.2, 1.2);\r\n    opacity: 0.3;\r\n  }\r\n  60% {\r\n    -webkit-transform: translateX(130px) scale(2, 2);\r\n            transform: translateX(130px) scale(2, 2);\r\n    opacity: 0.05;\r\n  }\r\n  65% {\r\n    -webkit-transform: translateX(145px) scale(1.2, 1.2);\r\n            transform: translateX(145px) scale(1.2, 1.2);\r\n  }\r\n  80% {\r\n    -webkit-transform: translateX(120px) scale(0.5, 0.5);\r\n            transform: translateX(120px) scale(0.5, 0.5);\r\n    opacity: 0.1;\r\n  }\r\n  90% {\r\n    -webkit-transform: translateX(80px) scale(0.8, 0.8);\r\n            transform: translateX(80px) scale(0.8, 0.8);\r\n  }\r\n  100% {\r\n    -webkit-transform: translateX(60px);\r\n            transform: translateX(60px);\r\n    opacity: 0.3;\r\n  }\r\n}\r\n#loader2:after {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n#loader2 .roller {\r\n  -webkit-animation-delay: 0.15s;\r\n  animation-delay: 0.15s;\r\n}\r\n\r\n#loader3:after {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n#loader3 .roller {\r\n  -webkit-animation-delay: 0.3s;\r\n  animation-delay: 0.3s;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -611,10 +611,28 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "dive-balle69fb1c59edb845a8c726ac120f5cc2a.png";
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "quick-ball4b832bf859b98e0984b901eb5fb178c1.png";
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "master-ball9b4268f43fd5f71f96b9eb073a42b91d.png";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(13);
+	var content = __webpack_require__(16);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -634,7 +652,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -648,13 +666,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(15);
+	var content = __webpack_require__(18);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -674,7 +692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -682,19 +700,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "*, *:after, *:before { box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\t-ms-flex-line-pack: center;\r\n\t    align-content: center;\r\n\t-webkit-box-flex: 5;\r\n\t    -ms-flex-positive: 5;\r\n\t        flex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: -webkit-inline-box;\r\n\tdisplay: -ms-inline-flexbox;\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\t-ms-flex-preferred-size: 350px;\r\n\t    flex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n\tz-index: 1;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}\r\n\r\n@media screen and (min-aspect-ratio: 19/9) and (min-width: 900px) {\r\n\t.multiplierRow .centerAligned {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t        align-items: center;\r\n\t    display: -webkit-box;\r\n\t    display: -ms-flexbox;\r\n\t    display: flex;\r\n\t    -webkit-box-orient: horizontal;\r\n\t    -webkit-box-direction: reverse;\r\n\t        -ms-flex-direction: row-reverse;\r\n\t            flex-direction: row-reverse;\r\n\t}\r\n\t.miniLabel {\r\n\t    display: -webkit-inline-box;\r\n\t    display: -ms-inline-flexbox;\r\n\t    display: inline-flex;\r\n\t}\r\n\r\n\t.multiplierRow li:nth-child(n+2) .miniLabel {\r\n\t    display: none;\r\n\t}\r\n\r\n}", ""]);
+	exports.push([module.id, "*, *:after, *:before { box-sizing: border-box; }\r\n.clearfix:before, .clearfix:after { content: ''; display: table; }\r\n.clearfix:after { clear: both; }\r\n\r\nbody {\r\n  font-size: 16px;\r\n  font-family: 'Montserrat', sans-serif;\r\n  background-color: #282b30;\r\n}\r\n\r\ninput {\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n\r\na {\r\n  color: #fff;\r\n  text-decoration: none;\r\n  outline: none;\r\n}\r\n\r\na:hover,\r\na:focus {\r\n  color: #ec5a62;\r\n}\r\n\r\na:focus {\r\n    outline: -webkit-focus-ring-color auto 5px;\r\n    outline-color: -webkit-focus-ring-color;\r\n    outline-style: auto;\r\n    outline-width: 5px;\r\n}\r\n\r\na:hover, a:active {\r\n    outline: 0;\r\n}\r\n\r\n.container {\r\n\tposition: relative;\r\n\theight: 100%;\r\n\twidth: 100%;\r\n\tmin-height: 100%;\r\n}\r\n\r\n.mainContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-user-select: none;       \r\n\t-moz-user-select: none; \r\n\t-ms-user-select: none;\r\n\t-o-user-select: none;\r\n\tuser-select: none;\r\n}\r\n\r\n.secondaryContainer {\r\n\t-webkit-box-flex: 1;\r\n\t    -ms-flex-positive: 1;\r\n\t        flex-grow: 1;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\tposition: relative;\r\n\tz-index: 1;\r\n}\r\n\r\n.innerContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-ms-flex-pack: distribute;\r\n\t    justify-content: space-around;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\t-ms-flex-line-pack: center;\r\n\t    align-content: center;\r\n\t-webkit-box-flex: 5;\r\n\t    -ms-flex-positive: 5;\r\n\t        flex-grow: 5;\r\n}\r\n\r\n.pokemonImage {\r\n\tposition: relative;\r\n\tz-index: 1;\r\n}\r\n\r\n.pokemonImage>img {\r\n\theight: 45vh;\r\n\twidth: 45vw;\r\n\tposition: relative;\r\n}\r\n\r\n.pokemonStats {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center\r\n}\r\n\r\n.pokemonVCard {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: vertical;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: column;\r\n\t        flex-direction: column;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n}\r\n\r\n.pokemonName {\r\n\tfont-size: 300%;\r\n\tfont-weight: 800;\r\n\tz-index: 5;\r\n}\r\n\r\n.pokemonId {\r\n\tfont-size: 1334%;\r\n\topacity: .1;\r\n\tmargin-top: -149px;\r\n}\r\n\r\n.pokemonBaseStats {\r\n\tpadding-top: 1em;\r\n}\r\n\r\n.inline {\r\n\tdisplay: -webkit-inline-box;\r\n\tdisplay: -ms-inline-flexbox;\r\n\tdisplay: inline-flex;\r\n}\r\n\r\n.padded {\r\n\tpadding-right: 10px;\r\n\tpadding-left: 10px;\r\n}\r\n\r\n.pokemonAbilities {\r\n\tz-index: 10;\r\n}\r\n\r\n.verticalPadded {\r\n\tpadding-top: 10px;\r\n\tpadding-bottom: 10px;\r\n}\r\n\r\n.topPadded {\r\n\tpadding-top: 10px;\r\n}\r\n\r\n.miniLabel {\r\n\ttext-align: center;\r\n\tfont-size: 11px;\r\n}\r\n\r\n.liStat:nth-child(even) {\r\n\tpadding: 5px;\r\n}\r\n\r\n.mediumSize {\r\n\tfont-size: 170%;\r\n}\r\n\r\n.pokemonDescription {\r\n\tmax-width: 40vw;\r\n\tline-height: 1.5;\r\n\topacity: .8;\r\n}\r\n\r\n.pokemonTypesContainer {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-orient: horizontal;\r\n\t-webkit-box-direction: normal;\r\n\t    -ms-flex-direction: row;\r\n\t        flex-direction: row;\r\n\t-webkit-box-pack: start;\r\n\t    -ms-flex-pack: start;\r\n\t        justify-content: flex-start;\r\n}\r\n\r\n.pokemonGenere {\r\n\tmargin-left: -36px;\r\n}\r\n\r\n.pokemonMember {\r\n\theight: 90px;\r\n\twidth: 90px;\r\n\tcursor: pointer;\r\n}\r\n\r\n.centerAligned {\r\n\tvertical-align: middle;\r\n}\r\n\r\n.middleRow {\r\n\tvertical-align: middle;\r\n\theight: 40px;\r\n}\r\n\r\n.pokemonFamily {\r\n    max-width: 40%;\r\n}\r\n\r\n.pokemonFamily > ul {\r\n\ttext-align: center;\r\n}\r\n\r\n.pokemonAbilities, .pokemonFamily, .pokemonHeldItems {\r\n\t/*flex-grow: 1;*/\r\n}\r\n\r\n.pokemonMultipliers {\r\n\t-ms-flex-preferred-size: 350px;\r\n\t    flex-basis: 350px;\r\n}\r\n\r\n.loadingContainer {\r\n\tmin-height: 100%;\r\n\tmin-width: 100vw;\r\n\twidth: 100vw;\r\n\theight: 100%;\r\n\tbackground-color: #282b30;\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n\t-webkit-box-pack: center;\r\n\t    -ms-flex-pack: center;\r\n\t        justify-content: center;\r\n\t-webkit-box-align: center;\r\n\t    -ms-flex-align: center;\r\n\t        align-items: center;\r\n\tposition: fixed;\r\n\tz-index: 100;\r\n}\r\n\r\n.jp {\r\n\t/*font-family: 'Noto Sans Japanese', serif;*/\r\n    font-weight: 400;\r\n    position: absolute;\r\n    top: 100%;\r\n    font-size: 1260%;\r\n    opacity: 0.1;\r\n    width: 400%;\r\n}\r\n\r\n.multiplierAttack, .multiplierDefense {\r\n\tposition: absolute;\r\n}\r\n\r\n.switchMultiplier > .multiplierAttack {\r\n\topacity: 0;\r\n}\r\n\r\n.switchMultiplier > .multiplierDefense {\r\n\topacity: 1;\r\n}\r\n\r\n.hidden {\r\n\tdisplay: none;\r\n}\r\n\r\n.softHidden {\r\n\topacity: 0;\r\n}\r\n\r\n.pointer {\r\n\tcursor: pointer;\r\n}\r\n\r\n.pokemonSearchId {\r\n\topacity: .2;\r\n\tcolor: gray;\r\n    vertical-align: middle;\r\n    font-size: 30px;\r\n    margin-left: -20px;\r\n}\r\n\r\n.pokemonTypeVc {\r\n\theight: 14px;\r\n}\r\n\r\n.pokemonType {\r\n\theight: 24px;\r\n}\r\n\r\n.logo {\r\n\tposition: absolute;\r\n\ttop: 50px;\r\n\tleft: 50px;\r\n\tcursor: pointer;\r\n\tz-index: 1;\r\n}\r\n\r\n.logo > img {\r\n\theight: 40px;\r\n}\r\n\r\n.status {\r\n\ttext-align: center;\r\n    margin-top: 20px;\r\n    color: #5a5a5a;\r\n    max-width: 40%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\n.centerHorizontally {\r\n\tdisplay: -webkit-box;\r\n\tdisplay: -ms-flexbox;\r\n\tdisplay: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: row;\r\n            flex-direction: row;\r\n}\r\n\r\n@media screen and (max-width: 1300px) {\r\n\tbody {\r\n\t\tfont-size: 12px;\r\n\t}\r\n}\r\n\r\n@media screen and (min-aspect-ratio: 19/9) and (min-width: 900px) {\r\n\t.multiplierRow .centerAligned {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t        align-items: center;\r\n\t    display: -webkit-box;\r\n\t    display: -ms-flexbox;\r\n\t    display: flex;\r\n\t    -webkit-box-orient: horizontal;\r\n\t    -webkit-box-direction: reverse;\r\n\t        -ms-flex-direction: row-reverse;\r\n\t            flex-direction: row-reverse;\r\n\t}\r\n\t.miniLabel {\r\n\t    display: -webkit-inline-box;\r\n\t    display: -ms-inline-flexbox;\r\n\t    display: inline-flex;\r\n\t}\r\n\r\n\t.multiplierRow li:nth-child(n+2) .miniLabel {\r\n\t    display: none;\r\n\t}\r\n\r\n}", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(17);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -714,7 +732,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -728,13 +746,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(19);
+	var content = __webpack_require__(22);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -754,7 +772,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -768,13 +786,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(21);
+	var content = __webpack_require__(24);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -794,7 +812,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -808,13 +826,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(23);
+	var content = __webpack_require__(26);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -834,7 +852,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -848,13 +866,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(25);
+	var content = __webpack_require__(28);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -874,7 +892,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -882,19 +900,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\t-webkit-box-orient: vertical;\r\n\t\t-webkit-box-direction: normal;\r\n\t\t    -ms-flex-direction: column;\r\n\t\t        flex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t            -ms-grid-row-align: center;\r\n\t\t        align-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonDescription, .pokemonFamily {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    -ms-flex-preferred-size: 1px;\r\n\t        flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n\t", ""]);
+	exports.push([module.id, "@media screen and (max-width: 900px) {\r\n\thtml, body {\r\n\t\toverflow-x: hidden;\r\n\t\tfont-size: 16px;\r\n\t}\r\n\r\n\t.container {\r\n\t\theight: initial;\r\n\t\tmin-height: initial;\r\n\t}\r\n\r\n\t.innerContainer, .secondaryContainer, .pokemonTypesContainer {\r\n\t\t-webkit-box-orient: vertical;\r\n\t\t-webkit-box-direction: normal;\r\n\t\t    -ms-flex-direction: column;\r\n\t\t        flex-direction: column;\r\n\t}\r\n\r\n\t.innerContainer {\r\n\t\tpadding-top: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer, .pokemonVCard {\r\n\t\t-webkit-box-align: center;\r\n\t\t    -ms-flex-align: center;\r\n\t\t            -ms-grid-row-align: center;\r\n\t\t        align-items: center;\r\n\t}\r\n\r\n\t.mediumSize {\r\n\t\tmargin-top: 70px;\r\n\t}\r\n\r\n\t.pokemonHeight, .pokemonWeight, .mediumSize, .pokemonHabitat, .multiplierRow, .pokemonDescription, .pokemonHeldItems > ul, .pokemonAbilities > ul, .pokemonMultipliers {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmargin: 0 auto;\r\n\t}\r\n\r\n\t.pokemonStats, .pokemonFamily {\r\n\t\tmax-width: 90%;\r\n\t}\r\n\r\n\t.pokemonDescription {\r\n\t\tmax-width: 80%;\r\n\t}\r\n\r\n\t.morphsearch.open .morphsearch-form {\r\n\t\theight: 70px;\r\n\t}\r\n\r\n\t.jp {\r\n\t\tfont-size: 200%;\r\n\t\ttop: 10%;\r\n\t\topacity: .7;\r\n\t\tposition: relative;\r\n\t\tmargin-bottom: -35px;\r\n\t    margin-top: 23px;\r\n\t}\r\n\r\n\t.tooltip-onleft {\r\n\t    width: 239%;\r\n\t    left: -65%;\r\n\t    bottom: -2px;\r\n\t}\r\n\r\n\t.tooltip-onright {\r\n\t\twidth: 100%;\r\n\t    left: 0%;\r\n\t}\r\n\r\n\t.multiplierAttack, .multiplierDefense {\r\n\t    position: relative;\r\n\t}\r\n\r\n\t.softHidden {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierAttack {\r\n\t\tdisplay: none;\r\n\t}\r\n\r\n\t.switchMultiplier > .multiplierDefense {\r\n\t\tdisplay: block;\r\n\t}\r\n\r\n\t.pokemonHeldItems {\r\n\t    margin-bottom: 50px;\r\n\t}\r\n\r\n\t.secondaryContainer > .pokemonMultipliers {\r\n\t    -ms-flex-preferred-size: 1px;\r\n\t        flex-basis: 1px;\r\n\t    height: auto;\r\n\t}\r\n\r\n\t.logo {\r\n\t\ttop: 1%;\r\n    \tleft: 10%;\r\n\t}\r\n}\r\n\r\n@media screen and (max-width: 350px) {\r\n\t.liStat {\r\n\t\tfont-size: 72%;\r\n\t}\r\n}\r\n\t", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(27);
+	var content = __webpack_require__(30);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -914,7 +932,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -928,7 +946,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -938,27 +956,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = run;
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
-	var _quotes = __webpack_require__(30);
+	var _quotes = __webpack_require__(33);
 	
 	var _quotes2 = _interopRequireDefault(_quotes);
 	
-	var _getColors = __webpack_require__(31);
+	var _getColors = __webpack_require__(34);
 	
 	var _getColors2 = _interopRequireDefault(_getColors);
 	
-	var _getHappiness = __webpack_require__(33);
+	var _getHappiness = __webpack_require__(36);
 	
 	var _getHappiness2 = _interopRequireDefault(_getHappiness);
 	
-	var _recentPokemons = __webpack_require__(34);
+	var _recentPokemons = __webpack_require__(37);
 	
-	var _currentPokemon = __webpack_require__(35);
+	var _currentPokemon = __webpack_require__(38);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var isOffline = false;
 	
 	function hasCompleted(completed, $rootScope) {
 	    if (completed = 2) {
@@ -970,20 +990,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function handleErrors($rootScope) {
-	    $rootScope.status = 'ERROR';
-	    setTimeout(function () {
-	        $rootScope.status = 'RELODING';
-	    }, 300);
-	    setTimeout(function () {
-	        location.reload(1);
-	    }, 600);
+	    if (!isOffline) {
+	        $rootScope.status = 'SOMETHING BROKE :(';
+	        setTimeout(function () {
+	            $rootScope.status = 'RELODING';
+	        }, 300);
+	        setTimeout(function () {
+	            location.reload(1);
+	        }, 600);
+	    }
 	}
 	
 	function run($http, $rootScope, getInfoFactory) {
 	    var quoteId = _quotes2.default[Math.floor(Math.random() * _quotes2.default.length)];
 	    $rootScope.quote = quoteId[1];
 	    $rootScope.quoteAuthor = quoteId[0];
-	    $rootScope.status = 'FETCHING';
+	    if (isOffline) {
+	        $rootScope.status = 'You are OFFLINE\nNo problem, you can safely search for Pokémons you already searched';
+	    } else {
+	        $rootScope.status = 'FETCHING';
+	    }
 	    $rootScope.reloadHome = function (id) {
 	        window.location.hash = '';
 	        window.location.reload(true);
@@ -1045,10 +1071,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }).catch(function (err) {
 	        handleErrors($rootScope);
 	    });
+	
+	    if ('serviceWorker' in navigator) {
+	        // Handler for messages coming from the service worker
+	        navigator.serviceWorker.addEventListener('message', function (event) {
+	            var offlineInterval = null;
+	            if (event.data === 'OFFLINE') {
+	                isOffline = true;
+	                offlineInterval = setInterval(function () {
+	                    $rootScope.$apply(function () {
+	                        $rootScope.status = 'You are OFFLINE\nNo problem, you can safely search for Pokémons you already searched';
+	                    });
+	                }, 1000);
+	            }
+	            if (event.data === 'ONLINE') {
+	                isOffline = false;
+	            }
+	        });
+	    }
 	}
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1776,7 +1820,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	];
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -1805,7 +1849,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			"I like shorts! They're comfy and easy to wear!"
 		],
 		[
-			"Youngster joey",
+			"Youngster Joey",
 			"My Rattata is the top percentage of all Rattata!"
 		],
 		[
@@ -1822,7 +1866,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		],
 		[
 			"Mom",
-			"Oh...you look tired. why don't you take a rest?"
+			"Oh...you look tired. Why don't you take a rest?"
 		],
 		[
 			"Blaine",
@@ -1887,11 +1931,71 @@ return /******/ (function(modules) { // webpackBootstrap
 		[
 			"Skyla",
 			"Heads up! Make sure you are ready for it!"
+		],
+		[
+			"Nebulablue",
+			"Hell no, I can't be seen with that ****."
+		],
+		[
+			"Route 23 lass",
+			"It seems it ran away crying"
+		],
+		[
+			"Harley",
+			"Gotta go powder my nose!"
+		],
+		[
+			"A girl",
+			"Oh yes, im a girl"
+		],
+		[
+			"Old man",
+			"You remind me of my lost love. Yes, spitting image"
+		],
+		[
+			"Swimmer",
+			"You have to come from SOMEWHERE, right?"
+		],
+		[
+			"Young couple",
+			"Our love didnt work?"
+		],
+		[
+			"Old Route 111 lady",
+			"There's no need to be shy about it"
+		],
+		[
+			"Seven island guy",
+			"Do the Chansey Dance!"
+		],
+		[
+			"Six island girl",
+			"Hera, hera, HERACROSS!"
+		],
+		[
+			"Route 11 gamer",
+			"Fwahaha! I've never lost!"
+		],
+		[
+			"Rock Tunnel hiker",
+			"Hit me with your best shot!"
+		],
+		[
+			"Youngster Regis",
+			"Youngster? How rude! Call me Shorts Boy!"
+		],
+		[
+			"Battle Frontier woman",
+			"Here it is a sweet kiss from my Jynx"
+		],
+		[
+			"Mt. Chimney hiker",
+			"There are many hot trainers for company!"
 		]
 	];
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1904,7 +2008,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = getColors;
 	
-	var _rbg = __webpack_require__(32);
+	var _rbg = __webpack_require__(35);
 	
 	var _rbg2 = _interopRequireDefault(_rbg);
 	
@@ -1933,13 +2037,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	        css.type = 'text/css';
 	        css.innerHTML = '   .bgColor { \n                                background: linear-gradient( 0deg, ' + bgColor + ', ' + bgColorEnd + ' );\n                                     }\n                            .primaryColor { color: ' + primaryColor + '; }\n                            .secondaryColor { color: ' + secondaryColor + '; } \n                            .thirdyColor { color: ' + thirdyColor + '; }\n                            .borderColor { \n                                text-shadow: -1px 0 ' + bgColor + ', 0 1px ' + bgColor + ', 1px 0 ' + bgColor + ', 0 -1px ' + bgColor + ';\n                            }\n                            .tooltipColor {\n                                background: ' + bgColor + ';\n                                border-bottom: 56px solid ' + secondaryColor + ';\n                            }\n                            .onoffswitch-inner:before {\n                                background-color: ' + secondaryColor + ';\n                            }\n                            .onoffswitch-label, .onoffswitch-switch {\n                                border: 2px solid ' + secondaryColor + ';\n                                background-color: ' + secondaryColor + '; \n                            }\n                            .onoffswitch-inner:before {\n                                color: ' + bgColor + ';\n                            }\n                            .onoffswitch-inner:after {\n                                background-color: ' + bgColor + '; \n                            }\n                            .onoffswitch-switch {\n                                background: ' + bgColor + ';\n                            }\n                            .onoffswitch-inner:after {\n                                color: ' + thirdyColor + ';\n                            }\n                            ';
 	        document.body.appendChild(css);
+	        document.head.querySelectorAll('meta[name=theme-color]')[0].content = bgColor;
 	    };
 	    image.src = 'images/pokemons/' + id + '.svg';
 	    image.crossOrigin = 'Anonymous';
 	}
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1953,7 +2058,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1977,7 +2082,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1990,7 +2095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.recentPokemons = recentPokemons;
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2000,7 +2105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.currentPokemon = undefined;
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -2021,13 +2126,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	console.log(currentPokemon);
 	
 	function generateRandPokemon() {
-	    return _pokemons2.default[Math.floor(0 + Math.random() * 750)];
+	    return _pokemons2.default[Math.floor(0 + Math.random() * 648)];
 	}
 	
 	exports.currentPokemon = currentPokemon;
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2036,7 +2141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _getMultipliers = __webpack_require__(37);
+	var _getMultipliers = __webpack_require__(40);
 	
 	var _getMultipliers2 = _interopRequireDefault(_getMultipliers);
 	
@@ -2099,7 +2204,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = mainPokemon;
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2109,7 +2214,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = getMultipliers;
 	
-	var _all_types = __webpack_require__(38);
+	var _all_types = __webpack_require__(41);
 	
 	var _all_types2 = _interopRequireDefault(_all_types);
 	
@@ -2175,7 +2280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -2725,7 +2830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2734,13 +2839,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _getMemebers = __webpack_require__(40);
+	var _getMemebers = __webpack_require__(43);
 	
 	var _getMemebers2 = _interopRequireDefault(_getMemebers);
 	
-	var _config = __webpack_require__(41);
+	var _config = __webpack_require__(44);
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -2782,7 +2887,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonFamily;
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2803,7 +2908,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2818,7 +2923,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.config = config;
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2827,7 +2932,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -2850,7 +2955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Morph;
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2859,11 +2964,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: true
 	});
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
-	var _recentPokemons = __webpack_require__(34);
+	var _recentPokemons = __webpack_require__(37);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -2874,32 +2979,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    _classCallCheck(this, pokemonSearch);
 	
-	    $scope.$on('init', function () {
-	        $scope.pokemons = _pokemons2.default;
-	        $scope.recents = _recentPokemons.recentPokemons;
-	        $scope.getImageUrl = function (id) {
-	            return 'images/pokemons/' + (_pokemons2.default.indexOf(id) + 1) + '.svg';
-	        };
-	        $scope.saveAndReload = function (pokemon) {
-	            var recents = localStorage.getItem('recents');
-	            if (recents) {
-	                recents = JSON.parse(recents);
-	                recents.unshift(pokemon);
-	                localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)));
-	            } else {
-	                localStorage.setItem('recents', JSON.stringify([pokemon]));
-	            }
-	            window.location.hash = '#' + pokemon;
-	            window.location.reload(true);
-	        };
-	    });
+	    $scope.pokemons = _pokemons2.default;
+	    $scope.recents = _recentPokemons.recentPokemons;
+	    $scope.getImageUrl = function (id) {
+	        return 'images/pokemons/' + (_pokemons2.default.indexOf(id) + 1) + '.svg';
+	    };
+	    $scope.saveAndReload = function (pokemon) {
+	        var recents = localStorage.getItem('recents');
+	        if (recents) {
+	            recents = JSON.parse(recents);
+	            recents.unshift(pokemon);
+	            localStorage.setItem('recents', JSON.stringify(recents.slice(0, 6)));
+	        } else {
+	            localStorage.setItem('recents', JSON.stringify([pokemon]));
+	        }
+	        window.location.hash = '#' + pokemon;
+	        window.location.reload(true);
+	    };
 	};
 	pokemonSearch.$inject = ["$scope"];
 	
 	exports.default = pokemonSearch;
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2908,7 +3011,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _config = __webpack_require__(41);
+	var _config = __webpack_require__(44);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -2941,7 +3044,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonAbilities;
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2974,7 +3077,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonMultipliers;
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2983,7 +3086,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		value: true
 	});
 	
-	var _config = __webpack_require__(41);
+	var _config = __webpack_require__(44);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -3015,7 +3118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = pokemonHeldItems;
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3045,7 +3148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 48 */
+/* 51 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3081,7 +3184,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 49 */
+/* 52 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3103,7 +3206,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 50 */
+/* 53 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3125,7 +3228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 51 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3135,9 +3238,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = getInfoFactory;
 	
-	var _config = __webpack_require__(41);
+	var _config = __webpack_require__(44);
 	
-	var _pokemons = __webpack_require__(29);
+	var _pokemons = __webpack_require__(32);
 	
 	var _pokemons2 = _interopRequireDefault(_pokemons);
 	
@@ -3156,6 +3259,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        pokemon: currentPokemon
 	                    }
 	                });
+	                deferred.reject(data);
 	            });
 	            return deferred.promise;
 	        },
@@ -3170,6 +3274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                        pokemon: currentPokemon
 	                    }
 	                });
+	                deferred.reject(data);
 	            });
 	            return deferred.promise;
 	        }
@@ -3177,7 +3282,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 52 */
+/* 55 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3198,7 +3303,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            elem.classList.add(c);
 	        },
 	        remove: function remove(elem, c) {
-	            return classReg(c).test(elem.className);
+	            elem.classList.remove(c);
 	        },
 	        toggle: function toggleClass(elem, c) {
 	            var fn = hasClass(elem, c) ? removeClass : addClass;
@@ -3208,7 +3313,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	})(window);
 
 /***/ },
-/* 53 */
+/* 56 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3271,7 +3376,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	})(window);
 
 /***/ },
-/* 54 */
+/* 57 */
 /***/ function(module, exports) {
 
 	var appCacheIframe;
@@ -3295,109 +3400,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	          
 	        );
 	
-	      
-	        var handleUpdating = function(registration) {
-	          var sw = registration.installing || registration.waiting;
-	          var ignoreInstalling;
-	          var ignoreWaiting;
-	
-	          // No SW or already handled
-	          if (!sw || sw.onstatechange) return;
-	
-	          var stateChangeHandler;
-	
-	          // Already has SW
-	          if (registration.active) {
-	            onUpdateStateChange();
-	            stateChangeHandler = onUpdateStateChange;
-	          } else {
-	            onInstallStateChange();
-	            stateChangeHandler = onInstallStateChange;
-	          }
-	
-	          ignoreInstalling = true;
-	          if (registration.waiting) {
-	            ignoreWaiting = true;
-	          }
-	
-	          sw.onstatechange = stateChangeHandler;
-	
-	          function onUpdateStateChange() {
-	            switch (sw.state) {
-	              case 'redundant': {
-	                sendEvent('onUpdateFailed');
-	                sw.onstatechange = null;
-	              } break;
-	
-	              case 'installing': {
-	                if (!ignoreInstalling) {
-	                  sendEvent('onUpdating');
-	                }
-	              } break;
-	
-	              case 'installed': {
-	                if (!ignoreWaiting) {
-	                  sendEvent('onUpdateReady');
-	                }
-	              } break;
-	
-	              case 'activated': {
-	                sendEvent('onUpdated');
-	                sw.onstatechange = null;
-	              } break;
-	            }
-	          }
-	
-	          function onInstallStateChange() {
-	            switch (sw.state) {
-	              case 'redundant': {
-	                // Failed to install, ignore
-	                sw.onstatechange = null;
-	              } break;
-	
-	              case 'installing': {
-	                // Installing, ignore
-	              } break;
-	
-	              case 'installed': {
-	                // Installed, wait activation
-	              } break;
-	
-	              case 'activated': {
-	                sendEvent('onInstalled');
-	                sw.onstatechange = null;
-	              } break;
-	            }
-	          }
-	        };
-	
-	        var sendEvent = function(event) {
-	          if (typeof options[event] === 'function') {
-	            options[event]({
-	              source: 'ServiceWorker'
-	            });
-	          }
-	        };
-	
-	        registration.then(function(reg) {
-	          // WTF no reg?
-	          if (!reg) return;
-	
-	          // Installed but Shift-Reloaded (page is not controller by SW),
-	          // update might be ready at this point (more than one tab opened).
-	          // Anyway, if page is hard-reloaded, then it probably already have latest version
-	          // but it's not controlled by SW yet. Applying update will claim this page
-	          // to be controlled by SW. Maybe set flag to not reload it?
-	          // if (!navigator.serviceWorker.controller) return;
-	
-	          handleUpdating(reg);
-	          reg.onupdatefound = function() {
-	            handleUpdating(reg);
-	          };
-	        }).catch(function(err) {
-	          sendEvent('onError');
-	          return Promise.reject(err);
-	        });
 	      
 	
 	      return;
@@ -3434,23 +3436,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	
 	function applyUpdate(callback, errback) {
-	  
-	    if (hasSW()) {
-	      navigator.serviceWorker.getRegistration().then(function(registration) {
-	        if (!registration || !registration.waiting) {
-	          errback && errback();
-	          return;
-	        }
-	
-	        registration.waiting.postMessage({
-	          action: 'skipWaiting'
-	        });
-	
-	        callback && callback();
-	      });
-	
-	      return;
-	    }
 	  
 	
 	  

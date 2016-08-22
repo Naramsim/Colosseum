@@ -6,17 +6,25 @@ var __wpo = {
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js",
       "https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js",
+      "./master-ball9b4268f43fd5f71f96b9eb073a42b91d.png",
+      "./master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg",
+      "./quick-ball4b832bf859b98e0984b901eb5fb178c1.png",
+      "./dive-balle69fb1c59edb845a8c726ac120f5cc2a.png"
     ],
     "additional": [],
     "optional": []
   },
   "hashesMap": {
-    "bb0acd881747080b22beb240e9f5e3cc": "./index.js",
-    "52112e3f04d1f7d44c056ed806274523": "./"
+    "71acd2e800d33bd5d964ec9f6fe199c7": "./master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg",
+    "e69fb1c59edb845a8c726ac120f5cc2a": "./dive-balle69fb1c59edb845a8c726ac120f5cc2a.png",
+    "4b832bf859b98e0984b901eb5fb178c1": "./quick-ball4b832bf859b98e0984b901eb5fb178c1.png",
+    "9b4268f43fd5f71f96b9eb073a42b91d": "./master-ball9b4268f43fd5f71f96b9eb073a42b91d.png",
+    "188d6a2e4e87a42dc7396121e8efa73f": "./index.js",
+    "b9189aa88a9137c67a9a58af71eae120": "./"
   },
   "strategy": "all",
-  "version": "9c880def4937b4fb203b",
+  "version": "e49bfb36cb33ba54f734",
   "name": "webpack-offline",
   "relativePaths": true
 };
@@ -501,7 +509,70 @@ var __wpo = {
 /* 2 */
 /***/ function(module, exports) {
 
-	
+	"use strict";
+
+	var apiRe = /https:\/\/cdn\.rawgit\.com\/Naramsim\/ninjask\/master\/data\/api\/v2\/.+\/\d+\/index\.json/;
+	var imgRe = /images\/\w+\/[\d\w]+\.svg/;
+	var fonttRe = /fonts/;
+	var version = 1;
+
+	self.addEventListener('fetch', function (event) {
+	    if (event.request.url.match(apiRe) || event.request.url.match(imgRe) || event.request.url.match(fonttRe)) {
+	        // HACK: font caching hack: offline-plugin does not allow caching res with '?' in
+	        event.respondWith(caches.match(event.request).then(function (response) {
+	            if (response) {
+	                return response;
+	            }
+
+	            return fetch(event.request).then(function (response) {
+	                if (event.request.url.match(apiRe)) {
+	                    caches.open("api-" + version).then(function (cache) {
+	                        cache.add(event.request.url);
+	                    });
+	                }
+	                if (event.request.url.match(imgRe)) {
+	                    caches.open("images-" + version).then(function (cache) {
+	                        cache.add(event.request.url);
+	                    });
+	                }
+	                if (event.request.url.match(fonttRe)) {
+	                    caches.open("font-" + version).then(function (cache) {
+	                        cache.add(event.request.url);
+	                    });
+	                }
+	                send_message_to_all_clients("ONLINE");
+	                return response;
+	            }).catch(function (error) {
+	                console.log("npe");
+	                send_message_to_all_clients("OFFLINE");
+	            });
+	        }));
+	    }
+	});
+
+	function send_message_to_client(client, msg) {
+	    return new Promise(function (resolve, reject) {
+	        var msg_chan = new MessageChannel();
+
+	        msg_chan.port1.onmessage = function (event) {
+	            if (event.data.error) {
+	                reject(event.data.error);
+	            } else {
+	                resolve(event.data);
+	            }
+	        };
+
+	        client.postMessage(msg, [msg_chan.port2]);
+	    });
+	}
+
+	function send_message_to_all_clients(msg) {
+	    clients.matchAll().then(function (clients) {
+	        clients.forEach(function (client) {
+	            send_message_to_client(client, msg);
+	        });
+	    });
+	}
 
 /***/ }
 /******/ ]);

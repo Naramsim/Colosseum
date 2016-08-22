@@ -4,24 +4,33 @@
         <meta name="description" content="Pokemons at their maximum level">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
+        <meta name="theme-color" content="#282b30">
+        <meta name="msapplication-navbutton-color" content="#282b30">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#282b30">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#282b30">
+        <meta name="apple-mobile-web-app-title" content="Colosseum">
+        <meta name="msapplication-TileImage" content="images/icons/launcher-192.png">
+        <meta name="msapplication-TileColor" content="#3f51b5">
+
         <title>Colosseum</title>
 
+        <link rel="manifest" href="manifest.json">
         <link rel="shortcut icon" href="images/icons/favicon.ico">
         <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
-
-        <link rel="manifest" href="manifest.json">
+        <link rel="icon" sizes="192x192" href="images/icons/launcher-192.png">
 
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <!-- <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"> -->
 
-        <script data-apikey="a5c9247914387e79f30123dac3f6835c" src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js"></script>
+        <script data-apikey="a5c9247914387e79f30123dac3f6835c" src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" async defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    <script type="text/javascript" src="index.js?9c880def4937b4fb203b"></script></head>
+    <script type="text/javascript" src="index.js?e49bfb36cb33ba54f734"></script></head>
   <body class="bgColor">
-    <!--[if lt IE 10]>
+    <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="container">
@@ -48,7 +57,7 @@
                         <div class="author inline">@{{ ::quoteAuthor }}</div>
                     </i>
                 </div>
-                <div class="status">{{status}}</div>
+                <div class="status">{{ status }}</div>
             </div>
         </div>
         <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
@@ -253,12 +262,12 @@
 </script></div>
         
         <script>
-          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-          e.src='https://www.google-analytics.com/analytics.js';
-          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-          ga('create','UA-XXXXX-X');ga('send','pageview');
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-69090146-3', 'auto');
+            ga('send', 'pageview');
         </script>
     </div>
     <!-- build:js scripts/vendor.js -->

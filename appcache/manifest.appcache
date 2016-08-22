@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:9c880def4937b4fb203b
+#ver:e49bfb36cb33ba54f734
 
 CACHE:
 ../index.js
@@ -8,6 +8,10 @@ https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js
 https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js
 https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js
 https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js
+../master-ball9b4268f43fd5f71f96b9eb073a42b91d.png
+../master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg
+../quick-ball4b832bf859b98e0984b901eb5fb178c1.png
+../dive-balle69fb1c59edb845a8c726ac120f5cc2a.png
 
 NETWORK:
 *
