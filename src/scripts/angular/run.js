@@ -7,6 +7,8 @@ import getHappiness from '../helpers/getHappiness.js'
 import { recentPokemons } from '../getters/recentPokemons.js'
 import { currentPokemon } from '../getters/currentPokemon.js'
 
+let isOffline = false;
+
 function hasCompleted(completed, $rootScope) {
     if(completed = 2){
         setTimeout(() => {$rootScope.status = 'READY'},300);
@@ -15,16 +17,22 @@ function hasCompleted(completed, $rootScope) {
 }
 
 function handleErrors($rootScope) {
-    $rootScope.status = 'SOMETHING BROKE :(';
-    setTimeout(() => {$rootScope.status = 'RELODING'},300);
-    setTimeout(() => {location.reload(1)},600);
+    if (!isOffline) {
+        $rootScope.status = 'SOMETHING BROKE :(';
+        setTimeout(() => {$rootScope.status = 'RELODING'},300);
+        setTimeout(() => {location.reload(1)},600);
+    }
 }
 
 export default function run($http, $rootScope, getInfoFactory) {
     var quoteId = quotes[Math.floor(Math.random()*quotes.length)];
     $rootScope.quote = quoteId[1];
     $rootScope.quoteAuthor = quoteId[0];
-    $rootScope.status = 'FETCHING';
+    if (isOffline) {
+        $rootScope.status = 'You are OFFLINE\nNo problem, you can safely search for Pokémons you already searched';
+    } else {
+        $rootScope.status = 'FETCHING';
+    }
     $rootScope.reloadHome = function(id) {
             window.location.hash = '';
             window.location.reload(true);
@@ -86,4 +94,23 @@ export default function run($http, $rootScope, getInfoFactory) {
     }).catch(function(err) {
         handleErrors($rootScope);
     });
+
+
+    if('serviceWorker' in navigator){
+        // Handler for messages coming from the service worker
+        navigator.serviceWorker.addEventListener('message', function(event){
+            var offlineInterval = null;
+            if (event.data === 'OFFLINE') {
+                isOffline = true;
+                offlineInterval = setInterval(() => {
+                    $rootScope.$apply(() => {
+                        $rootScope.status = 'You are OFFLINE\nNo problem, you can safely search for Pokémons you already searched';
+                    });
+                },1000);
+            }
+            if (event.data === 'ONLINE') {
+                isOffline = false;
+            }
+        });
+    }
 }

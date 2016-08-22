@@ -1,6 +1,6 @@
 {
   "name": "colosseum",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Displays Pokemons in a pretty way",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "pokemon",
-    "pretty"
+    "pretty",
+    "search"
   ],
   "author": "Naramsim",
   "license": "MPL-2.0",

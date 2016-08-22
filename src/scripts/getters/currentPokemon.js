@@ -15,7 +15,7 @@ if (!currentPokemon) {
 console.log(currentPokemon)
 
 function generateRandPokemon() {
-    return pokemons[Math.floor(0 + Math.random() * 750)];
+    return pokemons[Math.floor(0 + Math.random() * 648)];
 }
 
 export { currentPokemon }

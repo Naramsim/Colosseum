@@ -33,7 +33,11 @@
 		margin: 0 auto;
 	}
 
-	.pokemonStats, .pokemonDescription, .pokemonFamily {
+	.pokemonStats, .pokemonFamily {
+		max-width: 90%;
+	}
+
+	.pokemonDescription {
 		max-width: 80%;
 	}
 
@@ -92,4 +96,9 @@
 	}
 }
 
+@media screen and (max-width: 350px) {
+	.liStat {
+		font-size: 72%;
+	}
+}
 	

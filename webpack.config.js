@@ -33,7 +33,6 @@ const offlinePluginOptions = {
     version: '[hash]',
     safeToUseOptionalCaches: true,
     ServiceWorker: {
-       // Entry in your project, will be included into SW file
         entry: './src/scripts/sw/swApiCalls.js'
     } 
 }
