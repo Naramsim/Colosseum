@@ -20,11 +20,11 @@ var __wpo = {
     "e69fb1c59edb845a8c726ac120f5cc2a": "./dive-balle69fb1c59edb845a8c726ac120f5cc2a.png",
     "4b832bf859b98e0984b901eb5fb178c1": "./quick-ball4b832bf859b98e0984b901eb5fb178c1.png",
     "9b4268f43fd5f71f96b9eb073a42b91d": "./master-ball9b4268f43fd5f71f96b9eb073a42b91d.png",
-    "188d6a2e4e87a42dc7396121e8efa73f": "./index.js",
-    "b9189aa88a9137c67a9a58af71eae120": "./"
+    "3e744e818252fa0e57319694950f4238": "./index.js",
+    "6426e87e8b930252c22602406df2b708": "./"
   },
   "strategy": "all",
-  "version": "e49bfb36cb33ba54f734",
+  "version": "44b7df7ef58a304c62fc",
   "name": "webpack-offline",
   "relativePaths": true
 };
@@ -512,8 +512,8 @@ var __wpo = {
 	"use strict";
 
 	var apiRe = /https:\/\/cdn\.rawgit\.com\/Naramsim\/ninjask\/master\/data\/api\/v2\/.+\/\d+\/index\.json/;
-	var imgRe = /images\/\w+\/[\d\w]+\.svg/;
-	var fonttRe = /fonts/;
+	var imgRe = /http.*images\/\w+\/[\d\w]+\.svg/;
+	var fonttRe = /http.*fonts/;
 	var version = 1;
 
 	self.addEventListener('fetch', function (event) {
