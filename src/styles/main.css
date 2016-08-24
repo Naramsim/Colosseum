@@ -3,9 +3,9 @@
 .clearfix:after { clear: both; }
 
 body {
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #282b30;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #282b30;
 }
 
 input {
@@ -13,14 +13,14 @@ input {
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
 }
 
 a:hover,
 a:focus {
-  color: #ec5a62;
+    color: #ec5a62;
 }
 
 a:focus {
@@ -35,144 +35,149 @@ a:hover, a:active {
 }
 
 .container {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	min-height: 100%;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
 }
 
 .mainContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	-webkit-user-select: none;       
-	-moz-user-select: none; 
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-user-select: none;       
+    -moz-user-select: none; 
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .secondaryContainer {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	position: relative;
-	z-index: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
 }
 
 .innerContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-	flex-grow: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-grow: 5;
 }
 
 .pokemonImage {
-	position: relative;
-	z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .pokemonImage>img {
-	height: 45vh;
-	width: 45vw;
-	position: relative;
+    height: 45vh;
+    width: 45vw;
+    position: relative;
 }
 
 .pokemonStats {
-	display: flex;
-	flex-direction: column;
-	justify-content: center
+    display: flex;
+    flex-direction: column;
+    justify-content: center
 }
 
 .pokemonVCard {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pokemonName {
-	font-size: 300%;
-	font-weight: 800;
-	z-index: 5;
+    font-size: 300%;
+    font-weight: 800;
+    z-index: 5;
 }
 
 .pokemonId {
-	font-size: 1334%;
-	opacity: .1;
-	margin-top: -149px;
+    font-size: 1334%;
+    opacity: .1;
+    margin-top: -149px;
 }
 
 .pokemonBaseStats {
-	padding-top: 1em;
+    padding-top: 1em;
 }
 
 .inline {
-	display: inline-flex;
+    display: inline-flex;
 }
 
 .padded {
-	padding-right: 10px;
-	padding-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.miniPadded {
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .pokemonAbilities {
-	z-index: 10;
+    z-index: 10;
 }
 
 .verticalPadded {
-	padding-top: 10px;
-	padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .topPadded {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 
 .miniLabel {
-	text-align: center;
-	font-size: 11px;
+    text-align: center;
+    font-size: 11px;
 }
 
 .liStat:nth-child(even) {
-	padding: 5px;
+    padding: 5px;
 }
 
 .mediumSize {
-	font-size: 170%;
+    font-size: 170%;
 }
 
 .pokemonDescription {
-	max-width: 40vw;
-	line-height: 1.5;
-	opacity: .8;
+    max-width: 40vw;
+    line-height: 1.5;
+    opacity: .8;
 }
 
 .pokemonTypesContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 
 .pokemonGenere {
-	margin-left: -36px;
+    margin-left: -36px;
 }
 
 .pokemonMember {
-	height: 90px;
-	width: 90px;
-	cursor: pointer;
+    height: 90px;
+    width: 90px;
+    cursor: pointer;
 }
 
 .centerAligned {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 .middleRow {
-	vertical-align: middle;
-	height: 40px;
+    vertical-align: middle;
+    height: 40px;
 }
 
 .pokemonFamily {
@@ -180,32 +185,32 @@ a:hover, a:active {
 }
 
 .pokemonFamily > ul {
-	text-align: center;
+    text-align: center;
 }
 
 .pokemonAbilities, .pokemonFamily, .pokemonHeldItems {
-	/*flex-grow: 1;*/
+    /*flex-grow: 1;*/
 }
 
 .pokemonMultipliers {
-	flex-basis: 350px;
+    flex-basis: 350px;
 }
 
 .loadingContainer {
-	min-height: 100%;
-	min-width: 100vw;
-	width: 100vw;
-	height: 100%;
-	background-color: #282b30;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	z-index: 100;
+    min-height: 100%;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100%;
+    background-color: #282b30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
 }
 
 .jp {
-	/*font-family: 'Noto Sans Japanese', serif;*/
+    /*font-family: 'Noto Sans Japanese', serif;*/
     font-weight: 400;
     position: absolute;
     top: 100%;
@@ -215,59 +220,59 @@ a:hover, a:active {
 }
 
 .multiplierAttack, .multiplierDefense {
-	position: absolute;
+    position: absolute;
 }
 
 .switchMultiplier > .multiplierAttack {
-	opacity: 0;
+    opacity: 0;
 }
 
 .switchMultiplier > .multiplierDefense {
-	opacity: 1;
+    opacity: 1;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .softHidden {
-	opacity: 0;
+    opacity: 0;
 }
 
 .pointer {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .pokemonSearchId {
-	opacity: .2;
-	color: gray;
+    opacity: .2;
+    color: gray;
     vertical-align: middle;
     font-size: 30px;
     margin-left: -20px;
 }
 
 .pokemonTypeVc {
-	height: 14px;
+    height: 14px;
 }
 
 .pokemonType {
-	height: 24px;
+    height: 14px;
 }
 
 .logo {
-	position: absolute;
-	top: 50px;
-	left: 50px;
-	cursor: pointer;
-	z-index: 1;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .logo > img {
-	height: 40px;
+    height: 40px;
 }
 
 .status {
-	text-align: center;
+    text-align: center;
     margin-top: 20px;
     color: #5a5a5a;
     max-width: 40%;
@@ -276,7 +281,7 @@ a:hover, a:active {
 }
 
 .centerHorizontally {
-	display: flex;
+    display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -284,23 +289,22 @@ a:hover, a:active {
 }
 
 @media screen and (max-width: 1300px) {
-	body {
-		font-size: 12px;
-	}
+    .mainContainer {
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-aspect-ratio: 19/9) and (min-width: 900px) {
-	.multiplierRow .centerAligned {
-		align-items: center;
-	    display: flex;
-	    flex-direction: row-reverse;
-	}
-	.miniLabel {
-	    display: inline-flex;
-	}
+    .multiplierRow .centerAligned {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .miniLabel {
+        display: inline-flex;
+    }
 
-	.multiplierRow li:nth-child(n+2) .miniLabel {
-	    display: none;
-	}
-
+    .multiplierRow li:nth-child(n+2) .miniLabel {
+        display: none;
+    }
 }

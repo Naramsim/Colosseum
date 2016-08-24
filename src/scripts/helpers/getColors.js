@@ -7,7 +7,7 @@ export default function getColors(id) {
         var plt = colorThief.getPalette(image, 4);
         var bgChannels, primaryChannels, secondaryChannels, thirdyChannels;
         [bgChannels, primaryChannels, secondaryChannels, thirdyChannels] = plt;
-        var bgColor = rgb(bgChannels[0], bgChannels[1], bgChannels[2]);
+        var bgColor = rgb(bgChannels[0] + 20, bgChannels[1] + 20, bgChannels[2] + 20);
         var bgColorEnd = rgb(bgChannels[0] - 20, bgChannels[1] - 20, bgChannels[2] - 20);
         var primaryColor = rgb(primaryChannels[0], primaryChannels[1], primaryChannels[2]);
         var secondaryColor = rgb(secondaryChannels[0], secondaryChannels[1], secondaryChannels[2]);
@@ -15,7 +15,7 @@ export default function getColors(id) {
         var css = document.createElement('style');
         css.type = 'text/css';
         css.innerHTML = `   .bgColor { 
-                                background: linear-gradient( 0deg, ${bgColor}, ${bgColorEnd} );
+                                background: linear-gradient( -45deg, ${bgColor}, ${bgColorEnd} );
                                      }
                             .primaryColor { color: ${primaryColor}; }
                             .secondaryColor { color: ${secondaryColor}; } 

@@ -1,14 +1,8 @@
-import getMultipliers from '../../helpers/getMultipliers.js'
-
 export default class mainPokemon {
     constructor($scope, $http, $rootScope, $timeout, $localStorage) { 'ngInject';
         $scope.$on('init', function(){
             if ($rootScope.currentPokemon && $rootScope.currentPokemon.types) {
                 $scope.$storage = $localStorage;
-                var types = $rootScope.currentPokemon.types.map((type) => {
-                    return type.type.name;
-                })
-                $scope.multipliers = getMultipliers(types);
                 var habitat = $rootScope.pokemonSpecie.habitat;
                 if(habitat) {
                     habitat = habitat.name;

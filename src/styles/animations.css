@@ -1,14 +1,14 @@
 .fadein,
 .fadeout {
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s 1s;
 }
 
 .fadein.ng-hide-remove,
 .fadeout.ng-hide-add.ng-hide-add-active {
-  opacity: 0;
+    opacity: 0;
 }
 
 .fadeout.ng-hide-add,

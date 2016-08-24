@@ -72,7 +72,10 @@
                 <div class="pokemonStats">
                     <div class="pokemonVCard to-left">
                         <div class="pokemonGenere secondaryColor">{{ ::genere }}</div>
-                        <div class="pokemonName primaryColor borderColor">{{ ::up(currentPokemon.name) }}</div>
+                        <div class="pokemonName primaryColor borderColor">
+                            <div class="inline">{{ ::up(currentPokemon.name) }}</div>
+                            <div class="inline">${require('./fav.html')}</div>
+                        </div>
                         <div class="pokemonId">{{ ::currentPokemon.id }}</div>
                         <div class="pokemonTypesContainer">
                             <div class="pokemonTypes ">
@@ -108,19 +111,19 @@
                     <div class="secondaryColor mediumSize primaryColor">Abilities</div>
                     <ul>
                         <li class="padded verticalPadded thirdyColor tooltip" ng-repeat="ability in currentPokemon.abilities" ng-mouseover="getAbility(ability.ability.url)">
-	                        <span class="tooltip-item">
-	                        	{{ ::up(ability.ability.name) }}
-					        </span>
-	                        <span class="tooltip-content tooltipColor tooltip-onleft">
+                            <span class="tooltip-item">
+                                {{ ::up(ability.ability.name) }}
+                            </span>
+                            <span class="tooltip-content tooltipColor tooltip-onleft">
                                     <div class="sk-three-bounce" ng-class="{ hidden : abilityDescription }">
                                         <div class="sk-child sk-bounce1"></div>
                                         <div class="sk-child sk-bounce2"></div>
                                         <div class="sk-child sk-bounce3"></div>
                                     </div>
-	                        	<span class="tooltip-text" ng-class="{ hidden : !abilityDescription }">
-	                        		{{ abilityDescription }}
-	                        	</span>
-					        </span>
+                                <span class="tooltip-text" ng-class="{ hidden : !abilityDescription }">
+                                    {{ abilityDescription }}
+                                </span>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -157,7 +160,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.attack | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="topPadded inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>
@@ -169,7 +172,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.defense | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="topPadded inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>
@@ -209,13 +212,13 @@
         <div ng-controller="Morph">${require('./morph.html')}</div>
         
         <script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-69090146-3', 'auto');
-			ga('send', 'pageview');
-		</script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-69090146-3', 'auto');
+            ga('send', 'pageview');
+        </script>
     </div>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

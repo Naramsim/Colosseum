@@ -1,6 +1,6 @@
 const apiRe = /https:\/\/cdn\.rawgit\.com\/Naramsim\/ninjask\/master\/data\/api\/v2\/.+\/\d+\/index\.json/;
-const imgRe = /images\/\w+\/[\d\w]+\.svg/
-const fonttRe = /fonts/
+const imgRe = /http.*images\/\w+\/[\d\w]+\.svg/
+const fonttRe = /http.*fonts/
 const version = 1
 
 self.addEventListener('fetch', function(event) {
