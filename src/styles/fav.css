@@ -17,7 +17,7 @@ body {
 
 body .wrapper {
     position: relative;
-        margin-left: 30px;
+    margin-left: 30px;
 }
 body .wrapper * {
     box-sizing: content-box;
@@ -66,34 +66,44 @@ body .love img {
 
 .favourite {
     border-radius: 100px;
-        width: 16px;
-        overflow: visible;
-        height: 16px;
-        cursor: pointer;
-        animation: pop .6s;
-        padding: 10px;
-        box-shadow: 0px 0px 0px 3px white;
-        color: white;
-        transition-property: width;
-        transition-duration: .2s,.2s;
-        transition-timing-function: cubic-bezier(0.38, -0.35, 0.265, 1.15);
-}
-.favourite:hover {
-    width: 146px;
+    width: 16px;
+    overflow: visible;
+    height: 16px;
+    cursor: pointer;
+    transform: scale(0);
+    animation: pop .3s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    padding: 10px;
     box-shadow: 0px 0px 0px 3px white;
+    color: white;
+    transition-property: width;
+    transition-duration: .2s,.2s;
+    transition-delay: 2s;
+    transition-timing-function: cubic-bezier(0.38, -0.35, 0.265, 1.15);
 }
+
 .favourite:hover > .favourite_heart .favourite_heart__left {
     /*transform: scale(1.1) rotate(-45deg);
     transition-property: transform;
     transition-duration: .1s;*/
 }
-.favourite:hover > .favourite_text {
-    top: 1px;
-    opacity: 1;
-    transition-property: top,opacity;
-    transition-duration: 0.3s;
-    transition-delay: .3s;
+
+@media screen and (min-width: 900px) {
+    .favourite:hover > .favourite_text {
+        top: 1px;
+        opacity: 1;
+        transition-property: top,opacity;
+        transition-duration: 0.3s;
+        transition-delay: .3s;
+    }
+
+    .favourite:hover {
+        width: 146px;
+        box-shadow: 0px 0px 0px 3px white;
+    }
 }
+
 .favourite:hover > .favourite_heart .favourite_heart__right {
     /*transform: scale(1.1) rotate(45deg);
     transition-property: transform;
@@ -113,30 +123,30 @@ body .love img {
 }
 .favourite_heart {
     position: absolute;
-        top: 9px;
-        left: 9px;
-        margin-right: 10px;
+    top: 9px;
+    left: 9px;
+    margin-right: 10px;
 }
 .favourite_heart__left {
     background: #CB3D3D;
-        width: 10px;
-        height: 20px;
-        transform: rotate(-45deg);
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        border-top-right-radius: 30px;
-        border-top-left-radius: 30px;
+    width: 10px;
+    height: 20px;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
 }
 .favourite_heart__right {
     background: #CB3D3D;
-        width: 10px;
-        height: 20px;
-        transform: rotate(45deg);
-        position: absolute;
-        left: 8px;
-        border-top-right-radius: 30px;
-        border-top-left-radius: 30px;
+    width: 10px;
+    height: 20px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 8px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 input[type='checkbox']:checked + label > .favourite .favourite_text {
@@ -149,7 +159,7 @@ input[type='checkbox']:checked + label > .favourite .favourite_text {
 
 input[type='checkbox']:checked + label > .favourite {
     width: 20px;
-    transition-delay: .2s;
+    transition-delay: 2s;
     box-shadow: 0px 0px 0px 0px transparent;
 }
 
@@ -166,12 +176,12 @@ input[type='checkbox']:checked + label > .favourite .favourite_heart .favourite_
 
 input[type='checkbox']:checked + label > .favourite .favourite_heart .favourite_heart__right {
     width: 6px;
-        transition-property: width,height,left,margin-top;
-        transition-duration: .2s;
-        transition-delay: 1.2s;
-        height: 17px;
-        left: 10px;
-        margin-top: 4px;
+    transition-property: width,height,left,margin-top;
+    transition-duration: .2s;
+    transition-delay: 1.2s;
+    height: 17px;
+    left: 10px;
+    margin-top: 4px;
 }
 
 .spinner_part {
@@ -2891,8 +2901,8 @@ input[type='checkbox']:not(:checked) + label > .favourite .spinner_part:nth-of-t
 
 input[type='checkbox']:not(:checked) + label > .favourite {
     transition-property: box-shadow,width;
-    transition-duration: 0s,.2s;
-    transition-delay: 0s,0s;
+    transition-duration: .1s,.2s;
+    transition-delay: 2s,2s;
     box-shadow: 0px 0px 0px 3px white;
 }
 
@@ -2901,8 +2911,8 @@ input[type='checkbox']:not(:checked) + label > .favourite {
     0% {
         transform: scale(0);
     }
-    50% {
-        transform: scale(1.05);
+    90% {
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);

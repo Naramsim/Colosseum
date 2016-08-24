@@ -94,6 +94,10 @@
         top: 1%;
         left: 10%;
     }
+
+    .pokemonImage>img {
+        width: 55vw;
+    }
 }
 
 @media screen and (max-width: 350px) {

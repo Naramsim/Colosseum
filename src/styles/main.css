@@ -198,8 +198,8 @@ a:hover, a:active {
 
 .loadingContainer {
     min-height: 100%;
-    min-width: 100vw;
-    width: 100vw;
+    min-width: 100%;
+    width: 100%;
     height: 100%;
     background-color: #282b30;
     display: flex;
@@ -288,9 +288,9 @@ a:hover, a:active {
     flex-direction: row;
 }
 
-@media screen and (max-width: 1300px) {
-    .mainContainer {
-        font-size: 12px;
+@media screen and (max-width: 1400px) {
+    body {
+        zoom: 0.8;
     }
 }
 

@@ -12,6 +12,7 @@ export default function getColors(id) {
         var primaryColor = rgb(primaryChannels[0], primaryChannels[1], primaryChannels[2]);
         var secondaryColor = rgb(secondaryChannels[0], secondaryChannels[1], secondaryChannels[2]);
         var thirdyColor = rgb(thirdyChannels[0], thirdyChannels[1], thirdyChannels[2]);
+        var invertedColor = rgb(255 - thirdyChannels[0], 255 - thirdyChannels[1], 255 - thirdyChannels[2]);
         var css = document.createElement('style');
         css.type = 'text/css';
         css.innerHTML = `   .bgColor { 
@@ -45,6 +46,9 @@ export default function getColors(id) {
                             }
                             .onoffswitch-inner:after {
                                 color: ${thirdyColor};
+                            }
+                            .invertedColor {
+                                background: ${invertedColor}
                             }
                             `;
         document.body.appendChild(css);
