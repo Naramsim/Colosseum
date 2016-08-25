@@ -11,7 +11,7 @@
                     <ul>
                         <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilterStart:searchString">
                             <a href="">
-                                <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                                <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                                 <h3 class="inline">{{up(pokemon)}}</h3>
                                 <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                             </a>
@@ -23,7 +23,7 @@
                     <ul class ="fullHeight">
                         <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in favourites track by $index">
                             <a href="">
-                                <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                                <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                                 <h3 class="inline">{{up(pokemon)}}</h3>
                                 <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                             </a>
@@ -34,7 +34,7 @@
                     <h2>Results</h2>
                     <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilter:searchString">
                         <a href="">
-                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                             <h3>{{up(pokemon)}}</h3>
                             <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                         </a>
@@ -44,7 +44,7 @@
                     <h2>Recent</h2>
                     <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in recents track by $index">
                         <a href="">
-                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                             <h3>{{up(pokemon)}}</h3>
                             <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                         </a>

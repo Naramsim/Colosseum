@@ -17,7 +17,7 @@
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
     display: block; float: left; width: 50%; height: 27px; padding: 0; line-height: 27px;
-    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    font-size: 16px; color: white;
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
@@ -27,7 +27,7 @@
 }
 .onoffswitch-inner:after {
     content: "Defense";
-    padding-right: 10px;
+    padding-right: 7px;
     text-align: right;
 }
 .onoffswitch-switch {

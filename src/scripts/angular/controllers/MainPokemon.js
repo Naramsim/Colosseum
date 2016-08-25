@@ -1,7 +1,7 @@
 export default class mainPokemon {
     constructor($scope, $http, $rootScope, $timeout, $localStorage) { 'ngInject';
         $scope.$on('init', function(){
-            if ($rootScope.currentPokemon && $rootScope.currentPokemon.types) {
+            if ($rootScope.currentPokemon && $rootScope.currentPokemon.types && $rootScope.pokemonSpecie) {
                 $scope.$storage = $localStorage;
                 var habitat = $rootScope.pokemonSpecie.habitat;
                 if(habitat) {

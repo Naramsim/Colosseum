@@ -90,6 +90,10 @@ body .love img {
 }
 
 @media screen and (min-width: 900px) {
+    .favourite {
+        top: 1px; /* HACK: to fix heart alignment*/
+    }
+
     .favourite:hover > .favourite_text {
         top: 1px;
         opacity: 1;
@@ -133,10 +137,11 @@ body .love img {
     height: 20px;
     transform: rotate(-45deg);
     position: absolute;
-    left: 0px;
+    left: -1px;
     top: 0px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    border-bottom-left-radius: 10px;
 }
 .favourite_heart__right {
     background: #CB3D3D;
@@ -144,9 +149,10 @@ body .love img {
     height: 20px;
     transform: rotate(45deg);
     position: absolute;
-    left: 8px;
+    left: 7px;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
+    border-bottom-right-radius: 10px;
 }
 
 input[type='checkbox']:checked + label > .favourite .favourite_text {
@@ -2902,7 +2908,7 @@ input[type='checkbox']:not(:checked) + label > .favourite .spinner_part:nth-of-t
 input[type='checkbox']:not(:checked) + label > .favourite {
     transition-property: box-shadow,width;
     transition-duration: .1s,.2s;
-    transition-delay: 2s,2s;
+    transition-delay: .1s,.2s;
     box-shadow: 0px 0px 0px 3px white;
 }
 

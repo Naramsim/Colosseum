@@ -98,6 +98,13 @@
     .pokemonImage>img {
         width: 55vw;
     }
+
+    .favouriteContainer {
+        display: block;
+        position: absolute;
+        right: 56px;
+        top: -8px;
+    }
 }
 
 @media screen and (max-width: 350px) {

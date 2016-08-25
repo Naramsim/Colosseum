@@ -72,7 +72,6 @@ a:hover, a:active {
 
 .pokemonImage {
     position: relative;
-    z-index: 1;
 }
 
 .pokemonImage>img {
@@ -97,6 +96,7 @@ a:hover, a:active {
     font-size: 300%;
     font-weight: 800;
     z-index: 5;
+    position: relative;
 }
 
 .pokemonId {
@@ -291,6 +291,10 @@ a:hover, a:active {
 @media screen and (max-width: 1400px) {
     body {
         zoom: 0.8;
+    }
+    .onoffswitch-switch {
+        width: 30px;
+        height: 30px;
     }
 }
 

@@ -247,13 +247,18 @@ input[type="search"] { /* reset normalize */
 }
 
 .morphsearch.open .dummy-column:nth-child(2) {
-    -webkit-transition-delay: 0.45s;
-    transition-delay: 0.45s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
 }
 
 .morphsearch.open .dummy-column:nth-child(3) {
     -webkit-transition-delay: 0.5s;
     transition-delay: 0.5s;
+}
+
+.morphsearch.open .dummy-column:nth-child(4) {
+    -webkit-transition-delay: 0.6s;
+    transition-delay: 0.6s;
 }
 
 .morphsearch.open .dummy-column {
