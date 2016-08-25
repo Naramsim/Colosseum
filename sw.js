@@ -20,11 +20,11 @@ var __wpo = {
     "e69fb1c59edb845a8c726ac120f5cc2a": "./dive-balle69fb1c59edb845a8c726ac120f5cc2a.png",
     "4b832bf859b98e0984b901eb5fb178c1": "./quick-ball4b832bf859b98e0984b901eb5fb178c1.png",
     "9b4268f43fd5f71f96b9eb073a42b91d": "./master-ball9b4268f43fd5f71f96b9eb073a42b91d.png",
-    "4cd9c3e8f0d17d1b163f2bceb2433bbd": "./index.js",
-    "b133d4252551fbedaa78c8900e65c6c8": "./"
+    "3b40df752220eed934c8d4ef952e5f50": "./index.js",
+    "4abec9b5fbda25c9fa967581fbddaa38": "./"
   },
   "strategy": "all",
-  "version": "4397c92430d353df674e",
+  "version": "8159a0a5f4d9638f78a7",
   "name": "webpack-offline",
   "relativePaths": true
 };

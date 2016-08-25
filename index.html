@@ -28,12 +28,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    <script type="text/javascript" src="index.js?4397c92430d353df674e"></script></head>
-  <body class="bgColor">
+    <script type="text/javascript" src="index.js?8159a0a5f4d9638f78a7"></script></head>
+  <body>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container">
+    <div class="container bgColor">
         <div class="loadingContainer fadeout" ng-show="!loaded">
             <div class="loader">
                 <div class="loader-wrapper">
@@ -74,7 +74,7 @@
                         <div class="pokemonGenere secondaryColor">{{ ::genere }}</div>
                         <div class="pokemonName primaryColor borderColor">
                             <div class="inline">{{ ::up(currentPokemon.name) }}</div>
-                            <div class="inline"><div class='wrapper' ng-controller="PokemonFavourites">
+                            <div class="inline favouriteContainer"><div class='wrapper' ng-controller="PokemonFavourites">
   <div class='wrapper_content'>
     <div class='wrapper_content__inner'>
       <input id='click' type='checkbox' ng-checked="isFav(currentPokemon.name)" ng-click="toggleFav(currentPokemon.name)">
@@ -334,7 +334,7 @@
                             <img    ng-click="reloadWith(pokemon)" 
                                     title="{{ ::getPokemonName(pokemon) }}" 
                                     class="pokemonMember to-top" 
-                                    ng-src="{{ ::getImageUrl(pokemon) }}" 
+                                    ng-src="{{ getImageUrl(pokemon) }}" 
                                     style="transition-delay: {{($index + 4 * 3)/10}}s;">
                         </li>
                     </ul>
@@ -360,7 +360,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.attack | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="inline pokemonType" title="{{ ::name }}" ng-src="{{ getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>
@@ -372,7 +372,7 @@
                             <ul class="multiplierRow">
                                 <li class="padded topPadded inline" ng-repeat="(name, percentage) in multipliers.defense | multi:multiplier">
                                     <div class="centerAligned">
-                                        <img class="inline pokemonType" title="{{ ::name }}" src="{{ ::getUrlType(name) }}">
+                                        <img class="inline pokemonType" title="{{ ::name }}" ng-src="{{ getUrlType(name) }}">
                                         <div class="miniLabel thirdyColor">x{{multiplier}}</div>
                                     </div>
                                 </li>
@@ -386,7 +386,7 @@
                         <li class="padded verticalPadded thirdyColor tooltip" ng-repeat="item in currentPokemon.held_items" ng-mouseover="getHeldItem(item.item.url)">
                             <div class="centerAligned">
                                 <span class="tooltip-item">
-                                    <img class="middleRow inline" title="{{ ::item.item.name }}" src="{{ ::getUrlItem(item.item.name) }}">
+                                    <img class="middleRow inline" title="{{ ::item.item.name }}" ng-src="{{ getUrlItem(item.item.name) }}">
                                     <div class="padded inline">
                                         {{ ::up(item.item.name) }} with probability {{ ::getRarity(item) }}%
                                     </div>
@@ -422,7 +422,7 @@
                     <ul>
                         <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilterStart:searchString">
                             <a href="">
-                                <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                                <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                                 <h3 class="inline">{{up(pokemon)}}</h3>
                                 <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                             </a>
@@ -440,7 +440,7 @@
                     <ul class ="fullHeight">
                         <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in favourites track by $index">
                             <a href="">
-                                <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                                <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                                 <h3 class="inline">{{up(pokemon)}}</h3>
                                 <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                             </a>
@@ -451,7 +451,7 @@
                     <h2>Results</h2>
                     <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in pokemons | pokemonFilter:searchString">
                         <a href="">
-                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                             <h3>{{up(pokemon)}}</h3>
                             <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                         </a>
@@ -461,7 +461,7 @@
                     <h2>Recent</h2>
                     <li class="dummy-media-object" ng-click="saveAndReload(pokemon)" ng-repeat="pokemon in recents track by $index">
                         <a href="">
-                            <img src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
+                            <img ng-src="{{getImageUrl(pokemon)}}" alt="{{pokemon}}"/>
                             <h3>{{up(pokemon)}}</h3>
                             <h1 class="inline pokemonSearchId">{{getPokemonId(pokemon)}}</h1>
                         </a>
