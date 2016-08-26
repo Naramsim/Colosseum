@@ -75,8 +75,7 @@ a:hover, a:active {
 }
 
 .pokemonImage>img {
-    height: 45vh;
-    width: 45vw;
+    height: 45%;
     position: relative;
 }
 
@@ -295,6 +294,24 @@ a:hover, a:active {
     .onoffswitch-switch {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media screen and (min-width: 2300px) {
+    body {
+        zoom: 1.7;
+    }
+    .pokemonImage>img {
+        width: 21vw;
+    }
+}
+
+@media screen and (min-width: 3500px) {
+    body {
+        zoom: 2.2;
+    }
+    .pokemonImage>img {
+        width: 21vw;
     }
 }
 
