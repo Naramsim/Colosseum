@@ -1,4 +1,4 @@
-## Colosseum [![ghit.me](https://ghit.me/badge.svg?repo=Naramsim/Colosseum)](https://ghit.me/repo/Naramsim/Colosseum)
+## Colosseum
 
 A Pokémon-search [progressive web app](https://developers.google.com/web/progressive-web-apps/) :zap:  It even works offline :crescent_moon:
 
