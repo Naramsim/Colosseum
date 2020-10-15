@@ -42,7 +42,7 @@
     "offline-plugin": "^4.9.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
+    "webpack-dev-server": "^3.1.11",
     "webpack-shell-plugin": "^0.4.2"
   },
   "dependencies": {}
