@@ -23,17 +23,16 @@
 
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-        <script data-apikey="a5c9247914387e79f30123dac3f6835c" src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" async defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
-    <script type="text/javascript" src="index.js?d02c39e752f97c7ccfcd"></script></head>
+    <script type="text/javascript" src="index.js?c1b694578bbe9e36e37c"></script></head>
   <body>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container bgColor">
+    <div class="container bgColor unselectable">
         <div class="loadingContainer fadeout" ng-show="!loaded">
             <div class="loader">
                 <div class="loader-wrapper">
@@ -62,7 +61,7 @@
         </div>
         <div class="mainContainer container" ng-class="{ animation : loaded && !animationsEnded, animationEnded : animationsEnded }" ng-controller="MainPokemon">
             <div class="logo to-bottom-logo delay-3">
-                <img src="master-ball71acd2e800d33bd5d964ec9f6fe199c7.svg" ng-click="reloadHome()">
+                <img src="master-ball03f4a260d00fd533cf388f4a3785738d.png" ng-click="reloadHome()">
             </div>
             <div class="innerContainer">
                 <div class="pokemonImage to-scale delay-1">
@@ -71,7 +70,7 @@
                 </div>
                 <div class="pokemonStats">
                     <div class="pokemonVCard to-left">
-                        <div class="pokemonGenere secondaryColor">{{ ::genere }}</div>
+                        <div class="pokemonGenre secondaryColor">{{ ::genere }}</div>
                         <div class="pokemonName primaryColor borderColor">
                             <div class="inline">{{ ::up(currentPokemon.name) }}</div>
                             <div class="inline favouriteContainer"><div class='wrapper' ng-controller="PokemonFavourites">
@@ -300,7 +299,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="pokemonDescription primaryColor verticalPadded">
+                        <div class="pokemonDescription primaryColor verticalPadded selectable">
                             {{ ::description }}
                         </div>
                     </div>
@@ -320,7 +319,7 @@
                                         <div class="sk-child sk-bounce2"></div>
                                         <div class="sk-child sk-bounce3"></div>
                                     </div>
-                                <span class="tooltip-text primaryColor" ng-class="{ hidden : !abilityDescription }">
+                                <span class="tooltip-text primaryColor selectable" ng-class="{ hidden : !abilityDescription }">
                                     {{ abilityDescription }}
                                 </span>
                             </span>
@@ -473,8 +472,8 @@
                 <div class="padded verticalPadded centerHorizontally"><kbd>Tab</kbd>Moves between search elements</div>
                 <div class="padded verticalPadded centerHorizontally"><kbd>Esc</kbd>Exit the search</div>
                 <div class="padded verticalPadded centerHorizontally"><kbd>R</kbd>Random Pokémon</div>
-                <div class="padded verticalPadded centerHorizontally"><bold>@</bold>Powered by <a href="https://github.com/PokeAPI/pokeapi">Pokéapi</a></div>
-                <div class="padded verticalPadded centerHorizontally">
+                <div class="padded verticalPadded centerHorizontally">Powered by <a href="https://github.com/PokeAPI/pokeapi">Pokéapi</a></div>
+                <div class="padded verticalPadded centerHorizontally starme">
                     <iframe src="https://ghbtns.com/github-btn.html?user=Naramsim&repo=Colosseum&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="30px"></iframe>
                 </div>
             </div>
