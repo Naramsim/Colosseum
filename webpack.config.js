@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const offlinePluginOptions = {
+    appShell: '/',
+    autoUpdate: true,
     caches:{
         main: [
             'index.js',
@@ -12,10 +14,11 @@ const offlinePluginOptions = {
             'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
+            'https://fonts.googleapis.com/css?family=Montserrat:400,700',
             'master-ball*.png',
-            'master-ball*.svg',
             'quick-ball*.png',
-            'dive-ball*.png'
+            'dive-ball*.png',
+            'manifest.json'
         ],
         additional: [
             
@@ -25,7 +28,9 @@ const offlinePluginOptions = {
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-animate.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js',
+        'https://fonts.googleapis.com/css?family=Montserrat:400,700',
+        'manifest.json'
     ],
     ServiceWorker: {
         events: true
@@ -70,20 +75,20 @@ module.exports = {
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,
                 loaders: [
-                    'file?hash=sha512&digest=hex&name=[name][hash].[ext]',
+                    'file?hash=sha512&digest=hex&name=[name][hash].[ext]&esModule=false',
                     'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
-                ]
+                ],
             }
         ]
     },
     plugins: [
-        new WebpackShellPlugin({onBuildStart:[], onBuildEnd:['npm run copyManifest'], dev: 0}),
         new HtmlWebpackPlugin({
             template: 'src/include/index.html',
             inject: 'head',
             hash: true,
             cache: false
         }),
-        new OfflinePlugin(offlinePluginOptions)
+        new OfflinePlugin(offlinePluginOptions),
+        new WebpackShellPlugin({onBuildStart:[], onBuildEnd:['npm run copyManifest'], dev: 0})
     ]
 };
