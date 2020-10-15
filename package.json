@@ -7,7 +7,7 @@
     "build": "webpack",
     "build:watch": "webpack --watch",
     "copyManifest": "cp ./manifest.json ./dist",
-    "gh-deploy": "git checkout gh-pages && git rebase master && npm run build && del-cli './*' '!(./dist|./node_modules)' && mv ./dist/* ./ && del-cli ./dist",
+    "gh-deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "http-server ./dist"
   },
@@ -32,6 +32,7 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
     "css-loader": "^0.23.1",
+    "gh-pages": "^3.1.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
