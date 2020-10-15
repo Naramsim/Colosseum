@@ -34,9 +34,9 @@ export default function run($http, $rootScope, getInfoFactory) {
         $rootScope.status = 'FETCHING';
     }
     $rootScope.reloadHome = function(id) {
-            window.location.hash = '';
-            window.location.reload(true);
-        }
+        window.location.hash = '';
+        window.location.reload(true);
+    }
 
     var completed = 0;
     $rootScope.currentPokemon = currentPokemon;
@@ -88,13 +88,18 @@ export default function run($http, $rootScope, getInfoFactory) {
             } else {
                 return false;
             }
-        })[0].flavor_text;  
+        })[0].flavor_text
+            .replace('\f','\n')
+            .replace(/\u00ad\n/g, '')
+            .replace(/\u00ad/g, '')
+            .replace(' -\n',  ' - ')
+            .replace('-\n', '-')
+            .replace('\n', ' ');
         completed += 1;
         hasCompleted(completed, $rootScope);
     }).catch(function(err) {
         handleErrors($rootScope);
     });
-
 
     if('serviceWorker' in navigator){
         // Handler for messages coming from the service worker

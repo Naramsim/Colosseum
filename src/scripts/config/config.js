@@ -1,5 +1,5 @@
 var config = {}
 
-config.baseUrl = 'https://cdn.rawgit.com/Naramsim/ninjask/master/data/api/v2';
+config.baseUrl = 'https://pokeapi.co/api/v2';
 
 export { config }

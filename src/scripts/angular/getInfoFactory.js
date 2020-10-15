@@ -5,7 +5,7 @@ export default function getInfoFactory($http, $q) {
     return {
         getPokemon: function(currentPokemon) {
             var deferred = $q.defer();
-            $http.get(`${config.baseUrl}/pokemon/${pokemons.indexOf(currentPokemon) + 1}/index.json`)
+            $http.get(`${config.baseUrl}/pokemon/${pokemons.indexOf(currentPokemon) + 1}`)
                .success(function(res){
                     deferred.resolve(res);
                 })
@@ -22,7 +22,7 @@ export default function getInfoFactory($http, $q) {
         },
         getSpecie: function(currentPokemon) {
             var deferred = $q.defer();
-            $http.get(`${config.baseUrl}/pokemon-species/${pokemons.indexOf(currentPokemon) + 1}/index.json`)
+            $http.get(`${config.baseUrl}/pokemon-species/${pokemons.indexOf(currentPokemon) + 1}`)
                 .success(function(res){
                     deferred.resolve(res);
                 })

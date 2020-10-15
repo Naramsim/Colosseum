@@ -1,5 +1,5 @@
-const apiRe = /https:\/\/cdn\.rawgit\.com\/Naramsim\/ninjask\/master\/data\/api\/v2\/.+\/\d+\/index\.json/;
-const imgRe = /http.*images\/\w+\/[\d\w]+\.svg/
+const apiRe = /https:\/\/pokeapi\.co\/api\/v2\/.+\/\d+/;
+const imgRe = /http.*images\/\w+\/[\d\w-]+\.svg/
 const fonttRe = /http.*fonts/
 const version = 1
 

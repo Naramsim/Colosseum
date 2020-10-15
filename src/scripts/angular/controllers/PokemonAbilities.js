@@ -8,10 +8,17 @@ export default class pokemonAbilities {
 	            if (id && id.length > 0) {
 	            	var localAbility = localStorage.getItem('a' + id[1]);
 	            	if (!localAbility) {
-		                $http.get(`${config.baseUrl}/ability/${id[1]}/index.json`)
+		                $http.get(`${config.baseUrl}/ability/${id[1]}`)
 		                .success(function(res){
-		                    $scope.abilityDescription = res.effect_entries[0].short_effect;
-		                    localStorage.setItem('a' + id[1], res.effect_entries[0].short_effect);
+							const abilityDescription = res.effect_entries.filter((entry) => {
+								if (entry.language.name === 'en') {
+									return true;
+								} else {
+									return false;
+								}
+							})[0].short_effect;
+							$scope.abilityDescription = abilityDescription;
+		                    localStorage.setItem('a' + id[1], abilityDescription);
 		                })
 		                .error(function(data) {
 		                    return "Nothing";

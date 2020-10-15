@@ -3,10 +3,10 @@ import getMultipliers from '../../helpers/getMultipliers.js'
 export default class pokemonMultipliers {
     constructor($scope, $rootScope) { 'ngInject';
         $scope.$on('init', function(){
-            if ($rootScope.currentPokemon) {
+            if ($rootScope.currentPokemon && $rootScope.currentPokemon.types) { // HACK: $on('init') is fired twice
                 let types = $rootScope.currentPokemon.types.map((type) => {
-                        return type.type.name;
-                    })
+                    return type.type.name;
+                })
                 const multipliers = getMultipliers(types);
                 let multipliersAttack = new Set();
                 let multipliersDefense = new Set();
@@ -21,6 +21,18 @@ export default class pokemonMultipliers {
                     multipliersDefense.add(multipliers.defense[key])
                 })
 
+                for (const [key, value] of Object.entries(multipliers.attack)) {
+                    if (value === 1) {
+                        delete multipliers.attack[key]
+                    }
+                }
+
+                for (const [key, value] of Object.entries(multipliers.defense)) {
+                    if (value === 1) {
+                        delete multipliers.defense[key]
+                    }
+                }
+
                 if (multipliersAttack.size > 3 || multipliersAttack.size > 3) {
                     inline = `
                             @media screen and (min-width: 900px) {
@@ -31,7 +43,7 @@ export default class pokemonMultipliers {
                                 }
                                 .miniLabel {
                                     display: inline-flex;
-                                    width: 40px;
+                                    width: 50px;
                                 }
                                 .multiplierRow li:nth-child(n+2) .miniLabel {
                                     display: none;

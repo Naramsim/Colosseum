@@ -15,7 +15,7 @@ export default class pokemonFamily {
                 }
                 var evolutionChainId = /chain\/(\d+)\/$/.exec($rootScope.pokemonSpecie.evolution_chain.url);
                 if (evolutionChainId && evolutionChainId.length > 0) {
-                    $http.get(`${config.baseUrl}/evolution-chain/${evolutionChainId[1]}/index.json`)
+                    $http.get(`${config.baseUrl}/evolution-chain/${evolutionChainId[1]}`)
                        .success(function(res){
                             $scope.family = res;
                             $scope.members = getMemebers(res);

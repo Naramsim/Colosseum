@@ -12,6 +12,10 @@ if (!currentPokemon) {
     }
 }
 
+setTimeout(() => {
+    window.location.hash = `#${currentPokemon}`;
+}, 4000);
+
 console.log(currentPokemon)
 
 function generateRandPokemon() {

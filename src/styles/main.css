@@ -41,15 +41,18 @@ a:hover, a:active {
     min-height: 100%;
 }
 
+.unselectable {
+    user-select: none;
+}
+
+.selectable {
+    user-select: text;
+}
+
 .mainContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    -webkit-user-select: none;       
-    -moz-user-select: none; 
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 .secondaryContainer {
@@ -58,7 +61,7 @@ a:hover, a:active {
     flex-direction: row;
     justify-content: space-around;
     position: relative;
-    z-index: 1;
+    z-index: 20;
 }
 
 .innerContainer {
@@ -72,17 +75,19 @@ a:hover, a:active {
 
 .pokemonImage {
     position: relative;
+    z-index: 10;
 }
 
 .pokemonImage>img {
-    height: 45%;
+    height: 45vh;
     position: relative;
 }
 
 .pokemonStats {
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    z-index: 20;
 }
 
 .pokemonVCard {
@@ -137,7 +142,8 @@ a:hover, a:active {
 
 .miniLabel {
     text-align: center;
-    font-size: 11px;
+    font-size: 16px;
+    margin-top: 2px;
 }
 
 .liStat:nth-child(even) {
@@ -160,8 +166,9 @@ a:hover, a:active {
     justify-content: flex-start;
 }
 
-.pokemonGenere {
+.pokemonGenre {
     margin-left: -36px;
+    padding-right: 50px;
 }
 
 .pokemonMember {
@@ -209,12 +216,12 @@ a:hover, a:active {
 }
 
 .jp {
-    /*font-family: 'Noto Sans Japanese', serif;*/
+    font-family : 'ヒラギノ角ゴ ProN' , 'Hiragino Kaku Gothic ProN' , '游ゴシック' , '游ゴシック体' , YuGothic , 'Yu Gothic' , 'メイリオ' , Meiryo , 'ＭＳ ゴシック' , 'MS Gothic' , HiraKakuProN-W3 , 'TakaoExゴシック' , TakaoExGothic , 'MotoyaLCedar' , 'Droid Sans Japanese' , sans-serif;
     font-weight: 400;
     position: absolute;
     top: 100%;
     font-size: 1260%;
-    opacity: 0.1;
+    opacity: 0.3;
     width: 400%;
 }
 
@@ -251,11 +258,11 @@ a:hover, a:active {
 }
 
 .pokemonTypeVc {
-    height: 14px;
+    height: 20px;
 }
 
 .pokemonType {
-    height: 14px;
+    height: 20px;
 }
 
 .logo {
@@ -285,6 +292,10 @@ a:hover, a:active {
     align-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+.starme iframe {
+    padding-top: 5px;
 }
 
 @media screen and (max-width: 1400px) {
