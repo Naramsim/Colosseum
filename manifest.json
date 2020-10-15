@@ -1,7 +1,7 @@
 {
     "short_name": "Colosseum",
     "name": "Colosseum",
-    "description": "Displays Pokemons in a beatiful way",
+    "description": "Displays Pokemons in a beautiful way",
     "icons": [
         {
             "src": "images/icons/launcher-48.png",
